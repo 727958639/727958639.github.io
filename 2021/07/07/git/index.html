@@ -487,23 +487,22 @@
             <div id="articleContent">
                 <hr>
 <h1 id="Git学习笔记"><a href="#Git学习笔记" class="headerlink" title="Git学习笔记"></a>Git学习笔记</h1><h1 id="一-版本控制分类"><a href="#一-版本控制分类" class="headerlink" title="一.版本控制分类"></a>一.版本控制分类</h1><p>记录文件每次的更新,可以对每一个版本做一个快照,或是记录补丁文件,适合个人用,如RCS</p>
-<p><img src="https://images1.tqwba.com/20201004/l1hb2j32z4j.png"></p>
+<p><img src="/2021/07/07/git/1626940328250.png"></p>
 <p>所有的版本数据都保存在服务器上,协同开发这从服务器上同步更新或上传自己的修改.</p>
-<p><img src="https://images1.tqwba.com/20201004/xfyl5ueug5e.png"></p>
-<p><img src="https://images1.tqwba.com/20201004/fe3gjqer4zu.png"><br>)</p>
+<p><img src="/2021/07/07/git/1626940351110.png"></p>
+<p>​                             <img src="/2021/07/07/git/1626940366184.png"><br>)</p>
 <p>缺点:每个人都拥有全部代码,安全隐患.</p>
 <p>所有版本信息仓库全部同步到本地的每个用户,这样就可以在本地查看所有版本历史,可以离线在本地提交,只需要在联网时push到相应的服务器或其他用户那里.由于每个用户那里保存的都是所有的版本数据,只要有一个用户的折本没有问题就可以恢复所有的数据,但这增加了本地存储空间的占用.</p>
 <p>不会因为服务器损坏或者网络问题,造成不能工作的情况;</p>
-<p><img src="https://images1.tqwba.com/20201004/0jybuxpdpzp.png"></p>
+<p><img src="/2021/07/07/git/1626940411759.png"></p>
 <blockquote>
 <p>Git和SVN主要区别</p>
 </blockquote>
 <p>SVN是集中式版本控制系统,版本库是集中放在中央服务器的,而工作的时候,用的都是自己的电脑,所有首先要从中央服务器得到最新的版本,然后工作,完成工作后,需要把自己做完的活推送到中央服务器.集中式版本控制系统是必须联网才能工作,对网络带宽要求较高.</p>
-<p><img src="https://images1.tqwba.com/20201004/4zids3zf5db.png"><br>)</p>
+<p><img src="/2021/07/07/git/1626940437562.png"><br>)</p>
 <p>Git是分布式版本控制系统,没有中央服务器,每个人的电脑就是一个完整的版本库,工作的时候不需要联网了,因为版本都在自己电脑上.系统的方法是这样的:比如说自己在电脑上改了文件A,其他人也在电脑上改了文件A,这是,你们两之间只需把各自的修改推送给对方,就可以互相看到对方的修改了.Git可以直接看到更新了哪些代码和文件!</p>
 <p>? <strong>Git是目前世界上最先进的分布式版本控制系统</strong></p>
-<h1 id="二-聊聊Git历史"><a href="#二-聊聊Git历史" class="headerlink" title="二.聊聊Git历史"></a>二.聊聊Git历史</h1><p><img src="https://images1.tqwba.com/20201004/h2oe4rqlcm5.png"></p>
-<p><img src="https://images1.tqwba.com/20201004/pq2jhepvpe1.png"></p>
+<h1 id="二-聊聊Git历史"><a href="#二-聊聊Git历史" class="headerlink" title="二.聊聊Git历史"></a>二.聊聊Git历史</h1><p><img src="/2021/07/07/git/1626940466521.png"></p>
 <h2 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h2><p>打开 [git官网] <a target="_blank" rel="noopener" href="https://git-scm.com/%EF%BC%8C%E4%B8%8B%E8%BD%BDgit%E5%AF%B9%E5%BA%94%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%88%E6%9C%AC%E3%80%82">https://git-scm.com/，下载git对应操作系统的版本。</a></p>
 <p>所有东西下载慢的话就可以去找镜像！</p>
 <p>官网下载太慢，我们可以使用淘宝镜像下载：<a target="_blank" rel="noopener" href="http://npm.taobao.org/mirrors/git-for-windows/">http://npm.taobao.org/mirrors/git-for-windows/</a></p>
@@ -550,13 +549,12 @@ git config <span class="token operator">--</span>global  <span class="token oper
 <blockquote>
 <p>配置用户名和密码很重要，因为每次提交都会使用该信息，永远嵌入提交中</p>
 </blockquote>
-<p><img src="https://images1.tqwba.com/20201004/hykxtsbqrqh.png"></p>
-<p><img src="https://images1.tqwba.com/20201004/nzb0ge2sfr0.png"></p>
+<p><img src="/2021/07/07/git/1626940530654.png"></p>
 <p><strong>Git相关的配置文件：</strong></p>
 <p>1）、Git\etc\gitconfig  ：Git 安装目录下的 gitconfig     –system 系统级</p>
 <p>2）、C:\Users\Administrator\ .gitconfig    只适用于当前登录用户的配置  –global 全局</p>
 <p>C:\Users\Administrator.gitconfig</p>
-<p><img src="https://images1.tqwba.com/20201004/beyjboonxrf.png"></p>
+<p><img src="/2021/07/07/git/1626940550107.png"></p>
 <h2 id="设置用户名与邮箱（用户标识，必要）"><a href="#设置用户名与邮箱（用户标识，必要）" class="headerlink" title="设置用户名与邮箱（用户标识，必要）"></a>设置用户名与邮箱（用户标识，必要）</h2><p>当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>name <span class="token string">"kuangshen"</span>  #名称
 git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>email <span class="token number">727958639</span>@qq<span class="token punctuation">.</span>com   #邮箱<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -567,7 +565,7 @@ git config <span class="token operator">--</span>global user<span class="token p
 <p>工作区域</p>
 </blockquote>
 <p>Git本地有三个工作区域:工作目录(Working Firectory) , 暂存区(Stage/Index) , 资源库(Repository或Git Directory).如果在加上远程的git仓库(Remote Directory) 就可以分为四个工作区域.文件在这四个区域之间的转换关系如下:</p>
-<p><img src="https://images1.tqwba.com/20201004/02p4fw3b1vl.png"></p>
+<p><img src="/2021/07/07/git/1626940573537.png"></p>
 <ul>
 <li>Workspace : 工作区,就是你平时存放项目代码的地方</li>
 <li>Index/Stage : 暂存区,用于临时存放你的改动,事实上他只是一个文件,保存即将提交到文件列表信息</li>
@@ -575,7 +573,7 @@ git config <span class="token operator">--</span>global user<span class="token p
 <li>Remote : 远程仓库,托管底阿妈的服务器,可以简单的认为是你项目组中的一台电脑用于远程数据交换.</li>
 </ul>
 <p>本地的三个区域确切的说应该是git仓库中HEAD指向的版本:</p>
-<p><img src="https://images1.tqwba.com/20201004/zuuxwrygmfp.png"></p>
+<p><img src="/2021/07/07/git/1626940597115.png"></p>
 <blockquote>
 <p>工作流程</p>
 </blockquote>
@@ -596,8 +594,7 @@ git config <span class="token operator">--</span>global user<span class="token p
 $ git init<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>2.执行后可以看到,仅仅在项目目录多出了一个.git目录,关于版本等的所有信息都在这个目录里面.</p>
-<p><img src="https://images1.tqwba.com/20201004/3h2tgfh4tin.png"></p>
-<p><img src="https://images1.tqwba.com/20201004/yinpfbudsop.png"></p>
+<p><img src="/2021/07/07/git/1626940634205.png"></p>
 <h2 id="克隆远程仓库"><a href="#克隆远程仓库" class="headerlink" title="克隆远程仓库"></a>克隆远程仓库</h2><p>1.另一种方式是克隆远程目录,是将远程服务器删的仓库完全镜像一份至本地!</p>
 <pre class="line-numbers language-none"><code class="language-none">#克隆一个项目和他的整个代码历史(版本信息)
 $ git clone [url] #git 克隆的地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -650,8 +647,7 @@ doc<span class="token comment">/*.txt    #会忽略 doc/notes.txt 但不包括 d
 
 
 <p>.gitignore</p>
-<p><img src="https://images1.tqwba.com/20201004/0yblfqy1tcw.png"></p>
-<p><img src="https://images1.tqwba.com/20201004/g0ow0ytuv5g.png"></p>
+<p><img src="/2021/07/07/git/1626940682558.png"></p>
 <h1 id="八-使用码云"><a href="#八-使用码云" class="headerlink" title="八.使用码云"></a>八.使用码云</h1><p>1.注册登录码云,完善个人信息</p>
 <p><img src="/2021/07/07/git/1619423943742.png"></p>
 <p>2.==设置本机绑定SSH公钥,实现免密码登录!==</p>
@@ -660,25 +656,23 @@ doc<span class="token comment">/*.txt    #会忽略 doc/notes.txt 但不包括 d
 # 生成公钥
 ssh-keygen -t rsa<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://images1.tqwba.com/20201004/52mw5erzeqz.png"></p>
+<p><img src="/2021/07/07/git/1626940704217.png"></p>
 <p><img src="https://images1.tqwba.com/20201004/fkxkrsn03dj.png" alt="Git学习笔记(git/fkxkrsn03dj.png)(自己总结方便复习)"></p>
 <p><img src="https://images1.tqwba.com/20201004/rmthwgwekln.png"></p>
 <p>3.将公钥信息public Key 添加到码云账户中即可!</p>
 <p><img src="/2021/07/07/git/1619424578117.png"></p>
 <p>4.使用码云创建一个自己的仓库!</p>
 <p><img src="/2021/07/07/git/1619424610440.png"></p>
-<p><img src="https://images1.tqwba.com/20201004/d3jd4wbhapy.png"></p>
-<p><img src="https://images1.tqwba.com/20201004/tbijqw1ic0x.png" alt="Git学习笔记(git/tbijqw1ic0x.png)(自己总结方便复习)"></p>
+<p><img src="/2021/07/07/git/1626940778439.png"></p>
 <p>创建成功</p>
-<p><img src="https://images1.tqwba.com/20201004/55brj1kgciq.png"></p>
+<p><img src="/2021/07/07/git/1626940804295.png"></p>
 <p>git clone [url] 克隆到本地</p>
-<p><img src="https://images1.tqwba.com/20201004/2qydfuipxki.png"></p>
-<p><img src="https://images1.tqwba.com/20201004/2vv5msjj1ia.png"></p>
+<p><img src="/2021/07/07/git/1626940823919.png"></p>
+<p><img src="/2021/07/07/git/1626940839363.png"></p>
 <h1 id="九-IDEA中集成Git"><a href="#九-IDEA中集成Git" class="headerlink" title="九.IDEA中集成Git"></a>九.IDEA中集成Git</h1><p>1.建一个普通的SpringBoot项目</p>
 <p>? 项目的文件夹就是git的文件夹</p>
 <p>2.将git工程中的文件夹直接拷贝到java文件夹中</p>
-<p><img src="https://images1.tqwba.com/20201004/gqdbegv2m5p.png"></p>
-<p><img src="https://images1.tqwba.com/20201004/j0hbwonydt5.png"></p>
+<p><img src="/2021/07/07/git/1626940862537.png"></p>
 <ul>
 <li><p>观察idea的变化</p>
 </li>
@@ -690,23 +684,23 @@ ssh-keygen -t rsa<span aria-hidden="true" class="line-numbers-rows"><span></span
 </blockquote>
 </li>
 </ul>
-<p><img src="https://images1.tqwba.com/20201004/cvkm5uibtfp.png"></p>
+<p><img src="/2021/07/07/git/1626940906122.png"></p>
 <ul>
 <li>1.)git commit</li>
 </ul>
-<p><img src="https://images1.tqwba.com/20201004/w1rgmgbw52u.png"></p>
+<p><img src="/2021/07/07/git/1626940928999.png"></p>
 <ul>
 <li>2.)git commit -m “消息”</li>
 </ul>
-<p><img src="https://images1.tqwba.com/20201004/0lxnu5rsr2g.png"></p>
+<p><img src="/2021/07/07/git/1626940969539.png"></p>
 <ul>
 <li>git push</li>
 </ul>
-<p><img src="https://images1.tqwba.com/20201004/akoibbymm5g.png"></p>
+<p>​                          <img src="/2021/07/07/git/1626940981138.png">)</p>
 <ul>
 <li>查看远程仓库已经提交上去了</li>
 </ul>
-<p><img src="https://images1.tqwba.com/20201004/0amw5qnpzkp.png"></p>
+<p><img src="/2021/07/07/git/1626941010621.png"></p>
 <p>这些是单个人操作</p>
 <h1 id="十-说明-GIT分支"><a href="#十-说明-GIT分支" class="headerlink" title="十.说明:GIT分支"></a>十.说明:GIT分支</h1><p>git分支常用命令</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"># 列出所有本地分支
@@ -734,8 +728,7 @@ $ git branch <span class="token operator">-</span>dr <span class="token punctuat
 
 
 <p>分支(多人开发)</p>
-<p><img src="https://images1.tqwba.com/20201004/h0jtlm1q4n3.png"></p>
-<p><img src="https://images1.tqwba.com/20201004/y4qndipkvrm.png"></p>
+<p><img src="/2021/07/07/git/1626941038274.png"></p>
 <p>如果冲突了就需要协商了</p>
 <p>如果同一个文件在合并分支时都修改了则会引起冲突:解决的办法是我们可以修改冲突文件后重新提交!选择要保留他的代码还是你的代码!</p>
 <p>master主分支应该非常稳定,用来发布新版本,一般情况下不允许在上面工作,工作一般情况下在新建的dev分支上工作,工作完后,比如上要发布,或者说dev分支代码稳定后可以合并到主分支master上来.</p>
