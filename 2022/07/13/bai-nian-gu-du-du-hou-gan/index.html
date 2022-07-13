@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="git, 烧了回忆取暖">
+    <meta name="keywords" content="百年孤独, 烧了回忆取暖">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>git | 烧了回忆取暖</title>
+    <title>百年孤独 | 烧了回忆取暖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">git</h1>
+                    <h1 class="description center-align post-title">百年孤独</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">git笔记</span>
+                            <a href="/tags/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC/">
+                                <span class="chip bg-color">百年孤独</span>
                             </a>
                         
                     </div>
@@ -443,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E4%B8%8E%E5%91%BD%E4%BB%A4%E6%9C%89%E5%85%B3%E7%9A%84%E7%AC%94%E8%AE%B0/" class="post-category">
-                                与命令有关的笔记
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
+                                生活
                             </a>
                         
                     </div>
@@ -456,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-07
+                    2022-07-13
                 </div>
                 
 
@@ -465,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.2k
+                    4.7k
                 </div>
                 
 
@@ -485,253 +485,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h1 id="Git学习笔记"><a href="#Git学习笔记" class="headerlink" title="Git学习笔记"></a>Git学习笔记</h1><h1 id="一-版本控制分类"><a href="#一-版本控制分类" class="headerlink" title="一.版本控制分类"></a>一.版本控制分类</h1><p>记录文件每次的更新,可以对每一个版本做一个快照,或是记录补丁文件,适合个人用,如RCS</p>
-<p><img src="/2021/07/07/git/1626940328250.png"></p>
-<p>所有的版本数据都保存在服务器上,协同开发这从服务器上同步更新或上传自己的修改.</p>
-<p><img src="/2021/07/07/git/1626940351110.png"></p>
-<p>​                             <img src="/2021/07/07/git/1626940366184.png"><br>)</p>
-<p>缺点:每个人都拥有全部代码,安全隐患.</p>
-<p>所有版本信息仓库全部同步到本地的每个用户,这样就可以在本地查看所有版本历史,可以离线在本地提交,只需要在联网时push到相应的服务器或其他用户那里.由于每个用户那里保存的都是所有的版本数据,只要有一个用户的折本没有问题就可以恢复所有的数据,但这增加了本地存储空间的占用.</p>
-<p>不会因为服务器损坏或者网络问题,造成不能工作的情况;</p>
-<p><img src="/2021/07/07/git/1626940411759.png"></p>
-<blockquote>
-<p>Git和SVN主要区别</p>
-</blockquote>
-<p>SVN是集中式版本控制系统,版本库是集中放在中央服务器的,而工作的时候,用的都是自己的电脑,所有首先要从中央服务器得到最新的版本,然后工作,完成工作后,需要把自己做完的活推送到中央服务器.集中式版本控制系统是必须联网才能工作,对网络带宽要求较高.</p>
-<p><img src="/2021/07/07/git/1626940437562.png"><br>)</p>
-<p>Git是分布式版本控制系统,没有中央服务器,每个人的电脑就是一个完整的版本库,工作的时候不需要联网了,因为版本都在自己电脑上.系统的方法是这样的:比如说自己在电脑上改了文件A,其他人也在电脑上改了文件A,这是,你们两之间只需把各自的修改推送给对方,就可以互相看到对方的修改了.Git可以直接看到更新了哪些代码和文件!</p>
-<p>? <strong>Git是目前世界上最先进的分布式版本控制系统</strong></p>
-<h1 id="二-聊聊Git历史"><a href="#二-聊聊Git历史" class="headerlink" title="二.聊聊Git历史"></a>二.聊聊Git历史</h1><p><img src="/2021/07/07/git/1626940466521.png"></p>
-<h2 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h2><p>打开 [git官网] <a target="_blank" rel="noopener" href="https://git-scm.com/%EF%BC%8C%E4%B8%8B%E8%BD%BDgit%E5%AF%B9%E5%BA%94%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%88%E6%9C%AC%E3%80%82">https://git-scm.com/，下载git对应操作系统的版本。</a></p>
-<p>所有东西下载慢的话就可以去找镜像！</p>
-<p>官网下载太慢，我们可以使用淘宝镜像下载：<a target="_blank" rel="noopener" href="http://npm.taobao.org/mirrors/git-for-windows/">http://npm.taobao.org/mirrors/git-for-windows/</a></p>
-<h2 id="启动Git"><a href="#启动Git" class="headerlink" title="启动Git"></a>启动Git</h2><p>安装成功后在开始菜单中会有Git项，菜单下有3个程序：任意文件夹下右键也可以看到对应的程序！</p>
-<p> <img src="/2021/07/07/git/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy91SkRBVUtyR0M3S3N1OFVsSVR3TWxiWDNrTUd0WjlwMGphaWFBZnIycEFmV3RGWDU3a0dZcVIzU2xOeERsQVpEa0NVNklPQjFZQWljS3hIaWI1eUdidjl6US82NDA.png"> </p>
-<p><strong>Git Bash</strong>：Unix与Linux风格的命令行，使用最多，推荐最多</p>
-<p><strong>Git CMD</strong>：Windows风格的命令行</p>
-<p><strong>Git GUI</strong>：图形界面的Git，不建议初学者使用，尽量先熟悉常用命令</p>
-<h1 id="三-Linux常用命令"><a href="#三-Linux常用命令" class="headerlink" title="三.Linux常用命令"></a>三.Linux常用命令</h1><h2 id="常用的Linux命令"><a href="#常用的Linux命令" class="headerlink" title="常用的Linux命令"></a>常用的Linux命令</h2><p>平时一定要多使用这些基础的命令！</p>
-<p>1）、cd : 改变目录。</p>
-<p>2）、cd . . 回退到上一个目录，直接cd进入默认目录</p>
-<p>3）、pwd : 显示当前所在的目录路径。</p>
-<p>4）、ls(ll):  都是列出当前目录中的所有文件，只不过ll(两个ll)列出的内容更为详细。</p>
-<p>5）、touch : 新建一个文件 如 touch index.js 就会在当前目录下新建一个index.js文件。</p>
-<p>6）、rm:  删除一个文件, rm index.js 就会把index.js文件删除。</p>
-<p>7）、mkdir:  新建一个目录,就是新建一个文件夹。</p>
-<p>8）、rm -r :  删除一个文件夹, rm -r src 删除src目录</p>
-<blockquote>
-<p>rm -rf /  切勿在Linux中尝试！删除电脑中全部文件！</p>
-</blockquote>
-<p>9）、mv 移动文件, mv index.html src index.html 是我们要移动的文件, src 是目标文件夹,当然, 这样写,必须保证文件和目标文件夹在同一目录下。</p>
-<p>10）、reset 重新初始化终端/清屏。</p>
-<p>11）、clear 清屏。</p>
-<p>12）、history 查看命令历史。</p>
-<p>13）、help 帮助。</p>
-<p>14）、exit 退出。</p>
-<ol start="15">
-<li>  、#表示注释</li>
-</ol>
-<h1 id="四-Git配置"><a href="#四-Git配置" class="headerlink" title="四.Git配置"></a>四.Git配置</h1><blockquote>
-<p>设置用户名与邮箱(用户标识,必要)</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">#查看系统config
-git config <span class="token operator">--</span>system <span class="token operator">--</span>list
-　　
-#查看当前用户（global）配置
-git config <span class="token operator">--</span>global  <span class="token operator">--</span>list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>所有的配置文件，其实都保存在本地！</p>
-<blockquote>
-<p>查看配置 git config -l</p>
-</blockquote>
-<p><img src="/2021/07/07/git/1619411358517.png"></p>
-<blockquote>
-<p>配置用户名和密码很重要，因为每次提交都会使用该信息，永远嵌入提交中</p>
-</blockquote>
-<p><img src="/2021/07/07/git/1626940530654.png"></p>
-<p><strong>Git相关的配置文件：</strong></p>
-<p>1）、Git\etc\gitconfig  ：Git 安装目录下的 gitconfig     –system 系统级</p>
-<p>2）、C:\Users\Administrator\ .gitconfig    只适用于当前登录用户的配置  –global 全局</p>
-<p>C:\Users\Administrator.gitconfig</p>
-<p><img src="/2021/07/07/git/1626940550107.png"></p>
-<h2 id="设置用户名与邮箱（用户标识，必要）"><a href="#设置用户名与邮箱（用户标识，必要）" class="headerlink" title="设置用户名与邮箱（用户标识，必要）"></a>设置用户名与邮箱（用户标识，必要）</h2><p>当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>name <span class="token string">"kuangshen"</span>  #名称
-git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>email <span class="token number">727958639</span>@qq<span class="token punctuation">.</span>com   #邮箱<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>只需要做一次这个设置，如果你传递了–global 选项，因为Git将总是会使用该信息来处理你在系统中所做的一切操作。如果你希望在一个特定的项目中使用不同的名称或e-mail地址，你可以在该项目中运行该命令而不要–global选项。总之–global为全局配置，不加为某个项目的特定配置。</p>
-<p><img src="/2021/07/07/git/1619412224512.png"></p>
-<h1 id="五-Git的基本理论-核心"><a href="#五-Git的基本理论-核心" class="headerlink" title="五.Git的基本理论(核心)"></a>五.Git的基本理论(核心)</h1><blockquote>
-<p>工作区域</p>
-</blockquote>
-<p>Git本地有三个工作区域:工作目录(Working Firectory) , 暂存区(Stage/Index) , 资源库(Repository或Git Directory).如果在加上远程的git仓库(Remote Directory) 就可以分为四个工作区域.文件在这四个区域之间的转换关系如下:</p>
-<p><img src="/2021/07/07/git/1626940573537.png"></p>
-<ul>
-<li>Workspace : 工作区,就是你平时存放项目代码的地方</li>
-<li>Index/Stage : 暂存区,用于临时存放你的改动,事实上他只是一个文件,保存即将提交到文件列表信息</li>
-<li>Repository : 仓库区(或本地仓库) , 就是安全存放数据的位置,这里面有你提交到所有版本的数据.其中HEAD指向最新放入仓库的版本.</li>
-<li>Remote : 远程仓库,托管底阿妈的服务器,可以简单的认为是你项目组中的一台电脑用于远程数据交换.</li>
-</ul>
-<p>本地的三个区域确切的说应该是git仓库中HEAD指向的版本:</p>
-<p><img src="/2021/07/07/git/1626940597115.png"></p>
-<blockquote>
-<p>工作流程</p>
-</blockquote>
-<p>git的工作流程一般是这样的:</p>
-<ol>
-<li>在工作目录中添加,修改文件; (需要保存的代码 userMapper)</li>
-<li>将需要进行版本管理的文件放入暂存区;(git add)</li>
-<li>将暂存区的文件提交到git仓库.(git commit)</li>
-</ol>
-<p>因此,git管理的文件有三种状态: 已修改(modified),已暂存(staged),已提交(committed)</p>
-<p><img src="https://images1.tqwba.com/20201004/i4mnam3nugm.png"></p>
-<h1 id="六-Git项目搭建"><a href="#六-Git项目搭建" class="headerlink" title="六.Git项目搭建"></a>六.Git项目搭建</h1><h2 id="创建工作目录与常用指令"><a href="#创建工作目录与常用指令" class="headerlink" title="创建工作目录与常用指令"></a>创建工作目录与常用指令</h2><p>工作目录（WorkSpace)一般就是你希望Git帮助你管理的文件夹，可以是你项目的目录，也可以是一个空目录，建议不要有中文。</p>
-<p>日常使用只要记住下图6个命令：</p>
-<p> <img src="/2021/07/07/git/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy91SkRBVUtyR0M3S3N1OFVsSVR3TWxiWDNrTUd0WjlwMEFJSTZZVm9vVXppYnBpYnpKbm9PSEhYVXNMM2Y5RHFBNGhvclVpYmZjcEVaODhPeWYyZ1FRTlI2dy82NDA.png"> </p>
-<h2 id="本地仓库搭建"><a href="#本地仓库搭建" class="headerlink" title="本地仓库搭建"></a>本地仓库搭建</h2><p>创建本地仓库的方法有两种: 一种是创建全新的仓库,两一种是克隆远程仓库.</p>
-<p>1.创建全新的仓库,需要用GIT管理的项目的根目录执行:</p>
-<pre class="line-numbers language-none"><code class="language-none">#在当前目录新建一个Git代码库
-$ git init<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>2.执行后可以看到,仅仅在项目目录多出了一个.git目录,关于版本等的所有信息都在这个目录里面.</p>
-<p><img src="/2021/07/07/git/1626940634205.png"></p>
-<h2 id="克隆远程仓库"><a href="#克隆远程仓库" class="headerlink" title="克隆远程仓库"></a>克隆远程仓库</h2><p>1.另一种方式是克隆远程目录,是将远程服务器删的仓库完全镜像一份至本地!</p>
-<pre class="line-numbers language-none"><code class="language-none">#克隆一个项目和他的整个代码历史(版本信息)
-$ git clone [url] #git 克隆的地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>2.去gitee或者github上克隆一个测试!</p>
-<h1 id="七-GIT文件操作"><a href="#七-GIT文件操作" class="headerlink" title="七.GIT文件操作"></a>七.GIT文件操作</h1><h2 id="文件4种状态"><a href="#文件4种状态" class="headerlink" title="文件4种状态"></a>文件4种状态</h2><p>版本控制就是对文件的版本控制，要对文件进行修改、提交等操作，首先要知道文件当前在什么状态，不然可能会提交了现在还不想提交的文件，或者要提交的文件没提交上。</p>
-<blockquote>
-<p><strong>Untracked:</strong> 未跟踪, 此文件在文件夹中, 但并没有加入到git库, 不参与版本控制. 通过==git add== 状态变为==Staged==.</p>
-</blockquote>
-<blockquote>
-<p><strong>Unmodify:</strong> 文件已经入库, 未修改, 即版本库中的文件快照内容与文件夹中完全一致. 这种类型的文件有两种去处, 如果它被修改, 而变为==Modified==. 如果使用==git rm==移出版本库, 则成为==Untracked==文件</p>
-</blockquote>
-<blockquote>
-<p><strong>Modified:</strong> 文件已修改, 仅仅是修改, 并没有进其他的操作. 这个文件也有两个去处, 通过==git add==可进入暂存==staged==状态, 使用==git checkout== 则丢弃修改过, 返回到==unmodify==状态, 这个==git checkout==即从库中取出文件, 覆盖当前修改 !</p>
-</blockquote>
-<blockquote>
-<p><strong>Staged:</strong> 暂存状态. 执行==git commit==则将修改同步到库中, 这时库中的文件和本地文件又变为一致, 文件为==Unmodify==状态. 执行==git reset HEAD filename==取消暂存, 文件状态为==Modified==</p>
-</blockquote>
-<h2 id="查看文件状态"><a href="#查看文件状态" class="headerlink" title="查看文件状态"></a>查看文件状态</h2><p>上面说的文件有四种转态,通过如下命令可以查看到文件的状态:</p>
-<pre class="line-numbers language-none"><code class="language-none"># 查看指定文件状态
-git status [filename]
-
-# 查看所有文件状态
-git status
-
-# git add . 			   添加所有文件到暂存区
-# git commit -m &quot;消息内容&quot;  提交暂存区中的内容到本地仓库 -m 提交信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h2><p>有些时候我们不想把某些文件纳入版本控制中，比如数据库文件，临时文件，设计文件等</p>
-<p>在主目录下建立”.gitignore”文件，此文件有如下规则：</p>
-<ol>
-<li><p>忽略文件中的空行或以井号（#）开始的行将会被忽略。</p>
-</li>
-<li><p>可以使用Linux通配符。例如：星号（*）代表任意多个字符，问号（？）代表一个字符，方括号（[abc]）代表可选字符范围，大括号（{string1,string2,…}）代表可选的字符串等。</p>
-</li>
-<li><p>如果名称的最前面有一个感叹号（!），表示例外规则，将不被忽略。</p>
-</li>
-<li><p>如果名称的最前面是一个路径分隔符（/），表示要忽略的文件在此目录下，而子目录中的文件不忽略。</p>
-</li>
-<li><p>如果名称的最后面是一个路径分隔符（/），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。</p>
-</li>
-</ol>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">#为注释
-<span class="token operator">*</span><span class="token punctuation">.</span>txt        #忽略所有 <span class="token punctuation">.</span>txt结尾的文件<span class="token punctuation">,</span>这样的话上传就不会被选中！
-<span class="token operator">!</span>lib<span class="token punctuation">.</span>txt     #但lib<span class="token punctuation">.</span>txt除外
-<span class="token operator">/</span>temp        #仅忽略项目根目录下的TODO文件<span class="token punctuation">,</span>不包括其它目录temp
-build<span class="token operator">/</span>       #忽略build<span class="token operator">/</span>目录下的所有文件
-doc<span class="token comment">/*.txt    #会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<p>.gitignore</p>
-<p><img src="/2021/07/07/git/1626940682558.png"></p>
-<h1 id="八-使用码云"><a href="#八-使用码云" class="headerlink" title="八.使用码云"></a>八.使用码云</h1><p>1.注册登录码云,完善个人信息</p>
-<p><img src="/2021/07/07/git/1619423943742.png"></p>
-<p>2.==设置本机绑定SSH公钥,实现免密码登录!==</p>
-<pre class="line-numbers language-none"><code class="language-none"># 进入C:\users\Administrator\.ssh  目录
-没有就用命令建一个文件夹
-# 生成公钥
-ssh-keygen -t rsa<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="/2021/07/07/git/1626940704217.png"></p>
-<p><img src="https://images1.tqwba.com/20201004/fkxkrsn03dj.png" alt="Git学习笔记(git/fkxkrsn03dj.png)(自己总结方便复习)"></p>
-<p><img src="https://images1.tqwba.com/20201004/rmthwgwekln.png"></p>
-<p>3.将公钥信息public Key 添加到码云账户中即可!</p>
-<p><img src="/2021/07/07/git/1619424578117.png"></p>
-<p>4.使用码云创建一个自己的仓库!</p>
-<p><img src="/2021/07/07/git/1619424610440.png"></p>
-<p><img src="/2021/07/07/git/1626940778439.png"></p>
-<p>创建成功</p>
-<p><img src="/2021/07/07/git/1626940804295.png"></p>
-<p>git clone [url] 克隆到本地</p>
-<p><img src="/2021/07/07/git/1626940823919.png"></p>
-<p><img src="/2021/07/07/git/1626940839363.png"></p>
-<h1 id="九-IDEA中集成Git"><a href="#九-IDEA中集成Git" class="headerlink" title="九.IDEA中集成Git"></a>九.IDEA中集成Git</h1><p>1.建一个普通的SpringBoot项目</p>
-<p>? 项目的文件夹就是git的文件夹</p>
-<p>2.将git工程中的文件夹直接拷贝到java文件夹中</p>
-<p><img src="/2021/07/07/git/1626940862537.png"></p>
-<ul>
-<li><p>观察idea的变化</p>
-</li>
-<li><p>刚才是红的</p>
-</li>
-<li><p><img src="/2021/07/07/git/1619432358808.png"></p>
-<blockquote>
-<p>可以用命令提交，也可以用图标</p>
-</blockquote>
-</li>
-</ul>
-<p><img src="/2021/07/07/git/1626940906122.png"></p>
-<ul>
-<li>1.)git commit</li>
-</ul>
-<p><img src="/2021/07/07/git/1626940928999.png"></p>
-<ul>
-<li>2.)git commit -m “消息”</li>
-</ul>
-<p><img src="/2021/07/07/git/1626940969539.png"></p>
-<ul>
-<li>git push</li>
-</ul>
-<p>​                          <img src="/2021/07/07/git/1626940981138.png">)</p>
-<ul>
-<li>查看远程仓库已经提交上去了</li>
-</ul>
-<p><img src="/2021/07/07/git/1626941010621.png"></p>
-<p>这些是单个人操作</p>
-<h1 id="十-说明-GIT分支"><a href="#十-说明-GIT分支" class="headerlink" title="十.说明:GIT分支"></a>十.说明:GIT分支</h1><p>git分支常用命令</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"># 列出所有本地分支
-git branch
- 
-# 列出所有远程分支
-git branch <span class="token operator">-</span>r
- 
-# 新建一个分支，但依然停留在当前分支
-git branch <span class="token punctuation">[</span>branch<span class="token operator">-</span>name<span class="token punctuation">]</span>
- 
-# 新建一个分支，并切换到该分支
-git checkout <span class="token operator">-</span>b <span class="token punctuation">[</span>branch<span class="token punctuation">]</span>
- 
-# 合并指定分支到当前分支
-$ git merge <span class="token punctuation">[</span>branch<span class="token punctuation">]</span>
- 
-# 删除分支
-$ git branch <span class="token operator">-</span>d <span class="token punctuation">[</span>branch<span class="token operator">-</span>name<span class="token punctuation">]</span>
- 
-# 删除远程分支
-$ git push origin <span class="token operator">--</span>delete <span class="token punctuation">[</span>branch<span class="token operator">-</span>name<span class="token punctuation">]</span>
-$ git branch <span class="token operator">-</span>dr <span class="token punctuation">[</span>remote<span class="token operator">/</span>branch<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<p>分支(多人开发)</p>
-<p><img src="/2021/07/07/git/1626941038274.png"></p>
-<p>如果冲突了就需要协商了</p>
-<p>如果同一个文件在合并分支时都修改了则会引起冲突:解决的办法是我们可以修改冲突文件后重新提交!选择要保留他的代码还是你的代码!</p>
-<p>master主分支应该非常稳定,用来发布新版本,一般情况下不允许在上面工作,工作一般情况下在新建的dev分支上工作,工作完后,比如上要发布,或者说dev分支代码稳定后可以合并到主分支master上来.</p>
+                <h1 id="《百年孤独》读后感"><a href="#《百年孤独》读后感" class="headerlink" title="《百年孤独》读后感"></a>《百年孤独》读后感</h1><p>​                                                                                                                               –2022年7月11日</p>
+<p>​    <code>多年以后，面对行刑队，奥雷里亚诺·布恩迪亚上校将会回想起父亲带他去见识冰块的那个遥远的下午。</code></p>
+<p>​        多年以后，再次看到这本书，不知道自己会不会想起那个曾改变自己的那个遥远的下午。</p>
+<p>​        开始读这本书的时候，怀着一种对名著的敬意，并且希望可以从中得到一丝的慰藉。不过确实没让我失望。虽然对于我一个读书甚少领悟一些比较深的感悟可能有点难，不过读过书之后还是有不少的感悟的。再加上观看别人对书籍的解读和大家的读后感，让自己对书籍有了更加深刻的了解与感悟！</p>
+<p>​        先说说自己在最初读完这本书时候的感悟吧。在最开始读这本书的时候并没有提前了解一些关于这本书的一些背景，也不知道这是一本魔幻现实主义的书籍，唯一知道的是这是一本对孤独进行阐释的书籍，因为最近的我有点丧，所以希望可以通过读书来缓解自己的焦躁与不安。说实话，现在的我确实比之前好多了，一方面可能是读书本就可以平复心中的烦躁与不安，另一方面就是《百年孤独》这本书确实让我领悟了一些道理吧。不过书中的名字多的让人眼花缭乱害的我时不时需要翻阅一下布恩迪亚家族的族谱，哈哈。故事以<code>多年以后，面对行刑队，奥雷里亚诺·布恩迪亚上校将会回想起父亲带他去见识冰块的那个遥远的下午。</code>这句话开始，同时包含了现在过去和未来三个时间点，让人有一种冲动去继续了解这个故事，而且“面对行刑队”这几个字也让人有一种悲惨结局的感觉，不过最后读完就会发现结局确实如此。整本书的开头并没有让人体会到跟孤独有关的任何东西，反而带给人的是一种欣欣向荣的场景，马孔多小镇的开辟，新生活的开始，一切一切都是那么的顺其自然。吉普赛人带来了新鲜的玩意磁铁，飞毯，再加上何塞·阿尔卡蒂奥·布恩迪亚对事物的太久的不懈坚持的精神和乌尔苏拉的勤劳和对整个家族的打理，让我感觉到马孔多未来会越来越好，但是结局却往往背道而驰。</p>
+<p>​        <code>生命中曾经有过的所有灿烂，终究都要用寂寞来偿还！</code></p>
+<p>​        说的一点都没错，不管之前的的生活有多么的灿烂，都避免不了孤独的存在。我们依次说说布恩迪亚家族的一些人吧。</p>
+<p>==1. 何塞·阿尔卡蒂奥·布恩迪亚==</p>
+<p>​        首先就是何塞·阿尔卡蒂奥·布恩迪亚，说到他无论是马孔多的建设还是发展，都有布恩迪亚不可磨灭的功劳，他的一生都在钻研之中度过，自从接触到吉普赛人带来的新科技，立即展开天马行空的想象，想要用磁铁来挖掘地下的黄金，把放大镜聚焦太阳应用于战争。他以科学家的忘我精神全心投入实验，甚至不惜以身犯险，他沉迷于科学研究，不再吃饭睡觉，喃喃自语，走火入魔。他终于筋疲力尽，精神崩溃，被家人绑在一棵栗子树上，直到多年后死去。何塞·阿尔卡蒂奥·布恩迪亚是一个有着坚定信念和执着追求的人，但他又是一个不切实际的理想主义者，他的精神世界与马孔多人的愚昧落后格格不入，因此他无论如何努力，都无法取得成功。他死在了一种不被理解的孤独里。读到他被绑在树上直到死去时，就开始故事慢慢的转向了悲剧和孤独，这么一个对马孔多做出巨大贡献的人最后却落得如此的下场，不被理解，被绑在树上直至生命的尽头。说明了探索者和开创者有着<code>不被理解的孤独</code>！</p>
+<p>==2. 乌尔苏拉==</p>
+<p>​        读完整本书我们可以感受到乌尔苏拉是整个家族的顶梁柱，无论整个家族发生怎样的事情，他都不会让家族分崩离析，所以为了让故事可以更好地继续发展所以她活了一百多岁，也几乎贯穿了整个家族的历史。<code>她似乎无处不在，每天从清晨到深夜，伴随着细棉布裙柔和的窸窣声一直四处忙碌。全亏了她，那泥土夯平的地面、未经粉刷的泥墙和自制的粗木家具才永远一尘不染，旧箱子的衣服才永远散发着罗勒的淡淡香气</code>乌尔苏拉是全文里活得最清醒、通透的一个，她吃苦耐劳、勤俭持家，但比起这些优秀的品质，她的坚强和积极向上的精神更令人敬佩，她在全书中就是一个希望的象征，她永远充满活力和不服输的精神，她凭借自己的双手扩大了家族，养育了一代又一代人，试图将这个各自孤独、一盘散沙的家族团结起来。但她始终没有明白的是：她自己都无法看透孤独，也无法摆脱孤独。就像面对儿子和孙子的事情无能为力，一个人对抗孤独带来的失望和困扰时，她也还是会去跟丈夫诉苦。就是这样一个女人，竟然也避免不了孤独，她再勤劳再努力，依然无法阻止家中一件一件悲剧的发生，就像他不愿意家族的人再用奥雷里亚诺，阿尔卡蒂奥，蕾梅黛丝和乌尔苏拉命名一样，不过一切都不能如她所愿。就是这样一个人，直到生命的尽头，她双目失明，老态龙钟，瘦小干枯，甚至成为曾孙女和玄孙的玩具，那种被死神遗忘的孤独，在她身上被展现的淋漓尽致，想一想如果换成自己眼睁睁看着身边亲人的离去，看到家族的没落，那是有多么的孤独呀。看到她的一生，我相信对我们来说现在是有多幸福呀。最后，她的一生也说明了品质再优秀的人，也无法逃脱孤独的魔爪。</p>
+<p>==3. 奥雷里亚诺·布恩迪亚上校==</p>
+<p>​        正本小说在讲家族中的各个成员，没有一个确定的主角，如果非要选一个出来的话，那一定非奥雷里亚诺·布恩迪亚上校莫属了，而且他也是作品中最具孤独气质的人物。奥雷里亚诺在长达二十年的征战生涯，通过三十二次失败的起义，躲过各种完成了他的的成长之路，最终成为奥雷里亚诺布恩迪亚上校。他之后甚至还妄图再次挑起被自己一手终结的战争，直到晚年无力再发动战争才终于歇息。奥雷里亚诺冷漠、近于无情，被母亲称作“缺乏爱能力的人”，可能大家早已忘记他也曾是在第一次摸到冰时，被吓得大叫“他在烧”的天真懵懂少年。奥雷里亚诺的命运转折出现在他的妻子被误杀， 上校的心也开始走向孤独。 战争的火焰烧进了马孔多，小镇的安静被打破， 也正是这突如其来的战争彻底地改变了奥雷里亚诺的一生。内外因交汇启动了命运的轮盘，然后奥雷里亚诺才成为了奥雷里亚诺布恩迪亚上校。他戎马一生，但是最终却在一间狭小的房间里不断地做着小金鱼来消磨最后的时光，他不断抗争但又一步步走向孤独。最后死在曾经绑着父亲的栗树下，死的时候还在想着已经记忆模糊的马戏团。他的一生是逃避孤独的一生，但孤独却从未摆脱。他发动战争是为了逃避妻子离世后的孤独，他放弃战争是发现战争只会让他更孤独，并且没有终点，他做小金鱼更是为了摆脱孤独，可是他始终没有摆脱。上校的孤独是来自于哪里呢？看了很多解读，觉得最有道理的应该是来自他内心的迷茫，最为重要的两个方面应该是权利和爱情。权利的孤独是必然的，当人爬升到一定的高度时就注定是孤独的，他们有很多东西是没有办法与人倾诉的。关于爱情，乌尔苏拉是这么评价上校的：他是一个不知道怎么去爱的男人，明明有过那么多女人，还有17个私生子，但是他还是选择重复制作小金鱼来孤独的度过余生（像我们平时，网络明明可以拉近人与人之间的感情让我们去发现爱，但讽刺的是反而人们离得太近导致与大家拉的更远，因为选择太多，反而不会去选择），我们其实也像上校一样，在这个大环境下不知道怎么去表达自己，总感觉自己是不被接受的，从而把自己困在围墙之中，去打游戏消遣时间。就是这么一个传奇的任务，最终也只能做着小金鱼度过自己的余生，而且最后被人们遗忘，被人们提起时也只是当做战争总被塑造的任务。可能被遗忘就是上校一生中最大的孤独了吧。</p>
+<p>==4.美人儿蕾梅黛丝==</p>
+<p>​        美人儿蕾梅黛丝一个天仙般的存在，开始并不懂得这么一个人的孤独来自何处呢？她天真烂漫，也从没感受到孤独感。她是一个很特别，很独立的存在，不论是在整个家族还是在马孔多，似乎都格格不入，而且她身上也有着某种诅咒，对她有想法的人都活不过两天，再后来她就成了死亡的象征但是依然有很多人前仆后继，不仅仅因为她美丽的外表，而且是为了追求自由（她不穿衣服在家乱跑，不守规则，是个彻彻底底的自由人），不过看了讲解以后才了解到她也象征着拉美人民追求者自由，然而美人儿蕾梅黛丝却升天飘走了，说明了在那个时代中，人们的希望再次破灭了。这里也运用了魔幻现实主义的写法，她随床单飘走了却没有人感到惋惜，也没有人疑惑他到底去了哪里，这可能是这个角色唯一让我感到孤独的地方吧。</p>
+<p>==5.阿玛兰妲==</p>
+<p>​    阿玛兰妲因为妒忌丽贝卡与钢琴师相爱，为了阻止丽贝卡结婚，下毒不小心害死了自己的嫂子和肚子里面的双胞胎。从此以后她一生都活在恐惧中，恐惧自己的内心并非那么懂得爱情，恐惧因自己的恶毒害死了嫂子。她一生都在惩罚自己，爱而不敢。阿玛兰妲的对丽贝卡结婚的破坏，导致丽贝卡移情别恋与她表哥相爱，并被赶出家门。钢琴师明白了阿玛兰妲心意后，跟她求婚，阿玛兰妲却说：“别天真了，克雷斯皮，我死也不会跟你结婚”。包括后面面对马尔克斯上校的追求的时候，一方面期待与他的相会，一方面又对他说：“我谁也不嫁，尤其不会嫁给你”。为什么阿玛兰妲面对追求者的时候这么狠心，她并非出于不爱，而是阿玛兰妲面对无穷的爱意和无法战胜的恐惧的时候，阿玛兰妲选择了后者，她让恐惧折磨自己的心灵。所以她后来一直用黑纱缠绕的手就是她内心恐惧的影子。她人的一生中，最大的恐惧不是来自外部，而是出于内心，她内心的不安全感恰恰就是恐惧的根源。她也知道了自己何时去世，于是她的后半生在为自己织寿衣中度过，这恐怕也是最大的孤独之一吧，知道了自己的死亡，而默默等待的过程。</p>
+<p>==6.奥雷里亚诺第二==</p>
+<p>​        他可能算是有一个很好地开局了，有着疯狂繁殖能力分农场，有着数不完的财富，有着妻子能接受的情人，每天都在欢乐中度过，但是正好也与他的结局有着鲜明的对比，连续几年的大雨让他变得一无所有，甚至食物都不够吃，结束了自己的一生。</p>
+<p>==7.阿尔卡蒂奥第二==</p>
+<p>​        小时候看枪毙犯人给他造成了阴影，最后又因为经历了香蕉公司的大屠杀，彻底的疯了，他忘不了那3000多具尸体，但是在别人看来确实什么都没有发生，==马孔多无事发生==，让他不愿意再走出那个房门，最终也是在心里隐形下孤独的死去。</p>
+<p>​       由于人物太多，这里就不一一说了。最后我们总得说说布恩迪亚家族的孤独吧。读完整本书，似乎自己也跟着书中的人物度过了百年，我们可以感到一种很明显的宿命感，所有人的生命都在进行一个循环往复，不管是人物的名称，性格和干的一些事情都在循环往复的发生。不过，跳出小说，我们的生活又何尝不是循环往复的呢？从小我们就被教导我们要好好地学习，考个好大学，找个好工作，组建好的家庭，然后教导我们的孩子…..大家似乎都在过着同一种人生，要不怎么说人类的本质是复读机呢？哈哈！虽然我们都过着差不多的人生，但是我们的孤独都是一样的吗？然而最大的孤独是什么样子呢？，我想对我们普通人来说大概是我们完成了很多事情，但是这些事似乎注定是会被遗忘的，我们一无所有的来，也终将一无所有的离去。就像是布恩迪亚家族一样，那一场大雨似乎冲刷了人们的记忆，人们慢慢的忘了奥雷里亚诺上校，慢慢的人们也会遗忘掉布恩迪亚家族，这可能就是整本书最大的孤独吧！<code>羊皮卷上所载的一切永远至永远不会再重复，因为经历百年孤独的家族不会有第二次机会在大地上出现</code>。</p>
+<p>​        看完讲解以后，才发现整个故事都在讲拉丁美洲的事情，一切的人物，背景，事件都有它的现实写照，故事中的人物都是自己身边亲人的写照，发生的事情也是，香蕉公司大屠杀，自由党保守党的战争等等，也让我明白了什么才是真正的魔幻现实主义。书中的最后一句也意味着压迫不会再拉美的土地上再次出现。讲解上还说，书中最后藏的彩蛋：小奥雷里亚诺破解着羊皮卷的内容，而他将小奥雷里亚诺代指自己，想说明他只是在破解预言家梅尔吉亚德斯的预言，自己成了自己书中人物预言中的人物，陷入了循环。不过，我反而觉得小奥雷里亚诺更像是我们读者自己，自己正在阅读着这本书，而作者才是梅尔吉亚德斯，我们以为孤独去阅读这本书，最后发现书中写得正是自己，我们也像是书中人物一样孤独，更加说明孤独在我们生活中是不可避免的。</p>
+<p>​        当然孤独并不是孤单，孤单只的只是肉体上的单一，而孤独确实内心的。所以在现实生活中，孤独他就是不可避免的，人生的不同阶段总有它对应的孤独，所以我们才需要不断地折腾，不断地经历，无论成功与否，这些都会变成我们的记忆，而记忆就是抵抗孤独最大的武器，因为回忆很长，够一辈子去回味。所以在马孔多最可怕的孤独莫过于村子里的人都得了失眠症，长期的失眠使他们丧失了记忆，他们记不起来自己来自哪里，要去往何处的时候是最孤独的时候。读完之后才觉得我们反而是幸运的，最起码我们的孤独是建立在和平之中，生活在丰衣足食的年代。</p>
+<p>​        最后，我觉得孤独并不可怕，可怕的是我们穷极一生没有按照我们自己的想法去做我们想做的事，可怕的是我们从来不敢去独自面对孤独，可怕的是我们自已以为我们自己从不孤独。虽然孤独不可避免，但是他也会以为我们的负重前行而变得更好。也希望我们可以在我们的一生中敢于面对孤独，更希望我们每个人都可以有人陪伴。</p>
 
                 
             </div>
@@ -758,7 +536,7 @@ $ git branch <span class="token operator">-</span>dr <span class="token punctuat
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/07/07/git/">http://example.com/2021/07/07/git/</a>
+                    <a href="http://example.com/2022/07/13/bai-nian-gu-du-du-hou-gan/">http://example.com/2022/07/13/bai-nian-gu-du-du-hou-gan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -796,8 +574,8 @@ $ git branch <span class="token operator">-</span>dr <span class="token punctuat
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">git笔记</span>
+                                <a href="/tags/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC/">
+                                    <span class="chip bg-color">百年孤独</span>
                                 </a>
                             
                         </div>
@@ -969,17 +747,18 @@ $ git branch <span class="token operator">-</span>dr <span class="token punctuat
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/07/07/vue/">
+                <a href="/2022/07/13/bai-nian-gu-du-du-hou-gan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="vue">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="百年孤独">
                         
-                        <span class="card-title">vue</span>
+                        <span class="card-title">百年孤独</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -989,26 +768,27 @@ $ git branch <span class="token operator">-</span>dr <span class="token punctuat
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
+                                    生活
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">vue笔记</span>
+                    <a href="/tags/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC/">
+                        <span class="chip bg-color">百年孤独</span>
                     </a>
                     
                 </div>
@@ -1022,13 +802,13 @@ $ git branch <span class="token operator">-</span>dr <span class="token punctuat
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/07/linux/">
+                <a href="/2021/08/07/wang-luo-bian-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Linux">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="网络编程">
                         
-                        <span class="card-title">Linux</span>
+                        <span class="card-title">网络编程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1039,14 +819,14 @@ $ git branch <span class="token operator">-</span>dr <span class="token punctuat
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%B8%8E%E5%91%BD%E4%BB%A4%E6%9C%89%E5%85%B3%E7%9A%84%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    与命令有关的笔记
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
                                 </a>
                             
                             
@@ -1056,8 +836,8 @@ $ git branch <span class="token operator">-</span>dr <span class="token punctuat
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">Linux笔记</span>
+                    <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">网络编程笔记</span>
                     </a>
                     
                 </div>
