@@ -1,0 +1,3504 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="docker, 烧了回忆取暖">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>docker | 烧了回忆取暖</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">烧了回忆取暖</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">烧了回忆取暖</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">docker</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/docker%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">docker笔记</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E4%B8%8E%E5%91%BD%E4%BB%A4%E6%9C%89%E5%85%B3%E7%9A%84%E7%AC%94%E8%AE%B0/" class="post-category">
+                                与命令有关的笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-07-07
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    14.5k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <hr>
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p><img src="/2021/07/07/docker/image-20200606203315597-1623556326395-1625636108743.png"></p>
+<p>linux开放端口</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">1、开启防火墙 
+    systemctl start firewalld
+
+2、开放指定端口
+      firewall-cmd --zone&#x3D;public --add-port&#x3D;1935&#x2F;tcp --permanent
+ 命令含义：
+--zone #作用域
+--add-port&#x3D;1935&#x2F;tcp  #添加端口，格式为：端口&#x2F;通讯协议
+--permanent  #永久生效，没有此参数重启后失效
+
+3、重启防火墙
+      firewall-cmd --reload
+
+4、查看端口号
+netstat -ntlp   &#x2F;&#x2F;查看当前所有tcp端口·
+
+netstat -ntulp |grep 1935   &#x2F;&#x2F;查看所有1935端口使用情况·
+
+
+firewalld防火墙基本操作：
+
+1.查看防火墙状态：
+
+systemctl status firewalld或者 firewall-cmd --state
+2.查看开放端口列表
+
+firewall-cmd --list-ports
+3.在指定区域打开端口（记得重启防火墙）(永久生效再加上 --permanent)
+
+firewall-cmd --zone&#x3D;public --add-port&#x3D;8080&#x2F;tcp
+
+4.启动防火墙
+
+systemctl start firewalld
+
+5.禁用防火墙
+
+systemctl stop firewalld
+
+6.设置开机启动
+
+systemctl enable firewalld
+
+7.停止并禁用开机启动
+
+sytemctl disable firewalld
+
+8.重启防火墙
+
+firewall-cmd --reload
+
+9.查看版本
+
+firewall-cmd --version
+
+10.查看帮助
+
+firewall-cmd --help<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>访问的时候老是不行，问题39.103.142.243：8088的冒号用的中文冒号</p>
+<p>应该39.103.142.243:8088</p>
+</blockquote>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>官方文档：<a target="_blank" rel="noopener" href="https://docs.docker.com/docker-for-windows/">https://docs.docker.com/docker-for-windows/</a> </p>
+<p>【官方文档超级详细】</p>
+<p>仓库地址：<a target="_blank" rel="noopener" href="https://hub.docker.com/">https://hub.docker.com/</a></p>
+<p>【发布到仓库，git pull push】</p>
+<p>b站教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1og4y1q7M4">https://www.bilibili.com/video/BV1og4y1q7M4</a>?</p>
+<p>【这个教程非常简洁！且深入！基于企业应用场景！推荐！以下笔记都基于该课程】</p>
+<h2 id="前期基础"><a href="#前期基础" class="headerlink" title="前期基础"></a>前期基础</h2><p>linux基本命令，类似cd，mkdir等</p>
+<h2 id="Docker概述"><a href="#Docker概述" class="headerlink" title="Docker概述"></a>Docker概述</h2><h3 id="Docker为什么会出现"><a href="#Docker为什么会出现" class="headerlink" title="Docker为什么会出现"></a>Docker为什么会出现</h3><p>一款产品，开发和上线两套环境，应用环境配置费时费力，而且容易出问题</p>
+<p>尤其对于机器学习和深度学习的库更是如此，很可能存在版本问题、底层依赖冲突问题</p>
+<p>所以发布项目时，不只是一套代码过去，而是代码+环境整体打包过去</p>
+<p>所谓开发即运维，保证系统稳定性，提高部署效率</p>
+<p>使用Docker后的流程：</p>
+<p>开发：建立模型–环境–打包带上环境，即镜像–放到Docker仓库</p>
+<p>部署：下载Docker中的镜像，直接运行即可</p>
+<p>Docker的思想来自于集装箱，集装箱，对环境进行隔离</p>
+<p>Docker通过隔离机制，可以将服务器利用到极致。</p>
+<h3 id="Docker的历史"><a href="#Docker的历史" class="headerlink" title="Docker的历史"></a>Docker的历史</h3><p>2010年，几个搞IT的人，在美国成立一家公司<code>dotCloud</code></p>
+<p>做一些pass的云计算服务</p>
+<p>他们将自己的容器化技术命名为Docker</p>
+<p>Docker基于Go语言开发</p>
+<p>Docker刚刚诞生的时候，没有引起行业的注意，dotCloud活不下去</p>
+<p>然后他们决定开源</p>
+<p>2013年，创始人将Docker开源，不开则以，一开惊人，刚开源的时候，每个月都会更新一个版本</p>
+<p>2014年4月9日，Docker 1.0发布</p>
+<h3 id="容器vs虚拟机"><a href="#容器vs虚拟机" class="headerlink" title="容器vs虚拟机"></a>容器vs虚拟机</h3><p>在容器技术出来之前，用的是虚拟机技术</p>
+<h4 id="虚拟机原理示意图"><a href="#虚拟机原理示意图" class="headerlink" title="虚拟机原理示意图"></a>虚拟机原理示意图</h4><p><img src="/2021/07/07/docker/image-20200606205436434-1623556326396-1625636108744.png"></p>
+<p>缺点：</p>
+<ol>
+<li>资源占用多</li>
+<li>冗余步骤多</li>
+<li>启动很慢</li>
+</ol>
+<h4 id="容器化技术示意图"><a href="#容器化技术示意图" class="headerlink" title="容器化技术示意图"></a>容器化技术示意图</h4><p>不是模拟的完整的操作系统</p>
+<p><img src="/2021/07/07/docker/image-20200606205739655-1623556326396-1625636108744.png"></p>
+<h4 id="二者对比"><a href="#二者对比" class="headerlink" title="二者对比"></a>二者对比</h4><p>比较虚拟机和Docker的不同</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>传统虚拟机</th>
+<th>Docker</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>虚拟内容</td>
+<td>硬件+完整的操作系统+软件</td>
+<td>APP+LIB</td>
+</tr>
+<tr>
+<td>大小</td>
+<td>笨重，通常几个G</td>
+<td>轻便几个M或KB</td>
+</tr>
+<tr>
+<td>启动速度</td>
+<td>慢，分钟级</td>
+<td>快，秒级</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h2><h3 id="Docker的基本组成"><a href="#Docker的基本组成" class="headerlink" title="Docker的基本组成"></a>Docker的基本组成</h3><p><img src="/2021/07/07/docker/image-20200606212250845-1623556326396-1625636108744.png"></p>
+<p>明确几个概念：</p>
+<ol>
+<li><p>镜像(image)：docker镜像好比一个模板，可以通过这个模板来创建容器(container)，一个镜像可以创建多个容器，类似Python中的Class</p>
+</li>
+<li><p>容器(container)：类似Python中通过Class创建的实例，Object；容器可以理解为一个简易的系统</p>
+</li>
+<li><p>仓库(repository)：存放镜像的地方，</p>
+<p>分为共有仓库和私有仓库</p>
+<ul>
+<li><p>Docker Hub：国外的</p>
+</li>
+<li><p>阿里云：配置镜像加速</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>我们要有一台服务器，并且可以操作它</p>
+<ol>
+<li>Linux命令基础，购买linux阿里云的服务器</li>
+<li>CentOS 7</li>
+<li>使用Xshell链接远程服务器</li>
+</ol>
+<h3 id="安装xshell"><a href="#安装xshell" class="headerlink" title="安装xshell"></a>安装xshell</h3><p>下载CentOS7 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a63f47e096e8">https://www.jianshu.com/p/a63f47e096e8</a></p>
+<p>下载VMware 360软件管家下载</p>
+<p>VMware配置虚拟机 <a target="_blank" rel="noopener" href="https://blog.csdn.net/babyxue/article/details/80970526">https://blog.csdn.net/babyxue/article/details/80970526</a></p>
+<p>xshell链接服务器 <a target="_blank" rel="noopener" href="https://blog.csdn.net/zzy1078689276/article/details/77280814">https://blog.csdn.net/zzy1078689276/article/details/77280814</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@192 ~]# cd &#x2F;
+[root@192 &#x2F;]# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[root@192 &#x2F;]# uname -r
+&#x2F;&#x2F;查看版本信息
+3.10.0-1127.el7.x86_64<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>查看ip：vmware里面输入，ip addIPr</p>
+<h3 id="Centos安装"><a href="#Centos安装" class="headerlink" title="Centos安装"></a>Centos安装</h3><p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/</a></p>
+<h3 id="卸载旧的版本"><a href="#卸载旧的版本" class="headerlink" title="卸载旧的版本"></a>卸载旧的版本</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 卸载旧的版本
+$ sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623556500192-1625636108744.png"></p>
+<h3 id="安装基本环境"><a href="#安装基本环境" class="headerlink" title="安装基本环境"></a>安装基本环境</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 安装基本的安装包
+$ sudo yum install -y yum-utils<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623556584641-1625636108744.png"></p>
+<h3 id="设置镜像的仓库"><a href="#设置镜像的仓库" class="headerlink" title="设置镜像的仓库"></a>设置镜像的仓库</h3><p>注意！！下载默认用国外的，太慢不要用！</p>
+<p>用国内镜像，百度搜索，docker的阿里云镜像地址</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 不要用官网默认这个！
+$ sudo yum-config-manager \
+    --add-repo \
+    https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo # 默认是国外的
+
+# 换成下面的
+
+$ sudo yum-config-manager \
+    --add-repo \
+    https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;docker-ce&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo # 阿里云镜像<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623556975165-1625636108744.png"></p>
+<p>直接复制粘贴就OK了</p>
+<p>更像软件包索引</p>
+<pre class="line-numbers language-none"><code class="language-none">yum makecache fast<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623560963569-1625636108744.png"></p>
+<p>没有问题的话就是可以用的</p>
+<h3 id="安装docker引擎"><a href="#安装docker引擎" class="headerlink" title="安装docker引擎"></a>安装docker引擎</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">yum install docker-ce docker-ce-cli containerd.io # docker-ce 社区版 ee 企业版<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623561311771-1625636108744.png"></p>
+<p>注意这里会有几个个y/n的判断</p>
+<p><img src="/2021/07/07/docker/1623561244635-1625636108744.png"></p>
+<p><img src="/2021/07/07/docker/1623561273220-1625636108744.png"></p>
+<p>要看到Complet再收手！</p>
+<h3 id="启动Docker"><a href="#启动Docker" class="headerlink" title="启动Docker"></a>启动Docker</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl start docker # 代表启动成功
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker version
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao ~]# systemctl start docker
+[root@renyichao ~]# docker version
+Client: Docker Engine - Community
+ Version:           20.10.7
+ API version:       1.41
+ Go version:        go1.13.15
+ Git commit:        f0df350
+ Built:             Wed Jun  2 11:56:24 2021
+ OS&#x2F;Arch:           linux&#x2F;amd64
+ Context:           default
+ Experimental:      true
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          20.10.7
+  API version:      1.41 (minimum version 1.12)
+  Go version:       go1.13.15
+  Git commit:       b0f5bc3
+  Built:            Wed Jun  2 11:54:48 2021
+  OS&#x2F;Arch:          linux&#x2F;amd64
+  Experimental:     false
+ containerd:
+  Version:          1.4.6
+  GitCommit:        d71fcd7d8303cbf684402823e425e9dd2e99285d
+ runc:
+  Version:          1.0.0-rc95
+  GitCommit:        b9ee9c6314599f1b4a7f497e1f1f856fe433d3b7
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0   
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623561573513-1625636108744.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run hello-world
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/image-20200616151641013-1623556326397-1625636108744.png"></p>
+<p><img src="/2021/07/07/docker/1623561739209-1625636108744.png"></p>
+<p>中间一堆是签名信息</p>
+<p>==查看下载的镜像==</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker images
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao ~]# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+hello-world   latest    d1165f221234   3 months ago   13.3kB
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><img src="/2021/07/07/docker/1623561794363-1625636108744.png"></p>
+<h3 id="卸载Docker"><a href="#卸载Docker" class="headerlink" title="卸载Docker"></a>卸载Docker</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 卸载依赖
+yum remove docker-ce docker-ce-cli containerd.io
+
+# 删除资源
+rm -rf &#x2F;var&#x2F;lib&#x2F;docker # docker 的默认工作路径
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="阿里云镜像加速"><a href="#阿里云镜像加速" class="headerlink" title="阿里云镜像加速"></a>阿里云镜像加速</h3><p><img src="/2021/07/07/docker/1623562479567-1625636108744.png"></p>
+<p>或者控制台搜索 容器镜像服务</p>
+<p><img src="/2021/07/07/docker/1623562816205-1625636108744.png"></p>
+<p>找到加速地址</p>
+<p><img src="/2021/07/07/docker/1623562760255-1625636108744.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo mkdir -p &#x2F;etc&#x2F;docker         # 创建一个目录
+sudo tee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;-&#39;EOF&#39;
+&#123;
+  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;vhsayy9j.mirror.aliyuncs.com&quot;]
+&#125;
+EOF                                   # 编写配置文件
+sudo systemctl daemon-reload          # 重启服务
+sudo systemctl restart docker         # 重启docker
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623563085860-1625636108744.png"></p>
+<h3 id="HelloWorld的流程"><a href="#HelloWorld的流程" class="headerlink" title="HelloWorld的流程"></a>HelloWorld的流程</h3><p><img src="/2021/07/07/docker/../../%25E7%25AC%2594%25E8%25AE%25B0/docker.assets/1623561739209.png"></p>
+<p>run的运行流程图</p>
+<p><img src="/2021/07/07/docker/image-20200616161441669-1623556326397-1625636108744.png"></p>
+<p><a target="_blank" rel="noopener" href="https://www.processon.com/">在线画图软件ProcessOn</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV177411K7bH">服务器及购买相关介绍</a></p>
+<h2 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h2><p>Docker是真么工作的？</p>
+<p>Docker是一个Client-Server结构的系统，Docker的守护进程在主机上。通过Socket从客户端访问！</p>
+<p>DockerServer接受到Docker-Client的指令，</p>
+<p><img src="/2021/07/07/docker/image-20200616162107363-1623556326397-1625636108744.png"></p>
+<p>Docker为什么比VM快？</p>
+<ol>
+<li>Docker有着比虚拟机更少的抽象层</li>
+<li>docker主要用的是宿主机的内核，vm需要Guest OS</li>
+</ol>
+<p><img src="/2021/07/07/docker/image-20200616162302653-1623556326397-1625636108744.png"></p>
+<p>所以说新建一个容器的时候，docker不需要像虚拟机一样重新加载一个操作系统内核，避免引导</p>
+<p><img src="/2021/07/07/docker/1623564222172-1625636108744.png"></p>
+<h2 id="Docker命令"><a href="#Docker命令" class="headerlink" title="Docker命令"></a>Docker命令</h2><h3 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker version # 显示docker的基本信息
+docker info # 系统信息，镜像和容器的数量
+docker --help # 全部信息,命令
+docker 命令 --help    # 与该仓库有关的全部信息,命令
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://docs.docker.com/reference/">官网文档</a></p>
+<p><img src="/2021/07/07/docker/image-20200616163338187-1623556326398-1625636108744.png"></p>
+<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><h4 id="docker-images"><a href="#docker-images" class="headerlink" title="docker images"></a>docker images</h4><p>查看所有本地主机上的镜像</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@192 ~]# docker images
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623564642128-1625636108744.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 解释
+REPOSITORY          # 镜像仓库源
+TAG                 # 镜像的标签
+IMAGE ID            # 镜像的ID
+CREATED             # 镜像的创建时间
+SIZE                # 镜像的大小
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">--all , -a		Show all images (default hides intermediate images) # 显示所有
+--digests		Show digests
+--filter , -f		Filter output based on conditions provided
+--format		Pretty-print images using a Go template
+--no-trunc		Don’t truncate output
+--quiet , -q		Only show numeric IDs                           # 只显示镜像id
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623565011922-1625636108744.png"></p>
+<h4 id="docker-search"><a href="#docker-search" class="headerlink" title="docker search"></a>docker search</h4><p>搜索仓库中的镜像，相当于网页搜索</p>
+<p><a target="_blank" rel="noopener" href="http://hub.docker.com/">网页搜索</a></p>
+<p><img src="/2021/07/07/docker/image-20200616173009473-1623556326398-1625636108744.png"></p>
+<p>mysql</p>
+<p><img src="/2021/07/07/docker/image-20200616173050756-1623556326398-1625636108744.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">docker search mysql
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623567242849-1625636108744.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">docker search --help
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623567440394-1625636108744.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 解释
+Options:
+  -f, --filter filter   Filter output based on conditions provided
+      --format string   Pretty-print search using a Go template
+      --limit int       Max number of search results (default 25)
+      --no-trunc        Don&#39;t truncate output
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">docker search mysql --filter&#x3D;STARS&#x3D;3000 # 搜索出Stars大于3000的
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623567482029-1625636108744.png"></p>
+<h4 id="docker-pull-下载镜像"><a href="#docker-pull-下载镜像" class="headerlink" title="docker pull 下载镜像"></a>docker pull 下载镜像</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker pull mysql # 下载mysql镜像，default tag，默认最新版latest
+docker pull 镜像名:tag# 下载对应版本镜像
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623567716228-1625636108744.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao &#x2F;]# docker pull mysql
+Using default tag: latest               # 不写tag默认最新版
+latest: Pulling from library&#x2F;mysql
+69692152171a: Pull complete             # layer 分层下载，docker image的核心 联合文件系统
+1651b0be3df3: Pull complete 
+951da7386bc8: Pull complete 
+0f86c95aa242: Pull complete 
+37ba2d8bd4fe: Pull complete 
+6d278bb05e94: Pull complete 
+497efbd93a3e: Pull complete 
+f7fddf10c2c2: Pull complete 
+16415d159dfb: Pull complete 
+0e530ffc6b73: Pull complete 
+b0a4a1a77178: Pull complete 
+cd90f92aa9ef: Pull complete 
+Digest: sha256:d50098d7fcb25b1fcb24e2d3247cae3fc55815d64fec640dc395840f8fa80969#签名
+Status: Downloaded newer image for mysql:latest
+docker.io&#x2F;library&#x2F;mysql:latest         # 真实地址
+
+# 即
+docker pull mysql
+# 等价于
+docker pull docker.io&#x2F;library&#x2F;mysql:latest
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 指定版本下载（版本一定要是人家官网上有的） 
+docker pull mysql:5.7
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623569025829-1625636108744.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao &#x2F;]# docker pull mysql:5.7
+5.7: Pulling from library&#x2F;mysql
+69692152171a: Already exists 
+1651b0be3df3: Already exists 
+951da7386bc8: Already exists 
+0f86c95aa242: Already exists 
+37ba2d8bd4fe: Already exists 
+6d278bb05e94: Already exists 
+497efbd93a3e: Already exists 
+a023ae82eef5: Pull complete 
+e76c35f20ee7: Pull complete 
+e887524d2ef9: Pull complete 
+ccb65627e1c3: Pull complete 
+Digest: sha256:a682e3c78fc5bd941e9db080b4796c75f69a28a8cad65677c23f7a9f18ba21fa
+Status: Downloaded newer image for mysql:5.7
+docker.io&#x2F;library&#x2F;mysql:5.7
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>==版本信息==</p>
+<p><img src="/2021/07/07/docker/1623569131187-1625636108744.png"></p>
+<p>版本来自于官网，版本库<a target="_blank" rel="noopener" href="https://hub.docker.com/_/mysql">https://hub.docker.com/_/mysql</a></p>
+<p><img src="/2021/07/07/docker/image-20200617094339687-1623556326399-1625636108744.png"></p>
+<p><img src="/2021/07/07/docker/image-20200617100948088-1623556326399-1625636108745.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">docker images
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>此时查看镜像，可以看到新下载的两个</p>
+<p><img src="/2021/07/07/docker/image-20200617101105899-1623556326399-1625636108745.png"></p>
+<h4 id="docker-rmi"><a href="#docker-rmi" class="headerlink" title="docker rmi"></a>docker rmi</h4><p>remove images</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 删除一个 可以通过名称 也可以指定id -f表示删除所有
+docker rmi -f 9cfcce23593a
+# 删除多个 用空格分隔id
+docker rmi -f id id id
+# 删除所有 
+docker rmi -f $(docker images -aq) # images -aq就是查所有镜像id，从而递归删除
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623570439820-1625636108745.png"></p>
+<p><img src="/2021/07/07/docker/1623571688188-1625636108745.png"></p>
+<h3 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h3><p>说明：有了镜像才能创建容器，linux，下载一个centos镜像来测试学习</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker pull centos
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623573372106-1625636108745.png"></p>
+<h4 id="新建容器并启动"><a href="#新建容器并启动" class="headerlink" title="新建容器并启动"></a>新建容器并启动</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run [可选参数] image
+
+# 参数说明
+--name&#x3D;“Name” # 容器名字，用于区分容器
+-d 后台方式运行
+-it 使用交互方式运行，进入容器查看内容
+-p 指定容器的端口 如-p 8080::8080
+	-p ip:主机端口：容器端口
+	-p 主机端口:容器端口
+	-p 容器端口
+	
+-p 随机指定端口
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="进入退出容器"><a href="#进入退出容器" class="headerlink" title="进入退出容器"></a>进入退出容器</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 进入
+docker run -it centos &#x2F;bin&#x2F;bash 
+# 查看目录
+ls
+# 退出
+exit
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623576522698-1625636108745.png"></p>
+<p>注意这里面主机名，编程了centos的id</p>
+<p>这里面就是一个容器，套娃啊</p>
+<h4 id="查看运行的容器"><a href="#查看运行的容器" class="headerlink" title="查看运行的容器"></a>查看运行的容器</h4><pre class="line-numbers language-none"><code class="language-none"># 查看正在运行的容器
+docker ps
+# 查看曾经运行的容器
+docker ps -a
+# 显示最近创建的容器，设置显示个数
+docker ps -a - n&#x3D;? 
+# 只显示容器的编号
+docker ps -aq
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao &#x2F;]# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[root@192 ~]# docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
+9939864fa2e6        centos              &quot;bin&#x2F;bash&quot;          4 minutes ago       Exited (0) 4 minutes ago                       unruffled_knuth
+5f42e9930435        centos              &quot;&#x2F;bin&#x2F;bash&quot;         8 minutes ago       Exited (0) 4 minutes ago                       lucid_cannon
+a89ddb393d3d        bf756fb1ae65        &quot;&#x2F;hello&quot;            19 hours ago        Exited (0) 19 hours ago                        gracious_bhabha
+[root@renyichao &#x2F;]# docker ps -a -n&#x3D;2
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
+9939864fa2e6        centos              &quot;bin&#x2F;bash&quot;          6 minutes ago       Exited (0) 6 minutes ago                       unruffled_knuth
+5f42e9930435        centos              &quot;&#x2F;bin&#x2F;bash&quot;         10 minutes ago      Exited (0) 7 minutes ago 
+[root@renyichao &#x2F;]# docker ps -aq
+9939864fa2e6
+5f42e9930435
+a89ddb393d3d
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623576639928-1625636108745.png"></p>
+<h4 id="退出容器"><a href="#退出容器" class="headerlink" title="退出容器"></a>退出容器</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 容器停止退出
+exit
+# 容器不停止退出 注意必须在英文输入法下，中文输入法不行
+Ctrl + P + Q
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao &#x2F;]# docker run -it centos &#x2F;bin&#x2F;bash
+[root@bfcea13c40cd &#x2F;]# [root@192 ~]# docker ps ##注意这里会自动给个命令，删掉
+CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS              PORTS               NAMES
+bfcea13c40cd        centos              &quot;&#x2F;bin&#x2F;bash&quot;         About a minute ago   Up About a minute                       stoic_wilson
+edbd9366d959        centos              &quot;&#x2F;bin&#x2F;bash&quot;         7 minutes ago        Up 7 minutes                            affectionate_bartik
+[root@renyichao &#x2F;]# docker exec -it edbd9366d959 &#x2F;bin&#x2F;bash ## 再次进入
+[root@edbd9366d959 &#x2F;]# exit ##停止并推出
+exit
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 删除指定容器 不能删除正在运行的容器，如果强制删除 rm -f
+docker rm 容器id
+# 删除所有容器
+docker rm -f $(docker ps -aq)
+# 删除所有容器
+docker ps -a -q|xargs docker rm
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao &#x2F;]# docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+bfcea13c40cd        centos              &quot;&#x2F;bin&#x2F;bash&quot;         29 minutes ago      Up 29 minutes                                   stoic_wilson
+edbd9366d959        centos              &quot;&#x2F;bin&#x2F;bash&quot;         35 minutes ago      Up 35 minutes                                   affectionate_bartik
+9939864fa2e6        centos              &quot;bin&#x2F;bash&quot;          48 minutes ago      Exited (0) 48 minutes ago                       unruffled_knuth
+5f42e9930435        centos              &quot;&#x2F;bin&#x2F;bash&quot;         52 minutes ago      Exited (0) 49 minutes ago                       lucid_cannon
+a89ddb393d3d        bf756fb1ae65        &quot;&#x2F;hello&quot;            20 hours ago        Exited (0) 20 hours ago                         gracious_bhabha
+[root@renyichao &#x2F;]# docker rm 5f42e9930435
+5f42e9930435
+[root@renyichao &#x2F;]# docker rm edbd9366d959      # 注意正在运行的容器不能删除
+Error response from daemon: You cannot remove a running container edbd9366d9596c744dd449119269b04de2f2a494e7fc471f6396bcefd94c33fe. Stop the container before attempting removal or force remove
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao &#x2F;]# docker ps -aq # 所有容器id
+bfcea13c40cd
+edbd9366d959
+9939864fa2e6
+a89ddb393d3d
+[root@renyichao &#x2F;]# docker rm -f $(docker ps -aq) # 全部删除
+bfcea13c40cd
+edbd9366d959
+9939864fa2e6
+a89ddb393d3d
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="启动和停止容器的操作"><a href="#启动和停止容器的操作" class="headerlink" title="启动和停止容器的操作"></a>启动和停止容器的操作</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker start  容器id        #启动容器         
+docker restart   容器id     #重启容器 
+docker stop   容器id        #停止容器 
+docker kill   容器id        #强制停止容器 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao &#x2F;]# docker run -it centos &#x2F;bin&#x2F;bash
+[root@7b1a7dd10ea4 &#x2F;]# exit
+exit
+[root@renyichao &#x2F;]# docker ps #查看正在运行的
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS     
+[root@renyichao &#x2F;]# docker ps -a # 查看历史运行过的
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS     
+7b1a7dd10ea4        centos              &quot;&#x2F;bin&#x2F;bash&quot;         54 seconds ago      Exited (0) 
+[root@renyichao &#x2F;]# docker start 7b1a7dd10ea4 # 启动当前这个容器 container id 粘过 来
+7b1a7dd10ea4
+[root@renyichao &#x2F;]# docker ps # 查看当前运行容器 发现启动成功
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS     
+7b1a7dd10ea4        centos              &quot;&#x2F;bin&#x2F;bash&quot;         2 minutes ago       Up 28 
+[root@renyichao &#x2F;]# docker stop 7b1a7dd10ea4 # 停止运行
+7b1a7dd10ea4
+[root@renyichao &#x2F;]# docker ps # 再次查看 没有这个容器了
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS     
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="常用其他命令"><a href="#常用其他命令" class="headerlink" title="常用其他命令"></a>常用其他命令</h3><h4 id="后台启动docker"><a href="#后台启动docker" class="headerlink" title="后台启动docker"></a>后台启动docker</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run -d 镜像名
+# 用docker ps 查看的时候 发现停止了
+
+# 后台运行，docker发现前台没有，容器启动后，发现自己没有提供服务，会立刻停止
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao &#x2F;]# docker run -d centos      # 运行
+7754f51c67d0aa480480e51865edaf9a8e123e50349a235e13a6407ebf2efc41
+[root@renyichao &#x2F;]# docker ps -a              # 查看正在运行的
+CONTAINER ID   IMAGE          COMMAND       CREATED          STATUS          PORTS     
+7754f51c67d0   centos         &quot;&#x2F;bin&#x2F;bash&quot;   5 seconds ago    Exited (0) 4 seconds ago       
+b173b286675e   centos         &quot;&#x2F;bin&#x2F;bash&quot;   16 minutes ago   Exited (0) 15 minutes ago     
+603c36f0ca21   centos         &quot;&#x2F;bin&#x2F;bash&quot;   17 minutes ago   Exited (0) 16 minutes ago     
+9c6c81463c8d   d1165f221234   &quot;&#x2F;hello&quot;      4 hours ago      Exited (0) 4 hours ago         
+d5151d881c00   d1165f221234   &quot;&#x2F;hello&quot;      4 weeks ago      Exited (0) 4 weeks ago         
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker logs
+docker logs -f -t --tail n 【id】
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/image-20200617161744298-1623556326399-1625636108745.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@192 ~]# docker logs --help
+
+Usage:	docker logs [OPTIONS] CONTAINER
+
+Fetch the logs of a container
+
+Options:
+      --details        Show extra details provided to logs
+  -f, --follow         Follow log output
+      --since string   Show logs since timestamp (e.g.
+                       2013-01-02T13:23:37) or relative
+                       (e.g. 42m for 42 minutes)
+      --tail string    Number of lines to show from the
+                       end of the logs (default &quot;all&quot;)
+  -t, --timestamps     Show timestamps # 时间戳
+      --until string   Show logs before a timestamp (e.g.
+                       2013-01-02T13:23:37) or relative
+                       (e.g. 42m for 42 minutes)
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">whiel true;do echo shenzai;sleep 
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 运行一个
+[root@192 ~]# docker run -it centos &#x2F;bin&#x2F;bash
+
+[root@c2887d35c71d &#x2F;]# [root@192 ~]# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS             
+c2887d35c71d        centos              &quot;&#x2F;bin&#x2F;bash&quot;         57 seconds ago      Up 56 
+
+# 查看日志，由于没有运行脚本，所以啥也没显示
+[root@192 ~]# docker logs -f -t --tail 10 c2887d35c71d
+^C # ctrl+c退出
+
+# 运行centos里面加个脚本
+[root@192 ~]# docker run -d centos &#x2F;bin&#x2F;sh -c &quot;while true;do echo shenzai;sleep 1;done&quot;
+cb6d7fbc3f27a064137d58282de97b97365dea2705211ebfbad642079cc1b388
+
+[root@192 ~]# docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS 
+cb6d7fbc3f27        centos              &quot;&#x2F;bin&#x2F;sh -c &#39;while t…&quot;   7 seconds ago       Up 6 
+c2887d35c71d        centos              &quot;&#x2F;bin&#x2F;bash&quot;              3 minutes ago       Up 3 
+
+# 查看日志 发现隔一秒打印一条
+[root@192 ~]# docker logs -f -t --tail 10 cb6d7fbc3f27
+2020-06-17T12:02:11.293765084Z shenzai
+2020-06-17T12:02:12.297675608Z shenzai
+2020-06-17T12:02:13.301845582Z shenzai
+2020-06-17T12:02:14.304800996Z shenzai
+2020-06-17T12:02:15.307130238Z shenzai
+2020-06-17T12:02:16.310574235Z shenzai
+2020-06-17T12:02:17.312946923Z shenzai
+2020-06-17T12:02:18.314841295Z shenzai
+2020-06-17T12:02:19.317021705Z shenzai
+2020-06-17T12:02:20.319670013Z shenzai
+2020-06-17T12:02:21.322651649Z shenzai
+2020-06-17T12:02:22.325466918Z shenzai
+2020-06-17T12:02:23.327984704Z shenzai
+2020-06-17T12:02:24.329656919Z shenzai
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="查看正在运行的容器信息"><a href="#查看正在运行的容器信息" class="headerlink" title="查看正在运行的容器信息"></a>查看正在运行的容器信息</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker   top    容器id      #查看容器进程信息
+
+docker inspect  容器id      #查看完整信息，源数据
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@192 ~]# docker inspect cb6d7fbc3f27
+[
+    &#123;
+        # 容器的完整id
+        &quot;Id&quot;: &quot;cb6d7fbc3f27a064137d58282de97b97365dea2705211ebfbad642079cc1b388&quot;,
+        
+        # 创建时间
+        &quot;Created&quot;: &quot;2020-06-17T12:00:50.706906186Z&quot;,
+        
+        # 脚本位置
+        &quot;Path&quot;: &quot;&#x2F;bin&#x2F;sh&quot;,
+        
+        # 运行的脚本
+        &quot;Args&quot;: [
+            &quot;-c&quot;,
+            &quot;while true;do echo shenzai;sleep 1;done&quot;
+        ],
+        &quot;State&quot;: &#123;
+            &quot;Status&quot;: &quot;running&quot;, # 状态，正在运行
+            &quot;Running&quot;: true,
+            &quot;Paused&quot;: false,
+            &quot;Restarting&quot;: false,
+            &quot;OOMKilled&quot;: false,
+            &quot;Dead&quot;: false,
+            &quot;Pid&quot;: 1909, # 父进程id
+            &quot;ExitCode&quot;: 0,
+            &quot;Error&quot;: &quot;&quot;,
+            &quot;StartedAt&quot;: &quot;2020-06-17T12:00:51.093617477Z&quot;,
+            &quot;FinishedAt&quot;: &quot;0001-01-01T00:00:00Z&quot;
+        &#125;,
+        
+        # 来源镜像
+        &quot;Image&quot;: &quot;sha256:831691599b88ad6cc2a4abbd0e89661a121aff14cfa289ad840fd3946f274f1f&quot;,
+        &quot;ResolvConfPath&quot;: &quot;&#x2F;var&#x2F;lib&#x2F;docker&#x2F;containers&#x2F;cb6d7fbc3f27a064137d58282de97b97365dea2705211ebfbad642079cc1b388&#x2F;resolv.conf&quot;,
+        &quot;HostnamePath&quot;: &quot;&#x2F;var&#x2F;lib&#x2F;docker&#x2F;containers&#x2F;cb6d7fbc3f27a064137d58282de97b97365dea2705211ebfbad642079cc1b388&#x2F;hostname&quot;,
+        &quot;HostsPath&quot;: &quot;&#x2F;var&#x2F;lib&#x2F;docker&#x2F;containers&#x2F;cb6d7fbc3f27a064137d58282de97b97365dea2705211ebfbad642079cc1b388&#x2F;hosts&quot;,
+        &quot;LogPath&quot;: &quot;&#x2F;var&#x2F;lib&#x2F;docker&#x2F;containers&#x2F;cb6d7fbc3f27a064137d58282de97b97365dea2705211ebfbad642079cc1b388&#x2F;cb6d7fbc3f27a064137d58282de97b97365dea2705211ebfbad642079cc1b388-json.log&quot;,
+        
+        
+        &quot;Name&quot;: &quot;&#x2F;dreamy_almeida&quot;,
+        &quot;RestartCount&quot;: 0,
+        &quot;Driver&quot;: &quot;overlay2&quot;,
+        &quot;Platform&quot;: &quot;linux&quot;,
+        &quot;MountLabel&quot;: &quot;&quot;,
+        &quot;ProcessLabel&quot;: &quot;&quot;,
+        &quot;AppArmorProfile&quot;: &quot;&quot;,
+        &quot;ExecIDs&quot;: null,
+        
+        # 主机配置
+        &quot;HostConfig&quot;: &#123;
+            &quot;Binds&quot;: null,
+            &quot;ContainerIDFile&quot;: &quot;&quot;,
+            &quot;LogConfig&quot;: &#123;
+                &quot;Type&quot;: &quot;json-file&quot;,
+                &quot;Config&quot;: &#123;&#125;
+            &#125;,
+            &quot;NetworkMode&quot;: &quot;default&quot;,
+            &quot;PortBindings&quot;: &#123;&#125;,
+            &quot;RestartPolicy&quot;: &#123;
+                &quot;Name&quot;: &quot;no&quot;,
+                &quot;MaximumRetryCount&quot;: 0
+            &#125;,
+            &quot;AutoRemove&quot;: false,
+            &quot;VolumeDriver&quot;: &quot;&quot;,
+            &quot;VolumesFrom&quot;: null,
+            &quot;CapAdd&quot;: null,
+            &quot;CapDrop&quot;: null,
+            &quot;Capabilities&quot;: null,
+            &quot;Dns&quot;: [],
+            &quot;DnsOptions&quot;: [],
+            &quot;DnsSearch&quot;: [],
+            &quot;ExtraHosts&quot;: null,
+            &quot;GroupAdd&quot;: null,
+            &quot;IpcMode&quot;: &quot;private&quot;,
+            &quot;Cgroup&quot;: &quot;&quot;,
+            &quot;Links&quot;: null,
+            &quot;OomScoreAdj&quot;: 0,
+            &quot;PidMode&quot;: &quot;&quot;,
+            &quot;Privileged&quot;: false,
+            &quot;PublishAllPorts&quot;: false,
+            &quot;ReadonlyRootfs&quot;: false,
+            &quot;SecurityOpt&quot;: null,
+            &quot;UTSMode&quot;: &quot;&quot;,
+            &quot;UsernsMode&quot;: &quot;&quot;,
+            &quot;ShmSize&quot;: 67108864,
+            &quot;Runtime&quot;: &quot;runc&quot;,
+            &quot;ConsoleSize&quot;: [
+                0,
+                0
+            ],
+            &quot;Isolation&quot;: &quot;&quot;,
+            &quot;CpuShares&quot;: 0,
+            &quot;Memory&quot;: 0,
+            &quot;NanoCpus&quot;: 0,
+            &quot;CgroupParent&quot;: &quot;&quot;,
+            &quot;BlkioWeight&quot;: 0,
+            &quot;BlkioWeightDevice&quot;: [],
+            &quot;BlkioDeviceReadBps&quot;: null,
+            &quot;BlkioDeviceWriteBps&quot;: null,
+            &quot;BlkioDeviceReadIOps&quot;: null,
+            &quot;BlkioDeviceWriteIOps&quot;: null,
+            &quot;CpuPeriod&quot;: 0,
+            &quot;CpuQuota&quot;: 0,
+            &quot;CpuRealtimePeriod&quot;: 0,
+            &quot;CpuRealtimeRuntime&quot;: 0,
+            &quot;CpusetCpus&quot;: &quot;&quot;,
+            &quot;CpusetMems&quot;: &quot;&quot;,
+            &quot;Devices&quot;: [],
+            &quot;DeviceCgroupRules&quot;: null,
+            &quot;DeviceRequests&quot;: null,
+            &quot;KernelMemory&quot;: 0,
+            &quot;KernelMemoryTCP&quot;: 0,
+            &quot;MemoryReservation&quot;: 0,
+            &quot;MemorySwap&quot;: 0,
+            &quot;MemorySwappiness&quot;: null,
+            &quot;OomKillDisable&quot;: false,
+            &quot;PidsLimit&quot;: null,
+            &quot;Ulimits&quot;: null,
+            &quot;CpuCount&quot;: 0,
+            &quot;CpuPercent&quot;: 0,
+            &quot;IOMaximumIOps&quot;: 0,
+            &quot;IOMaximumBandwidth&quot;: 0,
+            &quot;MaskedPaths&quot;: [
+                &quot;&#x2F;proc&#x2F;asound&quot;,
+                &quot;&#x2F;proc&#x2F;acpi&quot;,
+                &quot;&#x2F;proc&#x2F;kcore&quot;,
+                &quot;&#x2F;proc&#x2F;keys&quot;,
+                &quot;&#x2F;proc&#x2F;latency_stats&quot;,
+                &quot;&#x2F;proc&#x2F;timer_list&quot;,
+                &quot;&#x2F;proc&#x2F;timer_stats&quot;,
+                &quot;&#x2F;proc&#x2F;sched_debug&quot;,
+                &quot;&#x2F;proc&#x2F;scsi&quot;,
+                &quot;&#x2F;sys&#x2F;firmware&quot;
+            ],
+            &quot;ReadonlyPaths&quot;: [
+                &quot;&#x2F;proc&#x2F;bus&quot;,
+                &quot;&#x2F;proc&#x2F;fs&quot;,
+                &quot;&#x2F;proc&#x2F;irq&quot;,
+                &quot;&#x2F;proc&#x2F;sys&quot;,
+                &quot;&#x2F;proc&#x2F;sysrq-trigger&quot;
+            ]
+        &#125;,
+        
+        # 其他配置
+        &quot;GraphDriver&quot;: &#123;
+            &quot;Data&quot;: &#123;
+                &quot;LowerDir&quot;: &quot;&#x2F;var&#x2F;lib&#x2F;docker&#x2F;overlay2&#x2F;3675586ebbd79cd72d2562a90c9380627a331c563724c0dac091f92600af4907-init&#x2F;diff:&#x2F;var&#x2F;lib&#x2F;docker&#x2F;overlay2&#x2F;7f79322e0f58d651a84a555dadd83d92537788172525945d3f538dd95dce336c&#x2F;diff&quot;,
+                &quot;MergedDir&quot;: &quot;&#x2F;var&#x2F;lib&#x2F;docker&#x2F;overlay2&#x2F;3675586ebbd79cd72d2562a90c9380627a331c563724c0dac091f92600af4907&#x2F;merged&quot;,
+                &quot;UpperDir&quot;: &quot;&#x2F;var&#x2F;lib&#x2F;docker&#x2F;overlay2&#x2F;3675586ebbd79cd72d2562a90c9380627a331c563724c0dac091f92600af4907&#x2F;diff&quot;,
+                &quot;WorkDir&quot;: &quot;&#x2F;var&#x2F;lib&#x2F;docker&#x2F;overlay2&#x2F;3675586ebbd79cd72d2562a90c9380627a331c563724c0dac091f92600af4907&#x2F;work&quot;
+            &#125;,
+            &quot;Name&quot;: &quot;overlay2&quot;
+        &#125;,
+        
+        &quot;Mounts&quot;: [], # 挂载
+        
+        # 基本配置
+        &quot;Config&quot;: &#123;
+            &quot;Hostname&quot;: &quot;cb6d7fbc3f27&quot;,
+            &quot;Domainname&quot;: &quot;&quot;,
+            &quot;User&quot;: &quot;&quot;,
+            &quot;AttachStdin&quot;: false,
+            &quot;AttachStdout&quot;: false,
+            &quot;AttachStderr&quot;: false,
+            &quot;Tty&quot;: false,
+            &quot;OpenStdin&quot;: false,
+            &quot;StdinOnce&quot;: false,
+            &quot;Env&quot;: [
+                &quot;PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;sbin:&#x2F;usr&#x2F;local&#x2F;bin:&#x2F;usr&#x2F;sbin:&#x2F;usr&#x2F;bin:&#x2F;sbin:&#x2F;bin&quot;
+            ], # 基本环境变量，这里没有Java
+            
+            # 基本命令
+            &quot;Cmd&quot;: [
+                &quot;&#x2F;bin&#x2F;sh&quot;,
+                &quot;-c&quot;,
+                &quot;while true;do echo shenzai;sleep 1;done&quot;
+            ],
+            &quot;Image&quot;: &quot;centos&quot;,
+            &quot;Volumes&quot;: null,
+            &quot;WorkingDir&quot;: &quot;&quot;,
+            &quot;Entrypoint&quot;: null,
+            &quot;OnBuild&quot;: null,
+            &quot;Labels&quot;: &#123;
+                &quot;org.label-schema.build-date&quot;: &quot;20200611&quot;,
+                &quot;org.label-schema.license&quot;: &quot;GPLv2&quot;,
+                &quot;org.label-schema.name&quot;: &quot;CentOS Base Image&quot;,
+                &quot;org.label-schema.schema-version&quot;: &quot;1.0&quot;,
+                &quot;org.label-schema.vendor&quot;: &quot;CentOS&quot;
+            &#125;
+        &#125;,
+        
+        # 网卡，比如现在用的是桥接的网卡
+        &quot;NetworkSettings&quot;: &#123;
+            &quot;Bridge&quot;: &quot;&quot;,
+            &quot;SandboxID&quot;: &quot;4d701985d7e77aa153790b697b2f38a61e20555c224b7675e4bf650b82799882&quot;,
+            &quot;HairpinMode&quot;: false,
+            &quot;LinkLocalIPv6Address&quot;: &quot;&quot;,
+            &quot;LinkLocalIPv6PrefixLen&quot;: 0,
+            &quot;Ports&quot;: &#123;&#125;,
+            &quot;SandboxKey&quot;: &quot;&#x2F;var&#x2F;run&#x2F;docker&#x2F;netns&#x2F;4d701985d7e7&quot;,
+            &quot;SecondaryIPAddresses&quot;: null,
+            &quot;SecondaryIPv6Addresses&quot;: null,
+            &quot;EndpointID&quot;: &quot;8a6c71e2bafb19ca7dfd85445ccc4bef6d17467360a243d624089e676a24a018&quot;,
+            &quot;Gateway&quot;: &quot;172.17.0.1&quot;,
+            &quot;GlobalIPv6Address&quot;: &quot;&quot;,
+            &quot;GlobalIPv6PrefixLen&quot;: 0,
+            &quot;IPAddress&quot;: &quot;172.17.0.3&quot;,
+            &quot;IPPrefixLen&quot;: 16,
+            &quot;IPv6Gateway&quot;: &quot;&quot;,
+            &quot;MacAddress&quot;: &quot;02:42:ac:11:00:03&quot;,
+            &quot;Networks&quot;: &#123;
+                &quot;bridge&quot;: &#123;
+                    &quot;IPAMConfig&quot;: null,
+                    &quot;Links&quot;: null,
+                    &quot;Aliases&quot;: null,
+                    &quot;NetworkID&quot;: &quot;22b0fd2290ccbc4e066a75d3f01bd8bf32ee4352c5bbcfc9f911287219219571&quot;,
+                    &quot;EndpointID&quot;: &quot;8a6c71e2bafb19ca7dfd85445ccc4bef6d17467360a243d624089e676a24a018&quot;,
+                    &quot;Gateway&quot;: &quot;172.17.0.1&quot;,
+                    &quot;IPAddress&quot;: &quot;172.17.0.3&quot;,
+                    &quot;IPPrefixLen&quot;: 16,
+                    &quot;IPv6Gateway&quot;: &quot;&quot;,
+                    &quot;GlobalIPv6Address&quot;: &quot;&quot;,
+                    &quot;GlobalIPv6PrefixLen&quot;: 0,
+                    &quot;MacAddress&quot;: &quot;02:42:ac:11:00:03&quot;,
+                    &quot;DriverOpts&quot;: null
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+]
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 停止正在疯狂输出的那个容器
+[root@192 ~]# docker stop cb6d7fbc3f27
+cb6d7fbc3f27
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="进入当前正在运行的容器"><a href="#进入当前正在运行的容器" class="headerlink" title="进入当前正在运行的容器"></a>进入当前正在运行的容器</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker exec -it 容器id bashshell
+docker attach  容器id
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 我们通常容器都是使用后台方式运行的e
+
+docker exec -it 容器id bashSHELL
+
+# 测试
+[root@192 ~]# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS     
+c2887d35c71d        centos              &quot;&#x2F;bin&#x2F;bash&quot;         35 minutes ago      Up 35 
+[root@192 ~]# docker exec -it c2887d35c71d &#x2F;bin&#x2F;bash
+[root@c2887d35c71d &#x2F;]# ls
+bin  etc   lib	  lost+found  mnt  proc  run   srv  tmp  var
+dev  home  lib64  media       opt  root  sbin  sys  usr
+[root@c2887d35c71d &#x2F;]# ps -ef
+UID         PID   PPID  C STIME TTY          TIME CMD
+root          1      0  0 11:57 pts&#x2F;0    00:00:00 &#x2F;bin&#x2F;bash
+root         14      0  0 12:32 pts&#x2F;1    00:00:00 &#x2F;bin&#x2F;bash
+root         28     14  0 12:32 pts&#x2F;1    00:00:00 ps -ef
+[root@c2887d35c71d &#x2F;]# c2887d35c71d
+[root@c2887d35c71d &#x2F;]# exit
+exit
+
+# 方式二
+[root@192 ~]# docker attach c2887d35c71d
+[root@c2887d35c71d &#x2F;]# 
+
+# 区别
+# docker exec # 进入容器后开启一个新的终端，可以在里面操作(常用)
+# docker attach 进入容器正在执行的终端，不会启动新的进程
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="从容器内拷贝文件到主机上"><a href="#从容器内拷贝文件到主机上" class="headerlink" title="从容器内拷贝文件到主机上"></a>从容器内拷贝文件到主机上</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker cp 容器id:容器内路径
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 运行
+[root@192 ~]# docker run -it centos
+# ctrl P Q 不关闭退出，查看
+[root@0569081aa89c &#x2F;]# [root@192 ~]# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS     
+0569081aa89c        centos              &quot;&#x2F;bin&#x2F;bash&quot;         19 seconds ago      Up 19 
+
+# 查看主机home下无文件
+[root@192 ~]# cd &#x2F;home
+[root@192 home]# ls
+
+# 进入正在运行的容器
+[root@192 home]# docker attach 0569081aa89c
+
+# 进入容器home目录
+[root@0569081aa89c &#x2F;]# cd &#x2F;home
+
+# 在目录中创建java文件
+[root@0569081aa89c home]# touch test.java
+
+# 退出并停止容器
+[root@0569081aa89c home]# exit
+exit
+
+# 查看现在运行的容器
+[root@192 home]# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+# 容器虽然被停止，但是数据都会保留
+[root@192 home]# docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS 
+0569081aa89c        centos              &quot;&#x2F;bin&#x2F;bash&quot;              3 minutes ago       Exited 
+f589e5684a01        centos              &quot;&#x2F;bin&#x2F;bash&quot;              44 minutes ago      Exited 
+cb6d7fbc3f27        centos              &quot;&#x2F;bin&#x2F;sh -c &#39;while t…&quot;   54 minutes ago      Exited 
+c2887d35c71d        centos              &quot;&#x2F;bin&#x2F;bash&quot;              58 minutes ago      Exited 
+8ce188e5fee3        centos              &quot;&#x2F;bin&#x2F;bash&quot;              About an hour ago   Exited 
+7b1a7dd10ea4        centos              &quot;&#x2F;bin&#x2F;bash&quot;              9 hours ago         Exited 
+
+# 容器数据拷贝到主机
+[root@192 home]# docker cp 0569081aa89c:&#x2F;home&#x2F;test.java &#x2F;home
+[root@192 home]# ls
+test.java
+
+# 拷贝是一个手动过程，未来我们使用 -v 卷的技术，可以实现自动同步 &#x2F;home &#x2F;home
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="查看内容占用"><a href="#查看内容占用" class="headerlink" title="查看内容占用"></a>查看内容占用</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker stats
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p><img src="/2021/07/07/docker/image-20200617210554147-1623556326399-1625636108745.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@192 home]# docker --help
+
+Usage:	docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config
+                           files (default &quot;&#x2F;root&#x2F;.docker&quot;)
+  -c, --context string     Name of the context to use to
+                           connect to the daemon
+                           (overrides DOCKER_HOST env var
+                           and default context set with
+                           &quot;docker context use&quot;)
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level
+                           (&quot;debug&quot;|&quot;info&quot;|&quot;warn&quot;|&quot;error&quot;|&quot;fatal&quot;) (default &quot;info&quot;)
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by
+                           this CA (default
+                           &quot;&#x2F;root&#x2F;.docker&#x2F;ca.pem&quot;)
+      --tlscert string     Path to TLS certificate file
+                           (default &quot;&#x2F;root&#x2F;.docker&#x2F;cert.pem&quot;)
+      --tlskey string      Path to TLS key file (default
+                           &quot;&#x2F;root&#x2F;.docker&#x2F;key.pem&quot;)
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  engine      Manage the docker engine
+  image       Manage images
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach to a running container    # 当前shell下attach连接指定运行镜像
+  build       Build an image from a Dockerfile # 通过Dockerfile定制镜像
+  commit      Create a new image from a container changes # 提交当前容器为新镜像
+  cp          Copy files&#x2F;folders between a container and the local filesystem
+                                               # 容器数据拷贝到主机
+  create      Create a new container           # 创建一个新容器，同run，但不启动容器
+  diff        Inspect changes to files or directories on a container&#39;s filesystem
+                                               # 查看docker容器变化
+  events      Get real time events from the server  # 从docker服务获取容器实时事件
+  exec        Run a command in a running container  # 在已存在的容器上运行命令
+  export      Export a container&#39;s filesystem as a tar archive
+                                   # 导出容器的内容作为一个tar归档文件【对应import】
+  history     Show the history of an image     # 展示一个镜像形成历史
+  images      List images                      # 列出系统当前镜像
+  import      Import the contents from a tarball to create a filesystem image
+                                   # 从tar包中的内容创建一个新的文件系统映像归档文件【对应export】
+  info        Display system-wide information  # 显示系统相关信息
+  inspect     Return low-level information on Docker objects # 查看容器相关信息
+  kill        Kill one or more running containers # 杀死指定 docker 容器
+  load        Load an image from a tar archive or STDIN # 从tar包中加载一个镜像【对应 save】
+  login       Log in to a Docker registry      # 注册或登录一个docker源服务器
+  logout      Log out from a Docker registry   # 从当前docker registry 退出
+  logs        Fetch the logs of a container    # 输出当前容器日志信息
+  pause       Pause all processes within one or more containers # 暂停容器
+  port        List port mappings or a specific mapping for the container
+                                               # 从查看映射端口对应的容器内部的源端口
+  ps          List containers                  # 列出容器列表
+  pull        Pull an image or a repository from a registry 
+                                    # 从docker镜像源服务器上拉取指定镜像或者镜像库
+  push        Push an image or a repository to a registry 
+                                    #推送指定镜像或者镜像库至docker镜像源服务器
+  rename      Rename a container               # 对一个容器进行重命名
+  restart     Restart one or more containers   # 重启运行的容器
+  rm          Remove one or more containers    # 移除一个或者多个容器
+  rmi         Remove one or more images    
+   # 移除一个或者多个镜像【无容器使用才可删除，否则需删除相关容器才可继续 或者 -f强制删除】
+  run         Run a command in a new container # 创建一个新容器并运行一个命令
+  save        Save one or more images to a tar archive # 保存一个镜像为一个tar包【对应load】
+  search      Search the Docker Hub for images # 从Docker Hub中搜索镜像
+  start       Start one or more stopped containers # 启动容器
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers  # 停止容器
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE # 给源镜像打标签
+  top         Display the running processes of a container # 查看容器中运行的进程信息
+  unpause     Unpause all processes within one or more containers # 取消暂停容器
+  update      Update configuration of one or more containers # 更新容器
+  version     Show the Docker version information    # 查看docker版本号
+  wait        Block until one or more containers stop, then print their exit codes
+                                                 # 截取容器停止时的退出状态
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="作业练习"><a href="#作业练习" class="headerlink" title="作业练习"></a>作业练习</h4><h5 id="部署Nginx"><a href="#部署Nginx" class="headerlink" title="部署Nginx"></a>部署Nginx</h5><p><img src="/2021/07/07/docker/image-20200618100621199-1623556326399-1625636108745.png"></p>
+<blockquote>
+<p>curl localhost:3344 访问本机的地址</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 官网搜索nginx，可以看到帮助文档
+
+# 下载镜像
+[root@192 home]# docker pull nginx
+Using default tag: latest
+latest: Pulling from library&#x2F;nginx
+8559a31e96f4: Pull complete 
+8d69e59170f7: Pull complete 
+3f9f1ec1d262: Pull complete 
+d1f5ff4f210d: Pull complete 
+1e22bfa8652e: Pull complete 
+Digest: sha256:21f32f6c08406306d822a0e6e8b7dc81f53f336570e852e25fbe1e3e3d0d0133
+Status: Downloaded newer image for nginx:latest
+docker.io&#x2F;library&#x2F;nginx:latest
+
+# 查看镜像
+[root@192 home]# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+centos              latest              831691599b88        13 hours ago        215MB
+nginx               latest              2622e6cca7eb        7 days ago          132MB
+
+# 运行测试
+# -d 后台运行，--name 命名，-p 暴露端口，3344服务器、宿主机的端口，容器内部端口
+[root@192 home]# docker run -d --name nginx01 -p:3344:80 nginx
+38dbf7bdcaef232d269b7184d91e44e06087181b5ee929494e177ad526810fa8
+[root@192 home]# docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+38dbf7bdcaef        nginx               &quot;&#x2F;docker-entrypoint.…&quot;   7 seconds ago       Up 6 seconds        0.0.0.0:3344-&gt;80&#x2F;tcp   nginx01
+
+# 使用3344可以访问成功
+[root@192 home]# curl localhost:3344
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;&#x2F;title&gt;
+&lt;style&gt;
+    body &#123;
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    &#125;
+&lt;&#x2F;style&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;&#x2F;h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;&#x2F;p&gt;
+
+&lt;p&gt;For online documentation and support please refer to
+&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;nginx.org&#x2F;&quot;&gt;nginx.org&lt;&#x2F;a&gt;.&lt;br&#x2F;&gt;
+Commercial support is available at
+&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;nginx.com&#x2F;&quot;&gt;nginx.com&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+
+&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623652256091-1625636108745.png"></p>
+<p>端口暴露</p>
+<p><img src="/2021/07/07/docker/image-20200617212310709-1623556326400-1625636108745.png"></p>
+<p>可以公网访问</p>
+<p>找到服务器地址</p>
+<p><img src="/2021/07/07/docker/image-20200617213213721-1623556326400-1625636108745.png"></p>
+<p>浏览器输入 192.168.147.132:3344/</p>
+<p><img src="/2021/07/07/docker/image-20200617213142079-1623556326400-1625636108745.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@192 home]# docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+38dbf7bdcaef        nginx               &quot;&#x2F;docker-entrypoint.…&quot;   21 minutes ago      Up 21 minutes       0.0.0.0:3344-&gt;80&#x2F;tcp   nginx01
+
+# 进入容器
+[root@192 home]# docker exec -it nginx01 &#x2F;bin&#x2F;bash
+
+# 查一下nginx在哪
+root@38dbf7bdcaef:&#x2F;# whereis nginx
+nginx: &#x2F;usr&#x2F;sbin&#x2F;nginx &#x2F;usr&#x2F;lib&#x2F;nginx &#x2F;etc&#x2F;nginx &#x2F;usr&#x2F;share&#x2F;nginx
+
+# 到这个目录
+root@38dbf7bdcaef:&#x2F;# cd &#x2F;etc&#x2F;nginx
+root@38dbf7bdcaef:&#x2F;etc&#x2F;nginx# ls
+conf.d		koi-utf  mime.types  nginx.conf   uwsgi_params
+fastcgi_params	koi-win  modules     scgi_params  win-utf
+
+# 退出
+root@38dbf7bdcaef:&#x2F;etc&#x2F;nginx# exit
+exit
+
+# 停止
+[root@192 home]# docker stop 38dbf7bdcaef
+38dbf7bdcaef
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>再次刷新网页，服务关闭</p>
+<p>思考问题：每次改动nginx配置文件，都需要进入容器内部，十分麻烦，要是可以在容器外部提供一个映射路径，达到在容器修改文件名，容器内部就可以自动修改？-v 数据卷技术！</p>
+<h5 id="部署tomcat"><a href="#部署tomcat" class="headerlink" title="部署tomcat"></a>部署tomcat</h5><p><img src="/2021/07/07/docker/image-20200618100551587-1623556326400-1625636108745.png"></p>
+<p>在docker hub上查看版本号和使用方法</p>
+<p><img src="/2021/07/07/docker/image-20200618100319796-1623556326400-1625636108745.png"></p>
+<p>官方文档一定要翻烂，超多版本，我的天呐~</p>
+<h6 id="官方方法"><a href="#官方方法" class="headerlink" title="官方方法"></a>官方方法</h6><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run -it --rm tomcat:9.0
+
+# docker run 可以不用pull，能自动下载
+# -it 直接进去运行
+# --rm 是什么意思？入门的意思？
+# 我们之前的启动都是后台，停止了容器之后，容器还是可以查到
+# 写了--rm，类似阅后即焚模式，用完即删除，这种通常用来测试
+# 最后冒号查好的版本号
+
+#部署tomcat
+docker pull tomcat
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><img src="/2021/07/07/docker/image-20200618101811914-1623556326400-1625636108745.png"></p>
+<p><img src="/2021/07/07/docker/image-20200618101849917-1623556326400-1625636108745.png"></p>
+<p>ctrl+c退出</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker ps -a
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/image-20200618102022167-1623556326400-1625636108745.png"></p>
+<p>可以看到并没有tomcat，印证阅后即焚模式，容器会删除，镜像不会删除</p>
+<p>平时不建议这样搞</p>
+<h6 id="正常方法"><a href="#正常方法" class="headerlink" title="正常方法"></a>正常方法</h6><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker pull tomcat:9.0 # 之前下过了，应该不用下了，这里老师讲错了
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p><img src="/2021/07/07/docker/image-20200618102544564-1623556326400-1625636108745.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 启动运行，应该加上版本号
+docker run -d -p 3355:8080 --name tomcat01 tomcat
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623726025129-1625636108745.png"></p>
+<p><img src="/2021/07/07/docker/1623725900877-1625636108745.png"></p>
+<blockquote>
+<p>说明外网已经可以访问了，就是tomcat内部还不是很完整</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 进入容器
+docker exec -it tomcat01 &#x2F;bin&#x2F;bash
+
+#发现
+linux命令少了一些，例如ll
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623726195341-1625636108745.png"></p>
+<blockquote>
+<p>这是阿里云镜像的原因：默认使用最小镜像，所有不必要的都剔除了，保证最小可运行环境</p>
+</blockquote>
+<p><img src="/2021/07/07/docker/image-20200618103848104-1623556326401-1625636108745.png"></p>
+<p>再次刷新页面</p>
+<p><img src="/2021/07/07/docker/1623726568137-1625636108745.png"></p>
+<p>思考问题：我们以后部署项目，如果每次都要进入容器是不是身份麻烦？我要是可以在容器外部提供一个映射路径，webapps，我们在外部放置项目，就自动同步到内部就好了！</p>
+<p>docker容器 tomcat+网站 </p>
+<p>docker mysql</p>
+<h5 id="部署es-kibana"><a href="#部署es-kibana" class="headerlink" title="部署es+kibana"></a>部署es+kibana</h5><p><img src="/2021/07/07/docker/image-20200618104950722-1623556326401-1625636108745.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># es 暴露的端口很多
+# es 十分耗内存
+# es 的数据一般需要放置到安全目录！挂载
+
+# 启动 elasticsearch
+$ docker run -d --name elasticsearch01 -p 9200:9200 -p 9300:9300 -e &quot;discovery.type&#x3D;single-node&quot; elasticsearch:7.6.2
+
+#启动就卡
+# 查看内存占用情况
+docker stats
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623754568271-1625636108745.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 先感觉stop一下
+docker stop ba18713ca536
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<p><img src="/2021/07/07/docker/image-20200618105057785-1623556326401-1625636108745.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 通过 -e 限制内存
+$ docker run -d --name elasticsearch02 -p 9200:9200 -p 9300:9300 -e &quot;discovery.type&#x3D;single-node&quot; -e ES_JAVA_OPTS&#x3D;“-Xms64m -Xmx512m” elasticsearch:7.6.2
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/image-20200618113018622-1623556326401-1625636108745.png"></p>
+<p>没成功啊，SEI能告诉我为啥！！</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run -d --name elasticsearch02 -p 9200:9200 -p 9300:9300 -e &quot;discovery.type&#x3D;single-node&quot; -e ES_JAVA_OPTS&#x3D;&quot;-Xms64m -Xmx512m&quot; elasticsearch:7.6.2
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>py0003null大佬:<br>“ES_JAVA_OPTS=-Xms64m -Xmx512m” </p>
+<p>py0003null大佬:<br>引号提前试试</p>
+</blockquote>
+<p>原因是引号！！你没觉得怪怪的嘛</p>
+<p><img src="/2021/07/07/docker/image-20200618115302656-1623556326401-1625636108745.png"></p>
+<p>此时查看stats，发现内存占用在控制范围内</p>
+<p><img src="/2021/07/07/docker/image-20200618115149971-1623556326401-1625636108745.png"></p>
+<p>ctrl + C退出，记得stop</p>
+<p><img src="/2021/07/07/docker/image-20200618115921069-1623556326401-1625636108745.png"></p>
+<p><img src="/2021/07/07/docker/1623986162546-1625636108745.png"> </p>
+<h5 id="思考：用kibana链接elasticsearch"><a href="#思考：用kibana链接elasticsearch" class="headerlink" title="思考：用kibana链接elasticsearch"></a>思考：用kibana链接elasticsearch</h5><p><img src="/2021/07/07/docker/image-20200618113556445-1623556326401-1625636108745.png"></p>
+<h3 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h3><ul>
+<li>portainer(先用这个)</li>
+<li>Rancher(CI/CD时用)</li>
+</ul>
+<h4 id="portainer"><a href="#portainer" class="headerlink" title="portainer"></a>portainer</h4><p>Docker图像化界面管理工具，提供一个后台面板供我们操作！</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run -d -p 8088:9000 --restart&#x3D;always -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker --privileged&#x3D;true portainer&#x2F;portainer
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623986487621-1625636108745.png"></p>
+<p>访问外网8088</p>
+<blockquote>
+<p>访问的时候老是不行，问题39.103.142.243：8088的冒号用的中文冒号</p>
+<p>应该39.103.142.243:8088</p>
+</blockquote>
+<p><img src="/2021/07/07/docker/1623987327449-1625636108745.png"></p>
+<p>用户名</p>
+<p>密码 </p>
+<p><img src="/2021/07/07/docker/image-20200618134706491-1623556326401-1625636108745.png"></p>
+<p>【中午吃饭重连了一下，失败，不知道发生了啥】</p>
+<p><img src="/2021/07/07/docker/image-20200618135424706-1623556326401-1625636108745.png"></p>
+<p><img src="/2021/07/07/docker/image-20200618135450037-1623556326401-1625636108745.png"></p>
+<blockquote>
+<p>好像是创建的时候的映射问题</p>
+</blockquote>
+<p>【平时不会用这个，好吧，先往下】</p>
+<h3 id><a href="#" class="headerlink" title></a></h3><h2 id="Docker镜像"><a href="#Docker镜像" class="headerlink" title="Docker镜像"></a>Docker镜像</h2><p><img src="/2021/07/07/docker/1623992495486-1625636108745.png" alt="1623992495486"></p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>UnionFS 联合文件系统</p>
+<p><img src="/2021/07/07/docker/1623992450192-1625636108745.png" alt="1623992450192"></p>
+<p><img src="/2021/07/07/docker/1623992543382-1625636108745.png" alt="1623992543382"></p>
+<p><img src="/2021/07/07/docker/image-20200618140242423-1623556326401-1625636108745.png"></p>
+<p>bootfs：boot file system</p>
+<p>rootfs：root file system</p>
+<p><img src="/2021/07/07/docker/1623992766899-1625636108745.png"></p>
+<p><img src="/2021/07/07/docker/image-20200618140932621-1623556326401-1625636108745.png"></p>
+<p><img src="/2021/07/07/docker/image-20200618141014511-1623556326401-1625636108745.png"></p>
+<p><img src="/2021/07/07/docker/image-20200618153329894-1623556326402-1625636108745.png"></p>
+<p>Docker镜像都是只读的，当容器启动时，一个新的可写层被加到镜像的顶部，这一层就是我们通常说的容器层，容器层之下的都叫镜像层</p>
+<p><img src="/2021/07/07/docker/image-20200618153855605-1623556326402-1625636108745.png"></p>
+<h3 id="commit提交镜像"><a href="#commit提交镜像" class="headerlink" title="commit提交镜像"></a>commit提交镜像</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker commit # 提交容器成为一个新的副本
+docker commit -m&#x3D;&quot;提交的描述信息&quot; -a&#x3D;&quot;作者&quot; 容器id 目标镜像名：[TAG]
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>==实战测试==</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#启动一个默认tomcat
+#发现这个tomcat没有webapps应用，原因官方默认webapps下没有文件
+#自己考进去基本文件
+#通过commit提交一个镜像，我们以后就可以使用自己的镜像
+docker images
+docker run -it -p 8080:8080 tomcat
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623993369339-1625636108745.png"></p>
+<p>这是一个前台程序</p>
+<p><img src="/2021/07/07/docker/1623993583544-1625636108745.png"></p>
+<p>将webapps.dist里面所有的文件拷贝到webapps里面，其中-r必须有，表示目录递归拷贝</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">cp -r webapps.dist&#x2F;* webapps
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p><img src="/2021/07/07/docker/1623993921001-1625636108745.png"></p>
+<p><img src="/2021/07/07/docker/image-20200618155750591-1623556326402-1625636108746.png"></p>
+<p>==将自己修改的提交成镜像==</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker commit -a&#x3D;&quot;renyichao&quot; -m&#x3D;&quot;add webapps app&quot; fdbb67382e54 tomcat02:1.0
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1623994710904-1625636108746.png"></p>
+<p>发现新的版本，比之前的大了一些，因为里面记录了我们的改动</p>
+<blockquote>
+<p>如果想保存当前容器的状态，可以通过commit提交，获得一个镜像</p>
+<p>好比我们以前学习VM的时候的快照</p>
+<p>到这里算是入门了</p>
+<p>接下来三个部分是docker的精髓</p>
+</blockquote>
+<h2 id="容器数据卷"><a href="#容器数据卷" class="headerlink" title="容器数据卷"></a>容器数据卷</h2><h3 id="什么是容器卷"><a href="#什么是容器卷" class="headerlink" title="什么是容器卷"></a>什么是容器卷</h3><p>docker是要将应用和环境打包成一个镜像</p>
+<p>这样，数据就不应该在容器中，否则容器删除，数据就会丢失，这就是删库跑路</p>
+<p>故容器之间要有一个数据共享技术</p>
+<p>在Docker容器中产生的数据，同步到本地，这就是卷技术</p>
+<p>本质上是一个目录挂载，将容器内的目录挂载到虚拟机上</p>
+<p><img src="/2021/07/07/docker/image-20200618162917672-1623556326402-1625636108746.png"></p>
+<p>目的：容器的持久化和同步操作</p>
+<p>容器间可以数据共享</p>
+<h3 id="使用数据卷"><a href="#使用数据卷" class="headerlink" title="使用数据卷"></a>使用数据卷</h3><blockquote>
+<p>方式一：直接使用命令来挂载</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run -it -v -p
+# -it 交互式进入
+# -v volume卷技术
+# -p 主机端口
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1624007382800-1625636108746.png"></p>
+<p>新开一个窗口</p>
+<p><img src="/2021/07/07/docker/1624007425728-1625636108746.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker inspect 容器id    #详细信息
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1624007572198-1625636108746.png"></p>
+<p>找到挂载信息Mounts</p>
+<p><img src="/2021/07/07/docker/image-20200618164148642-1623556326402-1625636108746.png"></p>
+<p>测试</p>
+<p><img src="/2021/07/07/docker/1624007979599-1625636108746.png"></p>
+<p>容器停止后，修改主机文件，再启动容器的时候，数据同样改变</p>
+<p><img src="/2021/07/07/docker/1624008524344-1625636108746.png"></p>
+<blockquote>
+<p>优点：我们以后只要修改本地即可，容器可自动同步</p>
+</blockquote>
+<h3 id="实战安装mysql"><a href="#实战安装mysql" class="headerlink" title="实战安装mysql"></a>实战安装mysql</h3><p>MySQL的数据持久化命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker search mysql
+
+# 拉取
+docker pull mysql:5.7
+
+# 挂载
+ docker run -d -p 3310:3306 -v &#x2F;home&#x2F;mysql&#x2F;conf:&#x2F;etc&#x2F;mysql&#x2F;conf.d -v &#x2F;home&#x2F;mysql&#x2F;data:&#x2F;var&#x2F;lib&#x2F;mysql -e MYSQL_ROOT_PASSWORD&#x3D;123456 --name mysql01 mysql:5.7
+
+-d 后台运行
+-p 端口映射
+-v 卷挂载
+-e 环境配置 安装启动mysql需要配置密码
+--name 容器名字
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1624009784688-1625636108746.png" alt="1624009784688"></p>
+<p>链接测试：打开navicat</p>
+<p><img src="/2021/07/07/docker/1624010296911-1625636108746.png"></p>
+<p><img src="/2021/07/07/docker/1624010506631-1625636108746.png" alt="1624010506631"></p>
+<p><img src="/2021/07/07/docker/1624010479789-1625636108746.png"></p>
+<blockquote>
+<p>多了一个test</p>
+</blockquote>
+<p><img src="/2021/07/07/docker/1624010564477-1625636108746.png"></p>
+<p>我们将容器删除</p>
+<p><img src="/2021/07/07/docker/1624010916571-1625636108746.png"></p>
+<blockquote>
+<p>发现，我们挂载到本地的数据卷依旧没有丢失，这就实现了容器数据持久化功能</p>
+</blockquote>
+<p><img src="/2021/07/07/docker/1624011181593-1625636108746.png"></p>
+<h3 id="具名和匿名挂载"><a href="#具名和匿名挂载" class="headerlink" title="具名和匿名挂载"></a>具名和匿名挂载</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#匿名挂载
+-v 容器内路径
+docker run -d -P --name nginx01 -v &#x2F;ect&#x2F;nginx  nginx
+
+#查看所有卷的情况
+docker volum ls 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1624016618618-1625636108746.png"></p>
+<p><img src="/2021/07/07/docker/1624016838932-1625636108746.png"></p>
+<p><img src="/2021/07/07/docker/1624016933173-1625636108746.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#所有docker容器内的卷，没有指定路径下，都是这个路径
+#我们通过具名挂载可以方便我们找到我们的每一个卷，大多数情况适用具名挂载
+&#x2F;var&#x2F;lib&#x2F;docker&#x2F;volumes&#x2F;juming-nginx&#x2F;_data
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#如何确定具名挂载还是匿名挂载，还是指定路径挂载！
+-v 容器内路径                    #匿名挂载
+-v 卷名：容器内路径              #具名挂载
+-v &#x2F;宿主机路径：：容器内路径      #指定路径挂载
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>拓展：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 通过 -v 容器内路径：ro&#x2F;rw 改写读写权限
+ro    readonly  #只读
+rw    readwrite #可读可写
+
+#一旦设置了容器权限，容器对我们挂载出来的内容就有限定了！
+docker run -d -P --name nginx01 -v juming-nginx:&#x2F;ect&#x2F;nginx:ro  nginx
+docker run -d -P --name nginx01 -v juming-nginx:&#x2F;ect&#x2F;nginx:rw  nginx
+
+#ro 只要看到ro就说明这个路径只能通过宿主机（外部）来操作，容器内不无法操作
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="初识Dockerfile"><a href="#初识Dockerfile" class="headerlink" title="初识Dockerfile"></a>初识Dockerfile</h3><p>DockerFile使用来构建docker镜像的文件</p>
+<p><img src="/2021/07/07/docker/1624090930718-1625636108746.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum install vim # 编辑文件的，没有装一下
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 镜像是一层一层的，脚本是一行一行的
+# 指令都是大写的
+# 这里的每个命令可以理解为镜像的一层
+
+FROM centos
+
+VOLUME [&quot;&#x2F;volume01&quot;,&quot;&#x2F;volume02&quot;] 
+# 再创建镜像的时候就挂载出来，必须加上&#x2F;  ，否则启动报错，属于匿名挂载
+
+CMD echo &quot;---end---&quot;
+CMD &#x2F;bin&#x2F;bash
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1624090838848-1625636108746.png"></p>
+<p>想保存并退出</p>
+<blockquote>
+<p>​                                        esc</p>
+<p>然后                              ：wq</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cat dockerfile
+
+docker build -f dockerfile -t renyichao&#x2F;centos:1.0 .  # 最后的点很重要 镜像名不能有&#x2F;
+
+docker images
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1624091521652-1625636108746.png"></p>
+<p>启动生成的镜像</p>
+<p><img src="/2021/07/07/docker/1624092739516-1625636108746.png"></p>
+<p><img src="/2021/07/07/docker/1624092863483-1625636108746.png"></p>
+<p>查看Mounts，Source对应容器外目录，匿名挂载卷</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker inspect 4ade3463430f
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p><img src="/2021/07/07/docker/1624093557066-1625636108746.png"></p>
+<p>测试一下，在container volume01下生成文件</p>
+<p><img src="/2021/07/07/docker/image-20200618222224352-1623556326403-1625636108747.png"></p>
+<p>在主机挂载路径下，也同样生成</p>
+<h3 id="多个容器数据共享"><a href="#多个容器数据共享" class="headerlink" title="多个容器数据共享"></a>多个容器数据共享</h3><p><img src="/2021/07/07/docker/image-20200621165403842-1623556326403-1625636108747.png"></p>
+<p>启动docker01，用之前建的padaxing/centos 1.0  镜像</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run -it --name docker01 padaxing&#x2F;centos:1.0 # 1.0必须写
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/image-20200621170429658-1623556326404-1625636108747.png"></p>
+<p>当前这个ctrl+p+q不停止退出</p>
+<p>依次启动docker02、docker03</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run -it --name docker02 --volumes-from docker01 padaxing&#x2F;centos:1.0
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>docker02继承docker01的volumes</p>
+<p><img src="/2021/07/07/docker/1624095265474-1625636108747.png"></p>
+<p>可以验证，在docker01下加一个数据，在docker02下也会出现</p>
+<p><img src="/2021/07/07/docker/1624095289466-1625636108747.png"></p>
+<p>创建docker03，同样继承docker01</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run -it --name docker03 --volumes-from docker01 padaxing&#x2F;centos:1.0
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/image-20200621172333639-1623556326404-1625636108747.png"></p>
+<p>在docker03的volume01下建立文件，在docker01的volume01下同样也有</p>
+<p>即通过–volumes-from 可以实现不同容器间的数据共享</p>
+<p>删除docker01，数据还在</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker rm -f 
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1624095429040-1625636108747.png"></p>
+<p>可以看到，删除docker01，进入docker02，数据依然在</p>
+<p><img src="/2021/07/07/docker/1624095440841-1625636108747.png"></p>
+<p>结论：</p>
+<p>容器之间配置信息的传递，数据卷容器的生命周期一直持续到没有容器使用位置</p>
+<p>但是如果持久化到了本地，即使所有容器删除了，本地数据是不会删除的</p>
+<p>要想实现两个数据库共享数据，一个挂载到另一个就行</p>
+<h3 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h3><h4 id="DockerFile介绍"><a href="#DockerFile介绍" class="headerlink" title="DockerFile介绍"></a>DockerFile介绍</h4><p><code>dockerfile</code>是用来构建docker镜像的文件！命令参数脚本！</p>
+<p>构建步骤：</p>
+<ol>
+<li>编写一个dockerfile文件</li>
+<li>docker build 构建称为一个镜像</li>
+<li>docker run运行镜像</li>
+<li>docker push发布镜像（DockerHub 、阿里云仓库)</li>
+</ol>
+<hr>
+<p><strong>查一下官方是怎么做的？</strong></p>
+<p><img src="/2021/07/07/docker/1624252291286-1625636108747.png"></p>
+<p><img src="/2021/07/07/docker/1624252329785-1625636108747.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">FROM scratch
+ADD centos-7-x86_64-docker.tar.xz &#x2F;
+
+LABEL \
+    org.label-schema.schema-version&#x3D;&quot;1.0&quot; \
+    org.label-schema.name&#x3D;&quot;CentOS Base Image&quot; \
+    org.label-schema.vendor&#x3D;&quot;CentOS&quot; \
+    org.label-schema.license&#x3D;&quot;GPLv2&quot; \
+    org.label-schema.build-date&#x3D;&quot;20201113&quot; \
+    org.opencontainers.image.title&#x3D;&quot;CentOS Base Image&quot; \
+    org.opencontainers.image.vendor&#x3D;&quot;CentOS&quot; \
+    org.opencontainers.image.licenses&#x3D;&quot;GPL-2.0-only&quot; \
+    org.opencontainers.image.created&#x3D;&quot;2020-11-13 00:00:00+00:00&quot;
+
+CMD [&quot;&#x2F;bin&#x2F;bash&quot;]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>很多官方镜像都是基础包，很多功能没有，我们通常会自己搭建自己的镜像！</p>
+<p>官方既然可以制作镜像，那我们也可以！</p>
+<h4 id="DockerFile构建过程"><a href="#DockerFile构建过程" class="headerlink" title="DockerFile构建过程"></a>DockerFile构建过程</h4><p><strong>基础知识：</strong></p>
+<ol>
+<li><p>每个保留关键字（指令）都必须是大写字母</p>
+</li>
+<li><p>执行从上到下顺序执行</p>
+</li>
+<li><h1 id="表示注释"><a href="#表示注释" class="headerlink" title="表示注释"></a>表示注释</h1></li>
+<li><p>每一个指令都会创建提交一个新的镜像层，并提交！</p>
+</li>
+</ol>
+<p><img src="/2021/07/07/docker/1624252747833-1625636108747.png"></p>
+<p>dockerfile是面向开发的，我们以后要发布项目，做镜像，就需要编写dockerfile文件，这个文件十分简单！</p>
+<p>Docker镜像逐渐成为企业交付的标准，必须要掌握！</p>
+<blockquote>
+<p>步骤：开发，部署，运维</p>
+</blockquote>
+<p>DockerFile : 构建文件，定义了一切的步骤，源代码</p>
+<p>DockerImages ： 通过DokerFile构建生成的镜像，是最终发布和运行的产品</p>
+<p>Docker容器：容器就是镜像运行起来提供服务器</p>
+<h4 id="DockerFile的指令"><a href="#DockerFile的指令" class="headerlink" title="DockerFile的指令"></a>DockerFile的指令</h4><p>以前我们使用别人的，现在我们知道了这些指令之后，我们来练习自己写一个镜像！</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">FROM				# 基础镜像，一切从这里开始构建
+MAINTAINER	        # 镜像是谁写的， 姓名+邮箱
+RUN					# 镜像构建的时候需要运行的命令
+ADD					# 步骤，例如加一个tomcat镜像，这个tomcat压缩包！添加内容 添加同目录
+WORKDIR			    # 镜像的工作目录
+VOLUME			    # 挂载的目录
+EXPOSE			    # 保留端口配置
+CMD					# 指定这个容器启动的时候要运行的命令，只有最后一个会生效，可被替代。
+ENTRYPOINT	        # 指定这个容器启动的时候要运行的命令，可以追加命令
+ONBUILD			    # 当构建一个被继承 DockerFile 这个时候就会运行ONBUILD的指令，触发指令。
+COPY				# 类似ADD，将我们文件拷贝到镜像中
+ENV					# 构建的时候设置环境变量！
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1624268940938-1625636108747.png"></p>
+<h4 id="实战测试"><a href="#实战测试" class="headerlink" title="实战测试"></a>实战测试</h4><blockquote>
+<p>创建一个自己的centos</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 1.编写Dockerfile的文件
+FROM centos
+MAINTAINER dainel&lt;dlgnjupt@qq.com&gt;
+
+ENV MYPATH &#x2F;usr&#x2F;local
+WORKDIR $MYPATH
+
+RUN yum -y install vim
+RUN yum -y install net-tools
+
+EXPOSE 80
+
+CMD echo $MYPATH
+CMD echo &quot;-----end----&quot;
+CMD &#x2F;bin&#x2F;bash
+
+FROM centos
+MAINTAINER renyichao&lt;727958639@qq.com&gt;
+
+ENV MYPATH &#x2F;usr&#x2F;local
+WORKDIR $MYPATH
+
+RUN yum -y install vim
+RUN yum -y install net-tools
+
+
+EXPOSE 80
+ 
+CMD echo $MYPATH
+CMD echo &quot;-----end-----&quot;
+CMD &#x2F;bin&#x2F;bash
+# 2.通过这个文件构建镜像
+# 命令 docker build -f 文件路径 -t 镜像名:[tag] .
+docker build -f mydockerfile-centos -t mycentos:0.1 .
+
+Successfully built 4af56313b71a
+Successfully tagged mycentos:0.1
+
+# 3.测试运行
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>对比：之前原生的centos</p>
+<p><img src="/2021/07/07/docker/1624269646536-1625636108747.png"></p>
+<p>dockerfile:</p>
+<p><img src="/2021/07/07/docker/1624270294565-1625636108747.png"></p>
+<p>我们增加后的镜像：</p>
+<p><img src="/2021/07/07/docker/1624432286137-1625636108747.png"></p>
+<p>我们可以列出本地进行的变更历史</p>
+<p><img src="/2021/07/07/docker/1624436078976-1625636108747.png"></p>
+<p>我们平时拿到一个镜像，可以研究一下它是怎么做的</p>
+<blockquote>
+<p>CMD 和 ENTRYPOINT区别</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMD					# 指定这个容器启动的时候要运行的命令，只有最后一个会生效，可被替代。
+ENTRYPOINT			# 指定这个容器启动的时候要运行的命令，可以追加命令
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>测试cmd</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 编写dockerfile文件
+$ vim dockerfile-test-cmd
+FROM centos
+CMD [&quot;ls&quot;,&quot;-a&quot;]
+# 构建镜像
+$ docker build  -f dockerfile-test-cmd -t cmd-test:0.1 .
+# 运行镜像
+$ docker run cmd-test:0.1
+.
+..
+.dockerenv
+bin
+dev
+
+# 想追加一个命令  -l 成为ls -al
+$ docker run cmd-test:0.1 -l
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:349: starting container process caused &quot;exec: \&quot;-l\&quot;:
+ executable file not found in $PATH&quot;: unknown.
+ERRO[0000] error waiting for container: context canceled 
+# cmd的情况下 -l 替换了CMD[&quot;ls&quot;,&quot;-l&quot;]。 -l  不是命令所有报错
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>测试ENTRYPOINT</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 编写dockerfile文件
+$ vim dockerfile-test-entrypoint
+FROM centos
+ENTRYPOINT [&quot;ls&quot;,&quot;-a&quot;]
+$ docker run entrypoint-test:0.1
+.
+..
+.dockerenv
+bin
+dev
+etc
+home
+lib
+lib64
+lost+found ...
+# 我们的命令，是直接拼接在我们得ENTRYPOINT命令后面的
+$ docker run entrypoint-test:0.1 -l
+total 56
+drwxr-xr-x   1 root root 4096 May 16 06:32 .
+drwxr-xr-x   1 root root 4096 May 16 06:32 ..
+-rwxr-xr-x   1 root root    0 May 16 06:32 .dockerenv
+lrwxrwxrwx   1 root root    7 May 11  2019 bin -&gt; usr&#x2F;bin
+drwxr-xr-x   5 root root  340 May 16 06:32 dev
+drwxr-xr-x   1 root root 4096 May 16 06:32 etc
+drwxr-xr-x   2 root root 4096 May 11  2019 home
+lrwxrwxrwx   1 root root    7 May 11  2019 lib -&gt; usr&#x2F;lib
+lrwxrwxrwx   1 root root    9 May 11  2019 lib64 -&gt; usr&#x2F;lib64 ....
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Dockerfile中很多命令都十分的相似，我们需要了解它们的区别，我们最好的学习就是对比他们然后测试效果！</p>
+<h4 id="实战-Tomcat镜像"><a href="#实战-Tomcat镜像" class="headerlink" title="实战: Tomcat镜像"></a>实战: Tomcat镜像</h4><ol>
+<li><p>准备镜像文件 tomcat压缩包，jdk压缩包</p>
+<p><img src="/2021/07/07/docker/1624513530046-1625636108747.png"></p>
+</li>
+<li><p>编写dockerfile文件，官方命名<code>Dockerfile</code>，build会自动寻找这个文件，就不需要-f指定了！</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">FROM centos
+MAINTAINET renyichao&lt;727958639@qq.com&gt;
+
+COPY readme.txt &#x2F;urs&#x2F;local&#x2F;readme.tex
+
+ADD jdk-8u291-linux-x64.tar.gz &#x2F;usr&#x2F;local&#x2F;
+ADD apache-tomcat-9.0.46.tar.gz &#x2F;usr&#x2F;local&#x2F;
+
+RUN yum -y install vim
+
+ENV MYPATH &#x2F;usr&#x2F;local
+WORK $MYPATH
+
+
+ENV JAVA_HOME &#x2F;usr&#x2F;local&#x2F;jdk1.8.0_291
+ENV CLASSPATH $JAVA_HOME&#x2F;lib&#x2F;dt.jar:$JAVA_HOME&#x2F;lib&#x2F;tools.jar
+ENV CATALINA_HOME &#x2F;usr&#x2F;local&#x2F;apache-tomcat-9.0.46
+ENV CATALINA_BASH &#x2F;usr&#x2F;local&#x2F;apache-tomcat-9.0.46
+ENV PATH $PATH:$JAVA_HOME&#x2F;bin:$CATALINA_HOME&#x2F;lib:$CATALINA_HOME&#x2F;bin
+
+EXPOSE 8080
+
+CMD &#x2F;usr&#x2F;local&#x2F;apache-tomcat-9.0.46&#x2F;bin&#x2F;startup.sh &amp;&amp; tail -F &#x2F;usr&#x2F;local&#x2F;apache-tomcat-9.0.46&#x2F;bin&#x2F;logs&#x2F;catalina.out
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<p>带注释</p>
+<p><img src="/2021/07/07/docker/1624514785949-1625636108747.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">FROM centos #
+MAINTAINER cheng&lt;1204598429@qq.com&gt;
+COPY README &#x2F;usr&#x2F;local&#x2F;README #复制文件
+ADD jdk-8u231-linux-x64.tar.gz &#x2F;usr&#x2F;local&#x2F; #复制解压
+ADD apache-tomcat-9.0.35.tar.gz &#x2F;usr&#x2F;local&#x2F; #复制解压
+RUN yum -y install vim
+ENV MYPATH &#x2F;usr&#x2F;local #设置环境变量
+WORKDIR $MYPATH #设置工作目录
+ENV JAVA_HOME &#x2F;usr&#x2F;local&#x2F;jdk1.8.0_231 #设置环境变量
+ENV CATALINA_HOME &#x2F;usr&#x2F;local&#x2F;apache-tomcat-9.0.35 #设置环境变量
+ENV PATH $PATH:$JAVA_HOME&#x2F;bin:$CATALINA_HOME&#x2F;lib #设置环境变量 分隔符是：
+EXPOSE 8080 #设置暴露的端口
+CMD &#x2F;usr&#x2F;local&#x2F;apache-tomcat-9.0.35&#x2F;bin&#x2F;startup.sh &amp;&amp; tail -F &#x2F;usr&#x2F;local&#x2F;apache-tomcat-9.0.35&#x2F;logs&#x2F;catalina.out # 设置默认命令
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li><p>构建镜像</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 因为dockerfile命名使用默认命名 因此不用使用-f 指定文件
+ docker build -t diytomcat .
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1624515153280-1625636108747.png"></p>
+<p><img src="/2021/07/07/docker/1624515183035-1625636108747.png"></p>
+</li>
+<li><p>run镜像</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao renyichao2]# docker run -d -p 9090:8080 --name renyichaotomcat -v &#x2F;home&#x2F;renyichao2&#x2F;build&#x2F;tomcat&#x2F;test:&#x2F;usr&#x2F;local&#x2F;apache-tomcat-9.0.46&#x2F;webapps&#x2F;test -v &#x2F;home&#x2F;renyichao2&#x2F;build&#x2F;tomcat&#x2F;tomcatlogs&#x2F;:&#x2F;usr&#x2F;local&#x2F;apache-tomcat-9.0.46&#x2F;logs diytomcat
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1624515538482-1625636108747.png"></p>
+<p><img src="/2021/07/07/docker/1624515600332-1625636108747.png"></p>
+</li>
+<li><p>访问测试</p>
+<p>==内网访问==</p>
+<p><img src="/2021/07/07/docker/1624516108295-1625636108747.png"></p>
+<p>==外网可以访问==</p>
+<p><img src="/2021/07/07/docker/1624516302144-1625636108747.png"></p>
+</li>
+<li><p>发布项目（由于做了卷挂载，我们直接在本地编写项目就可以发布了！）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;
+ &lt;web-app xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot; xmlns&#x3D;&quot;http:&#x2F;&#x2F;java.sun.com&#x2F;xml&#x2F;ns&#x2F;javaee&quot; xmlns:web&#x3D;&quot;http:&#x2F;&#x2F;java.sun.com&#x2F;xml&#x2F;ns&#x2F;javaee&#x2F;web-app_2_5.xsd&quot; xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;java.sun.com&#x2F;xml&#x2F;ns&#x2F;javaee http:&#x2F;&#x2F;java.sun.com&#x2F;xml&#x2F;ns&#x2F;javaee&#x2F;web-app_2_5.xsd&quot; id&#x3D;&quot;WebApp_ID&quot; version&#x3D;&quot;2.5&quot;&gt;
+ 
+&lt;&#x2F;web-app&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-jsp" data-language="jsp"><code class="language-jsp">&lt;%@ page language&#x3D;&quot;java&quot; contentType&#x3D;&quot;text&#x2F;html; charset&#x3D;UTF-8&quot;
+    pageEncoding&#x3D;&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset&#x3D;&quot;utf-8&quot;&gt;
+&lt;title&gt;hello renyichao&lt;&#x2F;title&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+Hello World!&lt;br&#x2F;&gt;
+&lt;%
+System.out.println(&quot;可以显示了，呵呵&quot;);
+%&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1624517844135-1625636108747.png"></p>
+<p><strong>发现：项目部署成功，可以直接访问！</strong></p>
+<p><img src="/2021/07/07/docker/1624518253364-1625636108747.png"></p>
+<blockquote>
+<p>理解：在tomcat的webapps文件夹下新建文件夹test ,在test文件夹下新建WEB-INF文件夹，将xml文件放在 WEB-INF 里面，将页面放在test目录下，就可以通过端口/test进行访问了</p>
+</blockquote>
+</li>
+</ol>
+<p> 我们以后开发的步骤：需要掌握Dockerfile的编写！我们之后的一切都是使用docker镜像来发布运行！</p>
+<h4 id="发布自己的镜像"><a href="#发布自己的镜像" class="headerlink" title="发布自己的镜像"></a>发布自己的镜像</h4><blockquote>
+<p>Dockerhub</p>
+</blockquote>
+<p>1、地址 <a target="_blank" rel="noopener" href="https://hub.docker.com/">https://hub.docker.com/</a></p>
+<p><img src="/2021/07/07/docker/1624518970152-1625636108747.png"></p>
+<p>2、确定这个账号可以登录</p>
+<p>3、登录</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker login --help
+Usage:  docker login [OPTIONS] [SERVER]
+
+Log in to a Docker registry.
+If no server is specified, the default is defined by the daemon.
+
+Options:
+  -p, --password string   Password
+      --password-stdin    Take the password from stdin
+  -u, --username string   Username
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>docker login -u  账号</p>
+</blockquote>
+<p><img src="/2021/07/07/docker/1624519103076-1625636108747.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao WEB-INF]# docker login -u 727958639
+Password: 
+WARNING! Your password will be stored unencrypted in &#x2F;root&#x2F;.docker&#x2F;config.json.
+Configure a credential helper to remove this warning. See
+https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;reference&#x2F;commandline&#x2F;login&#x2F;#credentials-store
+
+Login Succeeded
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>4、提交 push镜像</p>
+<p><img src="/2021/07/07/docker/1624520119534-1625636108748.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao WEB-INF]# docker push diytomcat
+Using default tag: latest
+The push refers to repository [docker.io&#x2F;library&#x2F;diytomcat]
+41f1fac48deb: Preparing 
+d3fb3fc96a51: Preparing 
+e646a2b2216d: Preparing 
+741c936a9365: Preparing 
+2653d992f4ef: Preparing 
+denied: requested access to the resource is denied #拒绝
+# 会发现push不上去，因为如果没有前缀的话默认是push到 官方的library
+# 解决方法
+# 第一种 build的时候添加你的dockerhub用户名，然后在push就可以放到自己的仓库了
+$ docker build -t chengcoder&#x2F;mytomcat:0.1 .
+# 第二种 使用docker tag #然后再次push
+$ docker tag 容器id chengcoder&#x2F;mytomcat:1.0 #然后再次push
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>阿里云镜像服务器上</p>
+</blockquote>
+<ol>
+<li>看官网 很详细<a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/repository/%E7%99%BB%E5%BD%95%E9%98%BF%E9%87%8C%E4%BA%91">https://cr.console.aliyun.com/repository/登录阿里云</a></li>
+<li>找到容器镜像服务</li>
+<li>创建命名空间</li>
+<li>创建容器镜像</li>
+<li>浏览阿里云</li>
+</ol>
+<h4 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h4><p><img src="/2021/07/07/docker/1624521753079-1625636108748.png"></p>
+<p><img src="/2021/07/07/docker/1624522101463-1625636108748.png"></p>
+<h3 id="Docker网络"><a href="#Docker网络" class="headerlink" title="Docker网络"></a>Docker网络</h3><h4 id="理解Docker0"><a href="#理解Docker0" class="headerlink" title="理解Docker0"></a>理解Docker0</h4><p>清空所有环境</p>
+<blockquote>
+<p>测试</p>
+</blockquote>
+<p><img src="/2021/07/07/docker/1625317112344-1625636108748.png"></p>
+<p>三个网络</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 问题： docker 是如何处理容器网络访问的？
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1625378829881-1625636108748.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao ~]# docker run -d -P --name tomcat01 tomcat
+
+# 查看容器的内部网络地址 ip addr , 发现容器启动的时候会得到一个 eth0@if83 ip地址，docker分配的
+
+[root@renyichao ~]# docker exec -it tomcat01 ip addr
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link&#x2F;loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1&#x2F;8 scope host lo
+       valid_lft forever preferred_lft forever
+82: eth0@if83: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default 
+    link&#x2F;ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 172.17.0.2&#x2F;16 brd 172.17.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+
+
+# 思考：linux能不能 ping 通容器内部
+[root@renyichao ~]# ping 172.17.0.2
+PING 172.17.0.2 (172.17.0.2) 56(84) bytes of data.
+64 bytes from 172.17.0.2: icmp_seq&#x3D;1 ttl&#x3D;64 time&#x3D;0.120 ms
+64 bytes from 172.17.0.2: icmp_seq&#x3D;2 ttl&#x3D;64 time&#x3D;0.069 ms
+64 bytes from 172.17.0.2: icmp_seq&#x3D;3 ttl&#x3D;64 time&#x3D;0.081 ms
+
+# linux可以 ping 通 docker 容器内部
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1625379176088-1625636108748.png"></p>
+<blockquote>
+<p>原理</p>
+</blockquote>
+<ol>
+<li><p>我们每启动一个docker容器，docker就会给docker容器分配一个ip，我们只要按照了docker，就会有一个网卡docker0桥接模式，使用的技术是veth-pair技术！</p>
+<p>再次测试ip add</p>
+</li>
+</ol>
+<p><img src="/2021/07/07/docker/1625379533385-1625636108748.png"></p>
+<ol>
+<li>再启动一个容器</li>
+</ol>
+<p><img src="/2021/07/07/docker/1625379705334-1625636108748.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 我们发现这个容器带来网卡，都是一对对的
+# veth-pair 就是一对的虚拟设备接口，他们都是成对出现的，一端连着协议，一端彼此相连
+# 正因为有这个特性 veth-pair 充当一个桥梁，连接各种虚拟网络设备的
+# OpenStac,Docker容器之间的连接，OVS的连接，都是使用evth-pair技术
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol>
+<li>我们来测试一下 tomcat1 和 tomcat2 是否可以ping 通</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao ~]# docker exec -it tomcat02 ping 172.17.0.3
+PING 172.17.0.3 (172.17.0.3) 56(84) bytes of data.
+64 bytes from 172.17.0.3: icmp_seq&#x3D;1 ttl&#x3D;64 time&#x3D;0.046 ms
+64 bytes from 172.17.0.3: icmp_seq&#x3D;2 ttl&#x3D;64 time&#x3D;0.047 ms
+
+
+# 结论：容器和容器之间是可以ping通的
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1625379963830-1625636108748.png"></p>
+<p><strong>结论 :</strong></p>
+<p><img src="/2021/07/07/docker/1625380748436-1625636108748.png"></p>
+<ol>
+<li>tomcat01 和 tomcat02 是公用一个路由器，docker0。</li>
+<li>所有的容器不指定网络的情况下，都是通过docker0路由的，docker会给我们的容器分配一个默认的可用IP</li>
+</ol>
+<blockquote>
+<p>小结</p>
+</blockquote>
+<p>Docker使用的是Linux的桥接，宿主机是一个Docker容器的网桥 docker0</p>
+<p><img src="/2021/07/07/docker/1625381144476-1625636108748.png"></p>
+<p>Docker中所有网络接口都是虚拟的，虚拟的转发效率高（内网传递文件）。</p>
+<p>只要容器删除，对应的网桥一对就没了！</p>
+<p><img src="/2021/07/07/docker/1625381323295-1625636108748.png"></p>
+<p><img src="/2021/07/07/docker/1625382321186-1625636108748.png"></p>
+<h4 id="–link"><a href="#–link" class="headerlink" title="–link"></a>–link</h4><blockquote>
+<p>思考一个场景：我们编写了一个微服务，database url=ip: 项目不重启，数据ip换了，我们希望可以处理这个问题，可以通过名字来进行访问容器？</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao ~]# docker exec -it tomcat02 ping tomcat01
+ping: tomcat01: Name or service not known
+# ping不通
+
+# 如何解决呢？
+# 通过 --link 就可以解决了
+[root@renyichao ~]# docker run -d -P --name tomcat03 --link tomcat02 tomcat
+88031303efd572ea15551036c0350aafc3f60644fc8df8fff2fbe81fef8e5ed5
+[root@renyichao ~]# docker exec -it tomcat03 ping tomcat02 
+PING tomcat02 (172.17.0.3) 56(84) bytes of data.
+64 bytes from tomcat02 (172.17.0.3): icmp_seq&#x3D;1 ttl&#x3D;64 time&#x3D;0.137 ms
+64 bytes from tomcat02 (172.17.0.3): icmp_seq&#x3D;2 ttl&#x3D;64 time&#x3D;0.093 ms
+64 bytes from tomcat02 (172.17.0.3): icmp_seq&#x3D;3 ttl&#x3D;64 time&#x3D;0.090 ms
+64 bytes from tomcat02 (172.17.0.3): icmp_seq&#x3D;4 ttl&#x3D;64 time&#x3D;0.093 ms
+
+# 用tomcat02 ping tomcat03 ping不通
+[root@renyichao ~]# docker exec -it tomcat02 ping tomcat03 
+ping: tomcat03: Name or service not known
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>查看tomcat03就是在在本地配置了tomcat02的配置</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 查看hosts 配置，在这里原理发现
+[root@renyichao ~]#  
+127.0.0.1       localhost
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+172.17.0.3      tomcat02 c2e5a8a29151
+172.17.0.4      50b163f99e32
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>–link 本质就是在hosts配置中添加映射</p>
+<p><strong>现在使用Docker已经不建议使用–link了！</strong></p>
+<p>自定义网络，不适用docker0！</p>
+<p>docker0问题：不支持容器名连接访问！</p>
+<h4 id="自定义网络"><a href="#自定义网络" class="headerlink" title="自定义网络"></a>自定义网络</h4><blockquote>
+<p>查看所有的docker网络</p>
+</blockquote>
+<p><img src="/2021/07/07/docker/1625382998142-1625636108748.png"></p>
+<p><strong>网络模式</strong></p>
+<p>bridge ：桥接 docker（默认，自己创建也是用bridge模式）</p>
+<p>none ：不配置网络，一般不用</p>
+<p>host ：和宿主机共享网络</p>
+<p>container ：容器网络连通（用得少！局限很大）</p>
+<p><strong>测试</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao ~]# docker rm -f $(docker ps -aq)
+88031303efd5
+0a2fa4f8a6d8
+be6a3e5f5698
+
+# 我们直接启动的命令 ，默认有--net bridge，就是我们的docker0
+docker run -d -P --name tomcat01 tomcat
+docker run -d -P --name tomcat01 --net bridge tomcat
+
+# docker0特点：默认，域名不能访问，--link可以打通连接
+
+# 我们可以自定义一个网络
+# --driver bridge 
+# --subnet 192.168.0.0&#x2F;16    子网从192.168.0.2到192.168.255.255
+# --gateway 192.168.0.1      网关
+[root@renyichao home]# docker network create --driver bridge --subnet 192.168.0.0&#x2F;16 --gateway 192.168.0.1 mynet
+4d8c7c6a65d02988ac983862010cb614b262b6e69c8a67fe8b1b243b5a7d84a1
+[root@renyichao home]# docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+ade9e1c4d834   bridge    bridge    local
+59a870ff79ee   host      host      local
+4d8c7c6a65d0   mynet     bridge    local
+7e75e12bf7f9   none      null      local
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>自己的网络就创建好了，以后服务就可以放在自己的网络</p>
+</blockquote>
+<p><img src="/2021/07/07/docker/1625399285974-1625636108748.png"></p>
+<p><img src="/2021/07/07/docker/1625399460882-1625636108748.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao home]# docker run -d -P --name tomcat-net-01 --net mynet tomcat
+2a5809a8027ae70f3198ee49109979311793a4b90da4971b452566b8fc77f660
+[root@renyichao home]# docker run -d -P --name tomcat-net-02 --net mynet tomcat
+7fbf9c6f6ec74185725ddc46350350994cd0f70805736b556ca730e62ad0da2f
+[root@renyichao home]# docker network inspect mynet
+[
+    &#123;
+        &quot;Name&quot;: &quot;mynet&quot;,
+        &quot;Id&quot;: &quot;4d8c7c6a65d02988ac983862010cb614b262b6e69c8a67fe8b1b243b5a7d84a1&quot;,
+        &quot;Created&quot;: &quot;2021-07-04T19:46:47.801996952+08:00&quot;,
+        &quot;Scope&quot;: &quot;local&quot;,
+        &quot;Driver&quot;: &quot;bridge&quot;,
+        &quot;EnableIPv6&quot;: false,
+        &quot;IPAM&quot;: &#123;
+            &quot;Driver&quot;: &quot;default&quot;,
+            &quot;Options&quot;: &#123;&#125;,
+            &quot;Config&quot;: [
+                &#123;
+                    &quot;Subnet&quot;: &quot;192.168.0.0&#x2F;16&quot;,
+                    &quot;Gateway&quot;: &quot;192.168.0.1&quot;
+                &#125;
+            ]
+        &#125;,
+        &quot;Internal&quot;: false,
+        &quot;Attachable&quot;: false,
+        &quot;Ingress&quot;: false,
+        &quot;ConfigFrom&quot;: &#123;
+            &quot;Network&quot;: &quot;&quot;
+        &#125;,
+        &quot;ConfigOnly&quot;: false,
+        &quot;Containers&quot;: &#123;
+            &quot;2a5809a8027ae70f3198ee49109979311793a4b90da4971b452566b8fc77f660&quot;: &#123;
+                &quot;Name&quot;: &quot;tomcat-net-01&quot;,
+                &quot;EndpointID&quot;: &quot;cc64cfffb56010a03c036e7f6c00a4bd031739fcb5baf647d7ef836dfbafc394&quot;,
+                &quot;MacAddress&quot;: &quot;02:42:c0:a8:00:02&quot;,
+                &quot;IPv4Address&quot;: &quot;192.168.0.2&#x2F;16&quot;,
+                &quot;IPv6Address&quot;: &quot;&quot;
+            &#125;,
+            &quot;7fbf9c6f6ec74185725ddc46350350994cd0f70805736b556ca730e62ad0da2f&quot;: &#123;
+                &quot;Name&quot;: &quot;tomcat-net-02&quot;,
+                &quot;EndpointID&quot;: &quot;5000a30b8d2e1e1f8e4b7b4a6d9ac50bc62a7b1e5f568f90863be39532ad51d7&quot;,
+                &quot;MacAddress&quot;: &quot;02:42:c0:a8:00:03&quot;,
+                &quot;IPv4Address&quot;: &quot;192.168.0.3&#x2F;16&quot;,
+                &quot;IPv6Address&quot;: &quot;&quot;
+            &#125;
+        &#125;,
+        &quot;Options&quot;: &#123;&#125;,
+        &quot;Labels&quot;: &#123;&#125;
+    &#125;
+]
+
+
+# 再次测试ping连接 ， 现在不适用 --link 也可以ping名字了
+[root@renyichao home]# docker exec -it tomcat-net-01 ping tomcat-net-02
+PING tomcat-net-02 (192.168.0.3) 56(84) bytes of data.
+64 bytes from tomcat-net-02.mynet (192.168.0.3): icmp_seq&#x3D;1 ttl&#x3D;64 time&#x3D;0.147 ms
+64 bytes from tomcat-net-02.mynet (192.168.0.3): icmp_seq&#x3D;2 ttl&#x3D;64 time&#x3D;0.109 ms
+64 bytes from tomcat-net-02.mynet (192.168.0.3): icmp_seq&#x3D;3 ttl&#x3D;64 time&#x3D;0.103 ms
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1625399774083-1625636108748.png"></p>
+<p>我们自定义的网络docker当我们维护好了对应的关系，推荐我们平时这样使用网络！</p>
+<p>好处：</p>
+<p>redis - 不同的集群使用不同的网络，保证集群是健康和安全的</p>
+<p>mysql - 不同的集群使用不同的网络，保证集群是健康安全的</p>
+<p><img src="/2021/07/07/docker/1625404045908-1625636108748.png"></p>
+<h4 id="网络连通"><a href="#网络连通" class="headerlink" title="网络连通"></a>网络连通</h4><p><img src="/2021/07/07/docker/1625406296553-1625636108748.png"></p>
+<p><img src="/2021/07/07/docker/1625406370698-1625636108748.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 测试打通 tomcat - mynet
+[root@renyichao]# docker network connect mynet tomcat01
+
+# 连通之后就是将 tomcat01 放到了 mynet 网络下
+
+# 一个容器两个ip地址
+# 阿里云服务：公网ip  私网ip
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1625452518762-1625636108748.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 01连通ok
+[root@renyichao]# docker exec -it tomcat01 ping tomcat-net-01
+PING tomcat-net-01 (192.168.0.2) 56(84) bytes of data.
+64 bytes from tomcat-net-01.mynet (192.168.0.2): icmp_seq&#x3D;1 ttl&#x3D;64 time&#x3D;0.098 ms
+64 bytes from tomcat-net-01.mynet (192.168.0.2): icmp_seq&#x3D;2 ttl&#x3D;64 time&#x3D;0.091 ms
+
+# 02依旧是打不通的
+[root@renyichao]# docker exec -it tomcat02 ping tomcat-net-01
+Error: No such container: tomcat02
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>结论：假设要跨网络操作别人，就需要使用docker network connect 连通！</p>
+<h4 id="实战：部署Redis集群"><a href="#实战：部署Redis集群" class="headerlink" title="实战：部署Redis集群"></a>实战：部署Redis集群</h4><p><img src="/2021/07/07/docker/1625452973084-1625636108748.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 创建网卡
+docker network create redis --subnet 172.38.0.0&#x2F;16
+# 通过脚本创建六个redis配置
+for port in $(seq 1 6);\
+do \
+mkdir -p &#x2F;mydata&#x2F;redis&#x2F;node-$&#123;port&#125;&#x2F;conf
+touch &#x2F;mydata&#x2F;redis&#x2F;node-$&#123;port&#125;&#x2F;conf&#x2F;redis.conf
+cat &lt;&lt; EOF &gt;&gt; &#x2F;mydata&#x2F;redis&#x2F;node-$&#123;port&#125;&#x2F;conf&#x2F;redis.conf
+port 6379
+bind 0.0.0.0
+cluster-enabled yes
+cluster-config-file nodes.conf
+cluster-node-timeout 5000
+cluster-announce-ip 172.38.0.1$&#123;port&#125;
+cluster-announce-port 6379
+cluster-announce-bus-port 16379
+appendonly yes
+EOF
+done
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1625453404414-1625636108748.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#运行六个redis
+docker run -p 6371:6379 -p 16671:16379 --name redis-1 \
+-v &#x2F;mydata&#x2F;redis&#x2F;node-1&#x2F;data:&#x2F;data \
+-v &#x2F;mydata&#x2F;redis&#x2F;node-1&#x2F;conf&#x2F;redis.conf:&#x2F;etc&#x2F;redis&#x2F;redis.conf \
+-d --net redis --ip 172.38.0.11 redis:5.0.9-alpine3.11 redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf
+
+docker run -p 6372:6379 -p 16672:16379 --name redis-2 \
+-v &#x2F;mydata&#x2F;redis&#x2F;node-2&#x2F;data:&#x2F;data \
+-v &#x2F;mydata&#x2F;redis&#x2F;node-2&#x2F;conf&#x2F;redis.conf:&#x2F;etc&#x2F;redis&#x2F;redis.conf \
+-d --net redis --ip 172.38.0.12 redis:5.0.9-alpine3.11 redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf
+
+...
+
+# 通过脚本运行六个redis
+for port in $(seq 1 6);\
+docker run -p 637$&#123;port&#125;:6379 -p 1667$&#123;port&#125;:16379 --name redis-$&#123;port&#125; \
+-v &#x2F;mydata&#x2F;redis&#x2F;node-$&#123;port&#125;&#x2F;data:&#x2F;data \
+-v &#x2F;mydata&#x2F;redis&#x2F;node-$&#123;port&#125;&#x2F;conf&#x2F;redis.conf:&#x2F;etc&#x2F;redis&#x2F;redis.conf \
+-d --net redis --ip 172.38.0.1$&#123;port&#125; redis:5.0.9-alpine3.11 redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf
+
+docker exec -it redis-1 &#x2F;bin&#x2F;sh #redis默认没有bash
+&#x2F;data # redis-cli --cluster create 172.38.0.11:6379 172.38.0.12:6379 172.38.0.13:6379 172.38.0.14:6379 172.38.0.15:6379 172.38.0.16:6379  --cluster-replicas 1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1625454030942-1625636108748.png"></p>
+<p>docker搭建redis集群完成！</p>
+<p><img src="/2021/07/07/docker/1625454136861-1625636108748.png"></p>
+<p><img src="/2021/07/07/docker/1625454294681-1625636108748.png"></p>
+<p>我们使用了Docker之后，所有的技术都会变得简单起来！</p>
+<h3 id="SpringBoot微服务打包Docker镜像"><a href="#SpringBoot微服务打包Docker镜像" class="headerlink" title="SpringBoot微服务打包Docker镜像"></a>SpringBoot微服务打包Docker镜像</h3><ol>
+<li><p>架构springboot项目</p>
+</li>
+<li><p>打包应用</p>
+<p><img src="/2021/07/07/docker/1625461206388-1625636108748.png"></p>
+</li>
+<li><p>编写dockerfile</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">FROM java:8
+
+COPY *.jar &#x2F;app.jar
+
+CMD [&quot;--server.port&#x3D;8080&quot;]
+
+EXPOSE 8080
+
+ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;&#x2F;app.jar&quot;]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/docker/1625461586297-1625636108748.png"></p>
+<blockquote>
+<p>上传文件</p>
+</blockquote>
+<p><img src="/2021/07/07/docker/1625462033403-1625636108748.png"></p>
+</li>
+<li><p>构建镜像</p>
+<p><img src="/2021/07/07/docker/1625462118930-1625636108748.png"></p>
+</li>
+<li><p>发布运行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@renyichao idea]# docker run -d -P --name renyichao-spring renyichao666
+28962b73b950490e449448ea1393be4664351a346cb377d262c679b7783d8057
+[root@renyichao idea]# docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+28962b73b950   renyichao666   &quot;java -jar &#x2F;app.jar …&quot;   57 seconds ago   Up 56 seconds   0.0.0.0:49163-&gt;8080&#x2F;tcp, :::49163-&gt;8080&#x2F;tcp   renyichao-spring
+[root@renyichao idea]# curl localhost:49163
+&#123;&quot;timestamp&quot;:&quot;2021-07-05T05:18:12.046+00:00&quot;,&quot;status&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;path&quot;:&quot;&#x2F;&quot;&#125;[root@renyichao idea]# 
+[root@renyichao idea]# curl localhost:49163&#x2F;hello
+hello ryc[root@renyichao idea]# 
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><img src="/2021/07/07/docker/1625462342955-1625636108748.png"></p>
+</li>
+</ol>
+<p>以后我们使用了Docker之后，给别人交付的就是一个镜像即可！</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">任宜超</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2021/07/07/docker/">http://example.com/2021/07/07/docker/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">任宜超</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/docker%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">docker笔记</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/07/07/redis/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="redis">
+                        
+                        <span class="card-title">redis</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%B8%8E%E5%91%BD%E4%BB%A4%E6%9C%89%E5%85%B3%E7%9A%84%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    与命令有关的笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/redis%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">redis笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07/07/docker/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="docker">
+                        
+                        <span class="card-title">docker</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%B8%8E%E5%91%BD%E4%BB%A4%E6%9C%89%E5%85%B3%E7%9A%84%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    与命令有关的笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/docker%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">docker笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">任宜超</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://gitee.com/ren-yichao" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:727958639@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=727958639" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 727958639" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/u/6357151006/home" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/u/6357151006/home" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

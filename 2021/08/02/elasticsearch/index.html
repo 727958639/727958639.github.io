@@ -1,0 +1,3163 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="ElasticSearch, 烧了回忆取暖">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>ElasticSearch | 烧了回忆取暖</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">烧了回忆取暖</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">烧了回忆取暖</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ElasticSearch</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ElasticSearch%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">ElasticSearch笔记</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%90%9C%E7%B4%A2/" class="post-category">
+                                搜索
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-08-02
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    12.9k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <hr>
+<h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><p>在学习ElasticSearch之前，先简单了解一下<strong>Lucene</strong>：</p>
+<ul>
+<li><strong>Doug Cutting开发</strong></li>
+<li>是<strong>apache软件基金会</strong>4 jakarta项目组的一个子项目</li>
+<li>是一个<strong>开放源代码</strong>的<strong>全文检索引擎工具包</strong></li>
+<li><strong>不是一个完整的全文检索引擎，而是一个全文检索引擎的架构</strong>，提供了完整的查询引擎和索引引擎，部分<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/11046544">文本分析</a>引擎（英文与德文两种西方语言）</li>
+<li>当前以及最近几年最受欢迎的<strong>免费Java信息检索程序库</strong>。</li>
+</ul>
+<p><strong>Lucene和ElasticSearch的关系：</strong></p>
+<ul>
+<li>ElasticSearch是基于Lucene 做了一下封装和增强</li>
+</ul>
+<h1 id="一、ElasticSearch概述"><a href="#一、ElasticSearch概述" class="headerlink" title="一、ElasticSearch概述"></a>一、ElasticSearch概述</h1><blockquote>
+<p>官网：<a target="_blank" rel="noopener" href="https://www.elastic.co/cn/downloads/elasticsearch">https://www.elastic.co/cn/downloads/elasticsearch</a></p>
+</blockquote>
+<p><strong>Elaticsearch</strong>，简称为es，es是一个开源的<strong>高扩展</strong>的<strong>分布式全文检索引擎</strong>，它可以近乎<strong>实时的存储</strong>、<strong>检索数据;<strong>本身扩展性很好，可以扩展到上百台服务器，处理PB级别(大数据时代）的数据。es也使用java开发并使用Lucene作为其核心来实现所有索引和搜索的功能，但是它的</strong>目的</strong>是 通过简单的<strong>RESTful API</strong>来隐藏Lucene的复杂性，从而让全文搜索变得简单 。</p>
+<p>据国际权威的数据库产品评测机构DB Engines的统计，在2016年1月，ElasticSearch已超过Solr等，成为<strong>排名第一的搜索引擎类应用</strong>。</p>
+<blockquote>
+<h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3></blockquote>
+<p>多年前，一个叫做Shay Banon的刚结婚不久的失业开发者，由于妻子要去伦敦学习厨师，他便跟着也去了。在他找工作的过程中，为了给妻子构建一个食谱的搜索引擎，他开始构建一个早期版本的Lucene。</p>
+<p>直接基于Lucene工作会比较困难，所以Shay开始抽象Lucene代码以便lava程序员可以在应用中添加搜索功能。他发布了他的第一个开源项目，叫做“Compass”。</p>
+<p>后来Shay找到一份工作，这份工作处在高性能和内存数据网格的分布式环境中，因此高性能的、实时的、分布式的搜索引擎也是理所当然需要的。然后他决定重写Compass库使其成为一个独立的服务叫做Elasticsearch。</p>
+<p>第一个公开版本出现在2010年2月，在那之后Elasticsearch已经成为Github上最受欢迎的项目之一，代码贡献者超过300人。一家主营Elasticsearch的公司就此成立，他们一边提供商业支持一边开发新功能，不过Elasticsearch将永远开源且对所有人可用。</p>
+<p>Shay的妻子依旧等待着她的食谱搜索…..</p>
+<p><strong>谁在使用：</strong></p>
+<p>1、维基百科,类似百度百科，全文检索,高亮,搜索推荐/2<br>2、The Guardian (国外新闻网站) ,类似搜狐新闻,用户行为日志(点击,浏览,收藏,评论) +社交网络数据(对某某新闻的相关看法) ,数据分析,给到每篇新闻文章的作者,让他知道他的文章的公众反馈(好,坏,热门，垃圾,鄙视，崇拜)<br>3、Stack Overflow (国外的程序异常讨论论坛) , IT问题,程序的报错,提交上去,有人会跟你讨论和回答,全文检索,搜索相关问题和答案,程序报错了,就会将报错信息粘贴到里面去,搜索有没有对应的答案<br>4、GitHub (开源代码管理),搜索 上千亿行代码<br>5、电商网站,检索商品<br>6、日志数据分析, logstash采集日志, ES进行复杂的数据分析, <strong>ELK技术, elasticsearch+logstash+kibana</strong><br>7、商品价格监控网站,用户设定某商品的价格阈值,当低于该阈值的时候,发送通知消息给用户,比如说订阅牙膏的监控,如果高露洁牙膏的家庭套装低于50块钱,就通知我,我就去买<br>8、BI系统,商业智能, Business Intelligence。比如说有个大型商场集团，BI ,分析一下某某区域最近3年的用户消费 金额的趋势以及用户群体的组成构成,产出相关的数张报表, **区,最近3年,每年消费金额呈现100%的增长,而且用户群体85%是高级白领，开-个新商场。ES执行数据分析和挖掘, Kibana进行数据可视化<br>9、国内:站内搜索(电商,招聘,门户,等等),IT系统搜索(OA,CRM,ERP,等等),数据分析(ES热门<br>的一一个使用场景)</p>
+<h2 id="ES和Solr"><a href="#ES和Solr" class="headerlink" title="ES和Solr"></a>ES和Solr</h2><h3 id="ElasticSearch简介"><a href="#ElasticSearch简介" class="headerlink" title="ElasticSearch简介"></a>ElasticSearch简介</h3><ul>
+<li>Elasticsearch是一个<strong>实时分布式搜索和分析引擎</strong>。 它让你以前所未有的速度处理大数据成为可能。</li>
+<li>它用于 <strong>全文搜索、结构化搜索、分析</strong> 以及将这三者混合使用:</li>
+<li><code>维基百科</code>使用Elasticsearch提供<strong>全文搜索</strong>并<strong>高亮关键字</strong>,以及输入<strong>实时搜索</strong>(search-asyou-type)和<strong>搜索纠错</strong>(did-you-mean)等搜索建议功能。</li>
+<li><code>英国卫报</code>使用Elasticsearch结合用户日志和社交网络数据提供给他们的编辑以实时的反馈,以便及时了解公众对新发表的文章的回应。</li>
+<li><code>StackOverflow</code>结合全文搜索与地理位置查询,以及more-like-this功能来找到相关的问题和答案。</li>
+<li><code>Github</code>使用Elasticsearch检索1300亿行的代码。</li>
+<li>但是Elasticsearch不仅用于大型企业，它还让像<code>DataDog</code>以及<code>Klout</code>这样的创业公司将最初的想法变成可扩展的解决方案。</li>
+<li>Elasticsearch可以在你的笔记本上运行,也可以在数以百计的服务器上处理PB级别的数据。</li>
+<li>Elasticsearch是一个基于Apache Lucene(TM)的开源搜索引擎。无论在开源还是专有领域, Lucene可被认为是迄今为止最先进、性能最好的、功能最全的搜索引擎库。<ul>
+<li>但是, <strong>Lucene只是一个库</strong>。 想要使用它,你必须使用Java来作为开发语言并将其直接集成到你的应用中,更糟糕的是, Lucene非常复杂,你需要深入了解检索的相关知识来理解它是如何工作的。</li>
+</ul>
+</li>
+<li>Elasticsearch也使用Java开发并使用Lucene作为其核心来实现所有索引和搜索的功能,但是它的<strong>目的</strong>是<mark>通过简单的<strong>RESTful API</strong>来隐藏Lucene的复杂性,从而让全文搜索变得简单。</mark></li>
+</ul>
+<h3 id="Solr简介"><a href="#Solr简介" class="headerlink" title="Solr简介"></a>Solr简介</h3><ul>
+<li>Solr是Apache下的一个顶级开源项目,采用Java开发,它是<strong>基于Lucene的全文搜索服务器</strong>。Solr提供了比Lucene更为<strong>丰富的查询语言</strong>,同时实现了<strong>可配置</strong>、<strong>可扩展</strong>，并<strong>对索引、搜索性能进行了优化</strong></li>
+<li>Solr可以<strong>独立运行</strong>,运行在letty. Tomcat等这些Selrvlet容器中 , Solr 索引的实现方法很简单,<mark>用POST方法向Solr服务器发送一个描述Field及其内容的XML文档, Solr根据xml文档<strong>添加、删除、更新</strong>索引</mark>。Solr 搜索只需要发送HTTP GET请求,然后对Solr返回xml、json等格式的查询结果进行解析,组织页面布局。</li>
+<li>Solr不提供构建UI的功能, <strong>Solr提供了一个管理界面,通过管理界面可以查询Solr的配置和运行情况。</strong></li>
+<li>Solr是基于lucene开发企业级搜索服务器,实际上就是封装了lucene.</li>
+<li>Solr是一个独立的企业级搜索应用服务器,它<strong>对外提供类似于Web-service的API接口</strong>。用户可以通过http请求,向搜索引擎服务器提交-定格式的文件,生成索引;也可以通过提出查找请求,并得到返回结果。</li>
+</ul>
+<h3 id="ElasticSearch与Solr比较"><a href="#ElasticSearch与Solr比较" class="headerlink" title="ElasticSearch与Solr比较"></a>ElasticSearch与Solr比较</h3><ol>
+<li><code>当单纯的对已有数据进行搜索时，Solr更快</code></li>
+</ol>
+<p><img src="/2021/08/02/elasticsearch/2aa8e3beb5871b69bacfbb8ea476024b-1626936023794.png"></p>
+<ol>
+<li><code>当实时建立索引时，Solr会产生io阻塞，查询性能较差，ElasticSearch具有明显的优势</code></li>
+</ol>
+<p><img src="/2021/08/02/elasticsearch/553df4df5803d0d748851ead4bcd2df7-1626936023793.png"></p>
+<ol>
+<li><code>随着数据量的增加，Solr的搜索效率会变得更低，而ElasticSearch却没有明显的变化</code></li>
+</ol>
+<p><img src="/2021/08/02/elasticsearch/8a363b4dca2f0e878634f3e95a345c1f-1626936023820.png"> </p>
+<ol>
+<li><code>转变我们的搜索基础设施后从Solr ElasticSearch，我们看见一个即时~ 50x提高搜索性能！</code></li>
+</ol>
+<p><img src="/2021/08/02/elasticsearch/7e3bdc49ad0de72a4669da1e2e5b91b1-1626936023799.png"></p>
+<p>总结</p>
+<p>1、<strong>es</strong>基本是<strong>开箱即用</strong>(解压就可以用!) ,非常简单。Solr安装略微复杂一丢丢!<br>2、<strong>Solr 利用Zookeeper进行分布式管理</strong>,而<strong>E*<em>lasticsearch 自身带有分布式协调管理功能*</em> 。</strong><br>3、Solr 支持更多格式的数据,比如JSON、XML、 CSV ,而<strong>Elasticsearch仅支持json文件格式</strong>。<br>4、Solr 官方提供的功能更多,而Elasticsearch本身更注重于核心功能，高级功能多有第三方插件提供，例如图形化界面需要kibana友好支撑<br>5、 <strong>Solr 查询快,但更新索引时慢(即插入删除慢)</strong> ，用于电商等查询多的应用;</p>
+<ul>
+<li><strong>ES建立索引快(即查询慢)</strong> ，即<strong>实时性查询快</strong>，用于facebook新浪等搜索。</li>
+<li>Solr是传统搜索应用的有力解决方案，但Elasticsearch更适用于新兴的实时搜索应用。</li>
+</ul>
+<p>6、Solr比较成熟，有一个更大，更成熟的用户、开发和贡献者社区，而Elasticsearch相对开发维护者较少,更新太快,学习使用成本较高。</p>
+<h1 id="二、ElasticSearch安装"><a href="#二、ElasticSearch安装" class="headerlink" title="二、ElasticSearch安装"></a>二、ElasticSearch安装</h1><pre class="line-numbers language-none"><code class="language-none">JDK8，最低要求<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>使用Java开发，必须保证<code>ElasticSearch</code>的版本与Java的核心jar包版本对应！（Java环境保证没错）</p>
+<blockquote>
+<p>这里在windows上进行安装</p>
+<h3 id="Windows下安装"><a href="#Windows下安装" class="headerlink" title="Windows下安装"></a>Windows下安装</h3></blockquote>
+<p>1、安装</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.elastic.co/cn/downloads/">https://www.elastic.co/cn/downloads/</a></p>
+<p>历史版本下载：<a target="_blank" rel="noopener" href="https://www.elastic.co/cn/downloads/past-releases/">https://www.elastic.co/cn/downloads/past-releases/</a></p>
+<blockquote>
+<p>ElasticSearch: <a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/elasticsearch/?C=N&amp;O=D">https://mirrors.huaweicloud.com/elasticsearch/?C=N&amp;O=D</a><br>logstash: <a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/logstash/?C=N&amp;O=D">https://mirrors.huaweicloud.com/logstash/?C=N&amp;O=D</a><br>kibana: <a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/kibana/?C=N&amp;O=D">https://mirrors.huaweicloud.com/kibana/?C=N&amp;O=D</a><br>elasticsearch-analysis-ik: <a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-ik/releases">https://github.com/medcl/elasticsearch-analysis-ik/releases</a><br>cerebro: <a target="_blank" rel="noopener" href="https://github.com/lmenezes/cerebro/releases">https://github.com/lmenezes/cerebro/releases</a> </p>
+</blockquote>
+<p>解压即可（尽量将ElasticSearch相关工具放在统一目录下）</p>
+<p>2、熟悉目录</p>
+<p><img src="/2021/08/02/elasticsearch/54d6400bf029f5086e61148312c11991-1626936023794.png"></p>
+<p><img src="/2021/08/02/elasticsearch/17a71c649421cd7ec42d73ecf5ce0c76-1626936023799.png"></p>
+<p><img src="/2021/08/02/elasticsearch/54d6400bf029f5086e61148312c11991.png"></p>
+<pre class="line-numbers language-basic" data-language="basic"><code class="language-basic">bin 启动文件目录
+config 配置文件目录
+	1og4j2 日志配置文件
+	jvm.options java 虚拟机相关的配置(默认启动占1g内存，内容不够需要自己调整)
+	elasticsearch.ym1 elasticsearch 的配置文件! 默认9200端口!跨域!
+1ib    相关jar包
+modules 功能模块目录
+plugins 插件目录
+ik分词器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3、启动</p>
+<blockquote>
+<p>一定要检查自己的java环境是否配置好</p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/930407acb07f960f346918bfa55e54ad-1626936023797.png"></p>
+<p><img src="/2021/08/02/elasticsearch/90337e146295d779b5c19d3b33ad4fbb-1626936023820.png"></p>
+<p> <img src="/2021/08/02/elasticsearch/20210608171553663-1626936023795.png"></p>
+<blockquote>
+<h3 id="安装可视化界面"><a href="#安装可视化界面" class="headerlink" title="安装可视化界面"></a>安装可视化界面</h3></blockquote>
+<pre class="line-numbers language-none"><code class="language-none">elasticsearch-head<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>使用前提</strong>：需要安装nodejs  </p>
+<blockquote>
+<p>nodejs安装</p>
+</blockquote>
+<p>Node.js 安装包及源码下载地址为：<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/%E3%80%82">https://nodejs.org/en/download/。</a></p>
+<p>.<img src="/2021/08/02/elasticsearch/ea44a05920cc648813a7d1938e9b6db3-1626936023798.png"><img src="/2021/08/02/elasticsearch/ea44a05920cc648813a7d1938e9b6db3-1626936023798.png"></p>
+<p><img src="/2021/08/02/elasticsearch/e18062fcafbad1cabd6cce2e6bff5091-1626936023796.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">npm install cnpm -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>可视化界面安装</p>
+</blockquote>
+<p>1、下载地址</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/mobz/elasticsearch-head">https://github.com/mobz/elasticsearch-head</a></p>
+<p>2、安装</p>
+<p>解压即可（尽量将ElasticSearch相关工具放在统一目录下）</p>
+<p>3、启动</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cd elasticsearch-head
+# 安装依赖
+npm install
+# 启动
+npm run start
+# 访问
+http:&#x2F;&#x2F;localhost:9100&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>安装依赖</strong></p>
+<p><img src="/2021/08/02/elasticsearch/9806ef8f1306edba6ce82680c4063f1b-1626936023794.png"></p>
+<p><strong>运行</strong></p>
+<p><img src="/2021/08/02/elasticsearch/7f9f7da8343cbb30b5a74bd440e11ad2-1626936023819.png"></p>
+<p><strong>访问</strong></p>
+<blockquote>
+<p>存在跨域问题（只有当两个页面同源，才能交互）</p>
+<p>同源（端口，主机，协议三者都相同）</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38128179/article/details/84956552">https://blog.csdn.net/qq_38128179/article/details/84956552</a></p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/698ee7c155e8ee7d5d251a093296fe3b-1626936023799.png"></p>
+<p><strong>开启跨域（在elasticsearch解压目录config下elasticsearch.yml中添加）</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 开启跨域
+http.cors.enabled: true
+# 所有人访问
+http.cors.allow-origin: &quot;*&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>重启elasticsearch</p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/20210608175802715-1626936023819.png"></p>
+<p><strong>再次连接</strong></p>
+<p><img src="/2021/08/02/elasticsearch/fb37f33e916c06e7ce9267886ec713e0-1626936023796.png"></p>
+<p><strong>如何理解上图：</strong></p>
+<ul>
+<li><p>如果你是初学者</p>
+<ul>
+<li>索引 可以看做 “数据库”</li>
+<li>类型 可以看做 “表”</li>
+<li>文档 可以看做 “库中的数据（表中的行）”</li>
+</ul>
+</li>
+<li><p><code>这个head，我们只是把它当做可视化数据展示工具，之后所有的查询都在kibana中进行</code></p>
+</li>
+<li><p>因为不支持json格式化，不方便</p>
+</li>
+</ul>
+<blockquote>
+<h3 id="安装kibana"><a href="#安装kibana" class="headerlink" title="安装kibana"></a>安装kibana</h3></blockquote>
+<p>​        Kibana是一个针对ElasticSearch的开源分析及可视化平台,用来搜索、查看交互存储在Elasticsearch索引中的数据。使用Kibana ,可以通过各种图表进行高级数据分析及展示。Kibana让海量数据更容易理解。它操作简单,基于浏览器的用户界面可以快速创建仪表板( dashboard )实时显示Elasticsearch查询动态。设置Kibana非常简单。无需编码或者额外的基础架构,几分钟内就可以完成Kibana安装并启动Elasticsearch索引监测。</p>
+<p>1、下载地址:</p>
+<blockquote>
+<p>下载的版本需要与ElasticSearch版本对应</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/cn/downloads/">https://www.elastic.co/cn/downloads/</a></p>
+<p>历史版本下载：<a target="_blank" rel="noopener" href="https://www.elastic.co/cn/downloads/past-releases/">https://www.elastic.co/cn/downloads/past-releases/</a></p>
+<p>2、安装</p>
+<p>解压即可（尽量将ElasticSearch相关工具放在统一目录下）</p>
+<p><img src="/2021/08/02/elasticsearch/444ba7c6a713f18240517a34857e0573-1626936023819.png"></p>
+<p>3、启动</p>
+<p><img src="/2021/08/02/elasticsearch/6cefd2c1a749a11f6156cadb9b10d1bb-1626936023819.png"></p>
+<p><img src="/2021/08/02/elasticsearch/145d46190d52c409313a12d62e357025-1626936023820.png"></p>
+<p><strong>访问</strong></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol>
+<li><code>localhost:5601</code></li>
+</ol>
+<p><img src="/2021/08/02/elasticsearch/424b2e09549e26843a6e362732435918-1626936023797.png"></p>
+<p>4、开发工具</p>
+<p>（Postman、curl、head、谷歌浏览器插件）</p>
+<blockquote>
+<p>可以使用 <code>Kibana</code>进行测试</p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/144dc81a6e463cbf89d19325faea14d2-1626936023798.png"></p>
+<blockquote>
+<p>如果说，你在英文方面不太擅长，kibana是支持汉化的</p>
+</blockquote>
+<p>5、kibana汉化</p>
+<p>编辑器打开<code>kibana解压目录/config/kibana.yml(kibana-7.13.1-windows-x86_64/config/kibana.yml)</code>，添加</p>
+<pre class="line-numbers language-none"><code class="language-none">i18n.locale: &quot;zh-CN&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>重启kibana</p>
+<p><strong>汉化成功</strong></p>
+<p><img src="/2021/08/02/elasticsearch/f0630a4b39e782ccf61b48d768f74f35-1626936023798.png"></p>
+<h3 id="了解ELK"><a href="#了解ELK" class="headerlink" title="了解ELK"></a><strong>了解ELK</strong></h3><ul>
+<li><p>ELK是</p>
+<p>Elasticsearch、Logstash、 Kibana三大开源框架首字母大写简称</p>
+<p>。市面上也被成为Elastic Stack。</p>
+<ul>
+<li>其中Elasticsearch是一个基于Lucene、分布式、通过Restful方式进行交互的近实时搜索平台框架。<ul>
+<li>像类似百度、谷歌这种大数据全文搜索引擎的场景都可以使用Elasticsearch作为底层支持框架，可见Elasticsearch提供的搜索能力确实强大,市面上很多时候我们简称Elasticsearch为es。</li>
+</ul>
+</li>
+<li>Logstash是ELK的中央数据流引擎,用于从不同目标(文件/数据存储/MQ )收集的不同格式数据,经过过滤后支持输出到不同目的地(文件/MQ/redis/elasticsearch/kafka等)。</li>
+<li>Kibana可以将elasticsearch的数据通过友好的页面展示出来 ,提供实时分析的功能。</li>
+</ul>
+</li>
+<li><p>市面上很多开发只要提到ELK能够一致说出它是一个日志分析架构技术栈总称 ,但实际上ELK不仅仅适用于日志分析,它还可以支持其它任何数据分析和收集的场景,日志分析和收集只是更具有代表性。并非唯一性。</p>
+</li>
+</ul>
+<ol>
+<li><code>收集清洗数据(Logstash) ==&gt; 搜索、存储(ElasticSearch) ==&gt; 展示(Kibana)</code></li>
+</ol>
+<p><img src="/2021/08/02/elasticsearch/df6dbfcb9e87260cd3b21553780b52de-1626936023820.png"></p>
+<h1 id="三、ElasticSearch核心概念"><a href="#三、ElasticSearch核心概念" class="headerlink" title="三、ElasticSearch核心概念"></a>三、ElasticSearch核心概念</h1><blockquote>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2></blockquote>
+<p>1、索引（ElasticSearch）</p>
+<ul>
+<li>包多个分片</li>
+</ul>
+<p>2、字段类型（映射）</p>
+<ul>
+<li>字段类型映射（字段是整型，还是字符型…）</li>
+</ul>
+<p>3、文档</p>
+<p>4、分片（Lucene索引，倒排索引）</p>
+<blockquote>
+<p>ElasticSearch是面向文档，关系行数据库和ElasticSearch客观对比！一切都是JSON！</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">Relational DB</th>
+<th align="left">ElasticSearch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">数据库（database）</td>
+<td align="left">索引（indices）</td>
+</tr>
+<tr>
+<td align="left">表（tables）</td>
+<td align="left">types (慢慢会被弃用)</td>
+</tr>
+<tr>
+<td align="left">行（rows）</td>
+<td align="left">documents</td>
+</tr>
+<tr>
+<td align="left">字段（columns）</td>
+<td align="left">fields</td>
+</tr>
+</tbody></table>
+<p><strong>elasticsearch（集群）</strong>中可以包含多个<strong>索引（数据库）</strong> ,每个索引中可以包含多个<strong>类型（表）</strong> ,每个类型下又包含多个<strong>文档（行）</strong> ,每个文档中又包含多个<strong>字段（列）</strong>。</p>
+<h3 id="物理设计"><a href="#物理设计" class="headerlink" title="物理设计:"></a>物理设计:</h3><p>elasticsearch在后台把<strong>每个索引划分成多个分片</strong>，每分分片可以在集群中的不同服务器间迁移</p>
+<p>一个人就是一个集群! ，即<strong>启动的ElasticSearch服务，默认就是一个集群，且默认集群名为elasticsearch</strong></p>
+<p><img src="/2021/08/02/elasticsearch/e546fee56b749c9c04dc8c882cd8b05f-1626936023799.png"></p>
+<h3 id="逻辑设计"><a href="#逻辑设计" class="headerlink" title="逻辑设计:"></a>逻辑设计:</h3><p>一个索引类型中，包含多个文档，比如说文档1，文档2。当我们索引一篇文档时，可以通过这样的顺序找到它：索引 =&gt; 类型 =&gt; 文档ID ，通过这个组合我们就能索引到某个具体的文档。 注意：ID不必是整数，实际上它是个字符串。</p>
+<blockquote>
+<p>文档（”行“）</p>
+</blockquote>
+<p>之前说elasticsearch是面向文档的，那么就意味着<strong>索引和搜索数据的最小单位是文档</strong>，elasticsearch中，文档有几个重要属性:</p>
+<ul>
+<li>自我包含，一篇文档同时包含字段和对应的值，也就是同时包含key:value !</li>
+<li>可以是层次型的，一个文档中包含自文档，复杂的逻辑实体就是这么来的! {就是一个json对象 ! fastjson进行自动转换 !}</li>
+<li>灵活的结构，文档不依赖预先定义的模式，我们知道关系型数据库中，要提前定义字段才能使用，在elasticsearch中，对于字段是非常灵活的，有时候,我们可以忽略该字段，或者动态的添加一个新的字段。</li>
+</ul>
+<p>尽管我们可以随意的新增或者忽略某个字段，但是，每个字段的类型非常重要，比如一个年龄字段类型，可以是字符串也可以是整形。因为elasticsearch会保存字段和类型之间的映射及其他的设置。这种映射具体到每个映射的每种类型，这也是为什么在elasticsearch中，类型有时候也称为映射类型。</p>
+<blockquote>
+<p>类型（“表”）  </p>
+</blockquote>
+<p>类型是文档的逻辑容器，就像关系型数据库一样，表格是行的容器。类型中对于字段的定义称为映射，比如name映射为字符串类型。我们说文档是无模式的，它们不需要拥有映射中所定义的所有字段，比如新增一个字段，那么elasticsearch是怎么做的呢?</p>
+<ul>
+<li>elasticsearch会自动的将新字段加入映射，但是这个字段的不确定它是什么类型，elasticsearch就开始猜，如果这个值是18，那么elasticsearch会认为它是整形。但是elasticsearch也可能猜不对，所以最安全的方式就是提前定义好所需要的映射，这点跟关系型数据库殊途同归了，先定义好字段，然后再使用，别整什么幺蛾子。</li>
+</ul>
+<blockquote>
+<p>索引（“库”）</p>
+</blockquote>
+<p>索引是映射类型的容器， elasticsearch中的索引是一个非常大的文档集合。 索引存储了映射类型的字段和其他设置。然后它们被存储到了各个分片上了。我们来研究下分片是如何工作的。</p>
+<p><strong>物理设计：节点和分片 如何工作</strong></p>
+<p>创建新索引</p>
+<p><img src="/2021/08/02/elasticsearch/2faa409745d8139159005bce5905bccb-1626936023814.png"></p>
+<p>一个集群至少有一个节点，而一个节点就是一个elasricsearch进程，节点可以有多个索引默认的，如果你创建索引，那么索引将会有个5个分片(primary shard ,又称主分片)构成的，每一个主分片会有一个副本(replica shard，又称复制分片)</p>
+<p><img src="/2021/08/02/elasticsearch/10bf46e479ee230cb126bfb6c788c202-1626936023813.png"></p>
+<p>上图是一个有3个节点的集群，可以看到主分片和对应的复制分片都不会在同一个节点内，这样有利于某个节点挂掉了，数据也不至于失。实际上，<strong><em>*一个分片是一个Lucene索引*<em>（*<em>一个ElasticSearch索引包含多个Lucene索引*</em> ）</em></em> ，</strong>一个包含**倒排索引**的文件目录，倒排索引的结构使得elasticsearch在不扫描全部文档的情况下，就能告诉你哪些文档包含特定的关键字**。不过，等等，倒排索引是什么鬼?</p>
+<p><strong>倒排索引（Lucene索引底层）</strong></p>
+<blockquote>
+<p>简单说就是 按（文章关键字，对应的文档0个或多个）形式建立索引，根据关键字就可直接查询对应的文档（含关键字的），无需查询每一个文档，如下图</p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/b131c1e91d1180722e92b260789f0538-1626936023744.png"></p>
+<h1 id="四、IK分词器-elasticsearch插件"><a href="#四、IK分词器-elasticsearch插件" class="headerlink" title="四、IK分词器(elasticsearch插件)"></a>四、IK分词器(elasticsearch插件)</h1><blockquote>
+<p><strong>IK分词器：中文分词器</strong></p>
+</blockquote>
+<p>分词：即把一段中文或者别的划分成一个个的关键字，我们在搜索时候会把自己的信息进行分词，会把数据库中或者索引库中的数据进行分词，然后进行一一个匹配操作，<strong>默认的中文分词是将每个字看成一个词</strong>（<mark>不使用用IK分词器的情况下</mark>），比如“我爱狂神”会被分为”我”，”爱”，”狂”，”神” ，这显然是不符合要求的，所以我们需要安装中文分词器ik来解决这个问题。</p>
+<p><strong>IK提供了两个分词算法</strong>: <code>ik_smart</code>和<code>ik_max_word</code> ,其中<code>ik_smart</code>为<strong>最少切分</strong>, <code>ik_max_word</code>为<strong>最细粒度划分</strong>!</p>
+<h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><blockquote>
+<p>版本要与ElasticSearch版本对应</p>
+</blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-ik/releases">https://github.com/medcl/elasticsearch-analysis-ik/releases</a></p>
+<h3 id="2、安装"><a href="#2、安装" class="headerlink" title="2、安装"></a>2、安装</h3><blockquote>
+<p>ik文件夹是自己创建的</p>
+</blockquote>
+<p>加压即可（但是我们需要解压到ElasticSearch的plugins目录ik文件夹下）</p>
+<p><img src="/2021/08/02/elasticsearch/24ce5f1ed0fabc0de65a2c6ec826da8c-1626936023819.png"></p>
+<h3 id="3、重启ElasticSearch"><a href="#3、重启ElasticSearch" class="headerlink" title="3、重启ElasticSearch"></a>3、重启ElasticSearch</h3><blockquote>
+<p>加载了IK分词器</p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/6c918d9e8f772f786e0454b59a2bc0a8-1626936023795.png"></p>
+<h3 id="4、使用-ElasticSearch安装补录-bin-elasticsearch-plugin-可以查看插件"><a href="#4、使用-ElasticSearch安装补录-bin-elasticsearch-plugin-可以查看插件" class="headerlink" title="4、使用 ElasticSearch安装补录/bin/elasticsearch-plugin 可以查看插件"></a>4、使用 <code>ElasticSearch安装补录/bin/elasticsearch-plugin</code> 可以查看插件</h3><pre class="line-numbers language-none"><code class="language-none">E:\ElasticSearch\elasticsearch-7.6.1\bin&gt;elasticsearch-plugin list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/0508f2275eb06963d6d9c730a5058d66-1626936023763.png"></p>
+<h3 id="5、使用kibana测试"><a href="#5、使用kibana测试" class="headerlink" title="5、使用kibana测试"></a>5、使用kibana测试</h3><p><code>ik_smart</code>：最少切分</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">GET _analyze
+&#123;
+  &quot;analyzer&quot;: &quot;ik_smart&quot;,
+  &quot;text&quot;: &quot;中国共产党&quot;
+  &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627541151790.png"></p>
+<p><code>ik_max_word</code>：最细粒度划分（穷尽词库的可能）</p>
+<pre class="line-numbers language-jso" data-language="jso"><code class="language-jso">GET _analyze
+&#123;
+  &quot;analyzer&quot;: &quot;ik_max_word&quot;,
+  &quot;text&quot;: &quot;中国共产党&quot;
+  &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627541214244.png"></p>
+<p><code>ik_smart</code>：最少切分</p>
+<p><img src="/2021/08/02/elasticsearch/ace9342952701bd14e1b9531c0ee29b7-1626936023798.png"></p>
+<p><code>ik_max_word</code>：最细粒度划分（穷尽词库的可能）</p>
+<p><img src="/2021/08/02/elasticsearch/42b97e51e53d8ad2d97a6c80d12f981b-1626936023749.png"></p>
+<blockquote>
+<p>从上面看，感觉分词都比较正常，但是大多数，分词都满足不了我们的想法，如下例:</p>
+<p>耗子尾汁被分开了，达不到我们的想法</p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/2771baaf4efdb1388f3d7017fe0268f3-1626936023795.png"></p>
+<blockquote>
+<p>那么，我们需要手动将该词添加到分词器的词典当中</p>
+</blockquote>
+<h3 id="6、添加自定义的词添加到扩展字典中"><a href="#6、添加自定义的词添加到扩展字典中" class="headerlink" title="6、添加自定义的词添加到扩展字典中"></a>6、添加自定义的词添加到扩展字典中</h3><pre class="line-numbers language-none"><code class="language-none">elasticsearch目录&#x2F;plugins&#x2F;ik&#x2F;config&#x2F;IKAnalyzer.cfg.xml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/9e498de9b416b8371f35689c1b450206-1626936023757.png"></p>
+<p>打开 <code>IKAnalyzer.cfg.xml</code> 文件，扩展字典</p>
+<p><img src="/2021/08/02/elasticsearch/80ab669f2e1e391c696127954a77234c-1626936023798.png"></p>
+<p>创建字典文件，添加字典内容</p>
+<p><img src="/2021/08/02/elasticsearch/af9a9f29d0af0c35f6799d97cc3ac3d0-1626936023795.png"></p>
+<p>重启ElasticSearch，再次使用kibana测试</p>
+<p><img src="/2021/08/02/elasticsearch/1131d783b3f9d26c3322ccaa689ba706-1626936023769.png"></p>
+<h1 id="五、Rest风格说明"><a href="#五、Rest风格说明" class="headerlink" title="五、Rest风格说明"></a>五、Rest风格说明</h1><p><strong>一种软件架构风格</strong>,而不是标准,只是提供了一组设计原则和约束条件。它主要用于客户端和服务器交互类的软件。基于这个风格设计的软件可以<strong>更简洁</strong>，<strong>更有层次</strong>，<strong>更易于实现缓存</strong>等机制。</p>
+<h3 id="1-基本Rest命令说明："><a href="#1-基本Rest命令说明：" class="headerlink" title="1.基本Rest命令说明："></a><strong>1.基本Rest命令说明：</strong></h3><table>
+<thead>
+<tr>
+<th align="left">method</th>
+<th align="left">url地址</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">PUT（创建,修改）</td>
+<td align="left">localhost:9200/索引名称/类型名称/文档id</td>
+<td align="left">创建文档（指定文档id）</td>
+</tr>
+<tr>
+<td align="left">POST（创建）</td>
+<td align="left">localhost:9200/索引名称/类型名称</td>
+<td align="left">创建文档（随机文档id）</td>
+</tr>
+<tr>
+<td align="left">POST（修改）</td>
+<td align="left">localhost:9200/索引名称/类型名称/文档id/_update</td>
+<td align="left">修改文档</td>
+</tr>
+<tr>
+<td align="left">DELETE（删除）</td>
+<td align="left">localhost:9200/索引名称/类型名称/文档id</td>
+<td align="left">删除文档</td>
+</tr>
+<tr>
+<td align="left">GET（查询）</td>
+<td align="left">localhost:9200/索引名称/类型名称/文档id</td>
+<td align="left">查询文档通过文档ID</td>
+</tr>
+<tr>
+<td align="left">POST（查询）</td>
+<td align="left">localhost:9200/索引名称/类型名称/文档id/_search</td>
+<td align="left">查询所有数据</td>
+</tr>
+</tbody></table>
+<h3 id="2-测试"><a href="#2-测试" class="headerlink" title="2.测试"></a>2.测试</h3><h4 id="1、创建一个索引，添加"><a href="#1、创建一个索引，添加" class="headerlink" title="1、创建一个索引，添加"></a>1、创建一个索引，添加</h4><blockquote>
+<p>PUT    /索引名/~类型名/文档id</p>
+<p>{请求体}</p>
+</blockquote>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">PUT &#x2F;test1&#x2F;type1&#x2F;1
+&#123;
+&quot;name&quot; : &quot;任宜超&quot;,
+&quot;age&quot; : 18
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627562286632.png"></p>
+<blockquote>
+<p>完成了自动增加索引！数据也成功添加了</p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/1627562572959.png"></p>
+<h4 id="2、字段数据类型"><a href="#2、字段数据类型" class="headerlink" title="2、字段数据类型"></a>2、字段数据类型</h4><ul>
+<li><p><code>字符串类型</code></p>
+</li>
+<li><p>text、keyword</p>
+<ul>
+<li>text：支持分词，全文检索,支持模糊、精确查询,不支持聚合,排序操作;text类型的最大支持的字符长度无限制,适合大字段存储；</li>
+<li>keyword：不进行分词，直接索引、支持模糊、支持精确匹配，支持聚合、排序操作。keyword类型的最大支持的长度为——32766个UTF-8类型的字符,可以通过设置ignore_above指定自持字符长度，超过给定长度后的数据将不被索引，无法通过term精确匹配检索返回结果。</li>
+</ul>
+</li>
+<li><p><code>数值型</code></p>
+</li>
+<li><p>long、Integer、short、byte、double、float、<strong>half float</strong>、<strong>scaled float</strong></p>
+</li>
+<li><p><code>日期类型</code></p>
+</li>
+<li><p>date</p>
+</li>
+<li><p><code>te布尔类型</code></p>
+</li>
+<li><p>boolean</p>
+</li>
+<li><p><code>二进制类型</code></p>
+</li>
+<li><p>binary</p>
+</li>
+<li><p>等等…</p>
+</li>
+</ul>
+<h4 id="3、指定字段的类型（使用PUT）"><a href="#3、指定字段的类型（使用PUT）" class="headerlink" title="3、指定字段的类型（使用PUT）"></a>3、指定字段的类型（使用PUT）</h4><blockquote>
+<p>创建规则   类似于建库（建立索引和字段对应类型），也可看做规则的建立</p>
+</blockquote>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token constant">PUT</span> <span class="token operator">/</span>test2
+<span class="token punctuation">&#123;</span>
+<span class="token string-property property">"mappings"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+<span class="token string-property property">"properties"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+<span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+<span class="token string-property property">"type"</span><span class="token operator">:</span> <span class="token string">"text"</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token string-property property">"age"</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+<span class="token string-property property">"type"</span><span class="token operator">:</span> <span class="token string">"long"</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token string-property property">"birthday"</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+<span class="token string-property property">"type"</span><span class="token operator">:</span> <span class="token string">"date"</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/37c626020fa67cb00955c59cd966f024-1626936023782.png"></p>
+<h4 id="4、获取建立的规则"><a href="#4、获取建立的规则" class="headerlink" title="4、获取建立的规则"></a>4、获取建立的规则</h4><pre class="line-numbers language-none"><code class="language-none">GET test2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol>
+<li><img src="/2021/08/02/elasticsearch/f370e9aa667836b14bdd27ad27de0c70-1626936023787.png"></li>
+</ol>
+<h4 id="5、获取默认信息"><a href="#5、获取默认信息" class="headerlink" title="5、获取默认信息"></a>5、获取默认信息</h4><blockquote>
+<p><code>_doc</code> 默认类型（default type），type 在未来的版本中会逐渐弃用，因此产生一个默认类型进行代替</p>
+</blockquote>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">PUT &#x2F;test3&#x2F;_doc&#x2F;1
+&#123;
+&quot;name&quot;: &quot;流柚&quot;,
+&quot;age&quot;: 18,
+&quot;birth&quot;: &quot;1999-10-10&quot;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">GET test3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/9fb783e4d5bcb4c370b54b3c1365d665-1626936023796.png"></p>
+<blockquote>
+<p>如果自己的文档字段没有被指定，那么ElasticSearch就会给我们默认配置字段类型</p>
+</blockquote>
+<p>扩展：通过<code>get _cat/</code> 可以获取ElasticSearch的当前的很多信息！ </p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET _cat&#x2F;indices         &#x2F;&#x2F;具体信息
+GET _cat&#x2F;aliases
+GET _cat&#x2F;allocation
+GET _cat&#x2F;count
+GET _cat&#x2F;fielddata
+GET _cat&#x2F;health
+GET _cat&#x2F;indices
+GET _cat&#x2F;master
+GET _cat&#x2F;nodeattrs
+GET _cat&#x2F;nodes
+GET _cat&#x2F;pending_tasks
+GET _cat&#x2F;plugins
+GET _cat&#x2F;recovery
+GET _cat&#x2F;repositories
+GET _cat&#x2F;segments
+GET _cat&#x2F;shards
+GET _cat&#x2F;snapshots
+GET _cat&#x2F;tasks
+GET _cat&#x2F;templates<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p> <img src="/2021/08/02/elasticsearch/1627564041145.png"></p>
+<h4 id="6、修改"><a href="#6、修改" class="headerlink" title="6、修改"></a>6、修改</h4><blockquote>
+<p>两种方案</p>
+</blockquote>
+<p>①旧的（使用put覆盖原来的值）</p>
+<ul>
+<li>版本+1（_version）</li>
+<li>但是如果漏掉某个字段没有写，那么更新是没有写的字段 ，会消失</li>
+</ul>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">PUT &#x2F;test3&#x2F;_doc&#x2F;1
+&#123;
+&quot;name&quot; : &quot;流柚是我的大哥&quot;,
+&quot;age&quot; : 18,
+&quot;birth&quot; : &quot;1999-10-10&quot;
+&#125;
+ 
+GET &#x2F;test3&#x2F;_doc&#x2F;1
+ 
+&#x2F;&#x2F; 修改会有字段丢失
+PUT &#x2F;test3&#x2F;_doc&#x2F;1
+&#123;
+&quot;name&quot; : &quot;流柚&quot;
+&#125;
+ 
+GET &#x2F;test3&#x2F;_doc&#x2F;1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/9ab3aa3c0eb15ff9df43b4b4d0b7172d-1626936023793.png"></p>
+<p><img src="/2021/08/02/elasticsearch/6f9081c4a6f3e919a670d21bb8e33a16-1626936023814.png"></p>
+<p>②新的（使用post的update）</p>
+<ul>
+<li>version不会改变</li>
+<li>需要注意doc</li>
+<li><code>不会丢失字段</code></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">POST &#x2F;test3&#x2F;_doc&#x2F;1&#x2F;_update
+&#123;
+&quot;doc&quot;:&#123;
+&quot;name&quot; : &quot;post修改，version不会加一&quot;,
+&quot;age&quot; : 2
+&#125;
+&#125;
+ 
+GET &#x2F;test3&#x2F;_doc&#x2F;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/f4c014990225c80102cf281551b12155-1626936023796.png"></p>
+<h4 id="7、删除"><a href="#7、删除" class="headerlink" title="7、删除"></a>7、删除</h4><pre class="line-numbers language-none"><code class="language-none">DELETE &#x2F;test1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/c867fabdcffe83bf04f0b1740fe4f296-1626936023796.png"></p>
+<p><img src="/2021/08/02/elasticsearch/28b62ce261cf5042502cc75391ebe7a5-1626936023824.png"></p>
+<h4 id="※关于文档的基本操作（重点）"><a href="#※关于文档的基本操作（重点）" class="headerlink" title="※关于文档的基本操作（重点）"></a>※关于文档的基本操作（重点）</h4><blockquote>
+<p>基本操作</p>
+</blockquote>
+<h5 id="（1）添加数据"><a href="#（1）添加数据" class="headerlink" title="（1）添加数据"></a>（1）添加数据</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">PUT &#x2F;chao&#x2F;user&#x2F;1
+&#123;
+  &quot;name&quot;: &quot;任宜超&quot;,
+  &quot;age&quot;: 23,
+  &quot;sesc&quot;: &quot;一定能操作&quot;,
+  &quot;tags&quot;: [&quot;直男&quot;,&quot;温暖&quot;,&quot;爱心&quot;]
+&#125;
+
+
+PUT &#x2F;chao&#x2F;user&#x2F;2
+&#123;
+  &quot;name&quot;: &quot;张三&quot;,
+  &quot;age&quot;: 3,
+  &quot;sesc&quot;: &quot;法外狂徒&quot;,
+  &quot;tags&quot;: [&quot;渣男&quot;,&quot;旅游&quot;,&quot;狠心&quot;]
+&#125;
+
+
+PUT &#x2F;chao&#x2F;user&#x2F;3
+&#123;
+  &quot;name&quot;: &quot;李四&quot;,
+  &quot;age&quot;: 3,
+  &quot;sesc&quot;: &quot;mmp&quot;,
+  &quot;tags&quot;: [&quot;靓仔&quot;,&quot;长歌&quot;,&quot;狠心&quot;]
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627642717553.png"></p>
+<h5 id="（2）查询数据"><a href="#（2）查询数据" class="headerlink" title="（2）查询数据"></a>（2）查询数据</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">GET chao&#x2F;user&#x2F;1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627642803555.png"></p>
+<h5 id="（3）-更新数据"><a href="#（3）-更新数据" class="headerlink" title="（3） 更新数据"></a>（3） 更新数据</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">PUT &#x2F;chao&#x2F;user&#x2F;3
+&#123;
+  &quot;name&quot;: &quot;李四2222&quot;,
+  &quot;age&quot;: 3,
+  &quot;sesc&quot;: &quot;mmp&quot;,
+  &quot;tags&quot;: [&quot;靓仔&quot;,&quot;长歌&quot;,&quot;狠心&quot;]
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627646962535.png"></p>
+<h5 id="（4）post-update-更新数据"><a href="#（4）post-update-更新数据" class="headerlink" title="（4）post update 更新数据"></a>（4）post update 更新数据</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">POST &#x2F;test3&#x2F;_doc&#x2F;1&#x2F;_update
+&#123;
+&quot;doc&quot;:&#123;
+&quot;name&quot; : &quot;post修改，version不会加一&quot;,
+&quot;age&quot; : 2
+&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>version不会改变</li>
+<li>需要注意doc</li>
+<li><code>不会丢失字段</code></li>
+</ul>
+<h4 id="8、查询（简单条件）"><a href="#8、查询（简单条件）" class="headerlink" title="8、查询（简单条件）"></a>8、查询（简单条件）</h4><pre class="line-numbers language-none"><code class="language-none">GET &#x2F;chao&#x2F;user&#x2F;_search?q&#x3D;name:任宜超<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627707113686.png"></p>
+<blockquote>
+<p>score 匹配度</p>
+<p>如果存在多条查询出来的结果，匹配度越高分值越高</p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/1627709452805.png"></p>
+<h4 id="9、复杂查询"><a href="#9、复杂查询" class="headerlink" title="9、复杂查询"></a>9、复杂查询</h4><blockquote>
+<p>chao索引中的内容</p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/1627717855434.png"></p>
+<h5 id="①查询匹配"><a href="#①查询匹配" class="headerlink" title="①查询匹配"></a>①查询匹配</h5><ul>
+<li><p><code>match</code>：匹配（会使用分词器解析（先分析文档，然后进行查询））</p>
+</li>
+<li><p><code>_source</code>：过滤字段</p>
+</li>
+<li><p><code>sort</code>：排序</p>
+</li>
+<li><p><code>form</code>、<code>size</code> 分页</p>
+</li>
+</ul>
+<blockquote>
+<p><code>match</code>：匹配（会使用分词器解析（先分析文档，然后进行查询））</p>
+<p>“query”  相当于            GET /chao/user/_search?q=name:任宜超          中的<code>q</code>属性</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET &#x2F;chao&#x2F;user&#x2F;_search
+&#123;
+&quot;query&quot;:&#123;
+&quot;match&quot;:&#123;
+&quot;name&quot;:&quot;超&quot;
+&#125;
+&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627718051633.png"></p>
+<blockquote>
+<p><code>_source</code>：过滤字段</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET &#x2F;chao&#x2F;user&#x2F;_search
+&#123;
+&quot;query&quot;:&#123;
+&quot;match&quot;:&#123;
+&quot;name&quot;:&quot;超&quot;
+&#125;
+&#125;
+, &quot;_source&quot;: [&quot;name&quot;,&quot;sesc&quot;]
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627718588696.png"></p>
+<blockquote>
+<p><code>sort</code>：排序</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET &#x2F;chao&#x2F;user&#x2F;_search
+&#123;
+&quot;query&quot;:&#123;
+&quot;match&quot;:&#123;
+&quot;name&quot;:&quot;超&quot;
+&#125;
+&#125;
+, &quot;sort&quot;: [
+  &#123;
+    &quot;age&quot;: &#123;
+      &quot;order&quot;: &quot;desc&quot;
+    &#125;
+  &#125;
+]
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627719749729.png"></p>
+<blockquote>
+<p><code>form</code>、<code>size</code> 分页</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET &#x2F;chao&#x2F;user&#x2F;_search
+&#123;
+&quot;query&quot;:&#123;
+&quot;match&quot;:&#123;
+&quot;name&quot;:&quot;超&quot;
+&#125;
+&#125;
+, &quot;sort&quot;: [
+  &#123;
+    &quot;age&quot;: &#123;
+      &quot;order&quot;: &quot;desc&quot;
+    &#125;
+  &#125;
+],
+&quot;from&quot;: 0
+, &quot;size&quot;: 1
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627720449199.png"></p>
+<h5 id="②多条件查询（bool）"><a href="#②多条件查询（bool）" class="headerlink" title="②多条件查询（bool）"></a>②多条件查询（<code>bool</code>）</h5><ul>
+<li><p><code>must</code> 相当于 <code>and</code></p>
+</li>
+<li><p><code>should</code> 相当于 <code>or</code></p>
+</li>
+<li><p><code>must_not</code> 相当于 <code>not (... and ...)</code></p>
+</li>
+<li><p><code>filter</code> 过滤</p>
+<blockquote>
+<p><code>must</code> 相当于 <code>and</code></p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET &#x2F;chao&#x2F;user&#x2F;_search
+&#123;
+&quot;query&quot;: &#123;
+  &quot;bool&quot;: &#123;
+    
+    &quot;must&quot;: [
+      &#123;
+        &quot;match&quot;: &#123;
+          &quot;name&quot;: &quot;超&quot;
+        &#125;
+      &#125;,
+      &#123;
+        &quot;match&quot;: &#123;
+          &quot;age&quot;: &quot;24&quot;
+        &#125;
+      &#125;
+    ]
+    
+  &#125;
+&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627722783399.png"></p>
+<blockquote>
+<p><code>shuld</code>   相当于  <code>or   </code>     符合其中一个就行</p>
+<p>should &lt;==&gt; or</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET &#x2F;chao&#x2F;user&#x2F;_search
+&#123;
+&quot;query&quot;: &#123;
+  &quot;bool&quot;: &#123;
+    
+    &quot;should&quot;: [
+      &#123;
+      &quot;match&quot;: &#123;
+          &quot;name&quot;: &quot;超&quot;
+        &#125;
+      &#125;,
+      &#123;
+        &quot;match&quot;: &#123;
+          &quot;age&quot;: &quot;24&quot;
+        &#125;
+      &#125;
+   ]
+    
+  &#125;
+&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627734000057.png"></p>
+<blockquote>
+<p>must_not &lt;==&gt; not (… and …)</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET &#x2F;chao&#x2F;user&#x2F;_search
+&#123;
+&quot;query&quot;: &#123;
+  &quot;bool&quot;: &#123;
+    
+    &quot;must_not&quot;: [
+     
+      &#123;
+        &quot;match&quot;: &#123;
+          &quot;age&quot;: &quot;24&quot;
+        &#125;
+      &#125;
+    ]
+    
+  &#125;
+&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627734410837.png"></p>
+<blockquote>
+<p>过滤器<code>filter</code></p>
+<p><code>gt</code>   大于</p>
+<p><code>gte</code>大于等于</p>
+<p><code>lt</code>小于</p>
+<p><code>lte</code>小于等于</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET &#x2F;chao&#x2F;user&#x2F;_search
+&#123;
+&quot;query&quot;: &#123;
+  &quot;bool&quot;: &#123;
+    
+    &quot;must&quot;: [
+     
+      &#123;
+        &quot;match&quot;: &#123;
+          &quot;name&quot;: &quot;超&quot;
+        &#125;
+      &#125;
+    ],
+    &quot;filter&quot;: &#123;
+      &quot;range&quot;: &#123;
+        &quot;age&quot;: &#123;
+         &quot;gte&quot;: 22,
+          &quot;lte&quot;: 23
+&#125;
+&#125;
+&#125;
+    
+  &#125;
+&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627741584339.png"></p>
+</li>
+</ul>
+<h5 id="②匹配数组"><a href="#②匹配数组" class="headerlink" title="②匹配数组"></a>②匹配数组</h5><ul>
+<li><p>貌似不能与其它字段一起使用</p>
+</li>
+<li><p>可以多关键字查（空格隔开）— 匹配字段也是符合的</p>
+</li>
+<li><p><code>match</code> 会使用分词器解析（先分析文档，然后进行查询）</p>
+</li>
+<li><p>搜词</p>
+<blockquote>
+<p>多个条件（不是精确查询）：</p>
+<p>使用空格隔开</p>
+<p>只要满足其中一个结果就可以被查出</p>
+<p>这个时候通过分值进行基本的判断</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET chao&#x2F;user&#x2F;_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;match&quot;: &#123;
+      &quot;tags&quot;: &quot;男 操作 爱&quot;
+    &#125;
+  &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627804850566.png"></p>
+</li>
+</ul>
+<h5 id="④精确查询"><a href="#④精确查询" class="headerlink" title="④精确查询"></a>④精确查询</h5><blockquote>
+<p>精确查询</p>
+</blockquote>
+<ul>
+<li><p><code>term</code> 直接通过 倒排索引 指定<strong>词条</strong>查询</p>
+</li>
+<li><p>适合查询 number、date、keyword ，不适合text</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">&#x2F;&#x2F; 精确查询（必须全部都有，而且不可分，即按一个完整的词查询）
+&#x2F;&#x2F; term 直接通过 倒排索引 指定的词条 进行精确查找的
+GET &#x2F;blog&#x2F;user&#x2F;_search
+&#123;
+&quot;query&quot;:&#123;
+&quot;term&quot;:&#123;
+&quot;desc&quot;:&quot;年 &quot;
+&#125;
+&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</li>
+<li><p><img src="/2021/08/02/elasticsearch/3730f347189d17265dd4e0e93c6978fb-1626936023818.png"></p>
+<h5 id="※-使用term（精确查询）时，我发现三个问题，问题如下："><a href="#※-使用term（精确查询）时，我发现三个问题，问题如下：" class="headerlink" title="※     使用term（精确查询）时，我发现三个问题，问题如下："></a>※     使用term（精确查询）时，我发现三个问题，问题如下：</h5><ul>
+<li><p>字段值必须是一个词（索引中存在的词），才能匹配</p>
+<ul>
+<li><p>问题：中文字符串，term查询时无法查询到数据（比如，“编程”两字在文档中存在，但是搜索不到）</p>
+</li>
+<li><p>原因：索引为配置中文分词器（默认使用standard，即所有中文字符串都会被切分为单个中文汉字作为单词），所以没有超过1个汉字的词，也就无法匹配，进而查不到数据</p>
+</li>
+<li><p>解决：创建索引时配置中文分词器，如</p>
+</li>
+<li><p>查询的英文字符只能是小写，大写都无效</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">PUT example
+&#123;
+&quot;mappings&quot;: &#123;
+&quot;properties&quot;: &#123;
+&quot;name&quot;:&#123;
+&quot;type&quot;: &quot;text&quot;,
+&quot;analyzer&quot;: &quot;ik_max_word&quot; &#x2F;&#x2F; ik分词器
+&#125;
+&#125;
+&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</li>
+</ul>
+</li>
+<li><p>查询时英文单词必须是完整的</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="⑤text和keyword"><a href="#⑤text和keyword" class="headerlink" title="⑤text和keyword"></a>⑤text和keyword</h5><ul>
+<li>text：<ul>
+<li><strong>支持分词</strong>，<strong>全文检索</strong>、支持模糊、精确查询,不支持聚合,排序操作;</li>
+<li>text类型的最大支持的字符长度无限制,适合大字段存储；</li>
+</ul>
+</li>
+<li>keyword：<ul>
+<li><strong>不进行分词</strong>，<strong>直接索引</strong>、支持模糊、支持精确匹配，支持聚合、排序操作。</li>
+<li>keyword类型的最大支持的长度为——32766个UTF-8类型的字符,可以通过设置ignore_above指定自持字符长度，超过给定长度后的数据将不被索引，<strong>无法通过term精确匹配检索返回结果</strong>。</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 测试keyword和text是否支持分词
+&#x2F;&#x2F; 设置索引类型
+PUT &#x2F;test
+&#123;
+    &quot;mappings&quot;: &#123;
+        &quot;properties&quot;: &#123;
+            &quot;text&quot;:&#123;
+                &quot;type&quot;:&quot;text&quot;
+             &#125;,
+            &quot;keyword&quot;:&#123;
+                &quot;type&quot;:&quot;keyword&quot;
+             &#125;
+        &#125;
+    &#125;
+&#125;
+ 
+ 
+ 
+&#x2F;&#x2F; 设置字段数据
+PUT &#x2F;test&#x2F;_doc&#x2F;1
+&#123;
+&quot;text&quot;:&quot;测试keyword和text是否支持分词&quot;,
+&quot;keyword&quot;:&quot;测试keyword和text是否支持分词&quot;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+ <pre class="line-numbers language-java" data-language="java"><code class="language-java">GET _analyze
+&#123;
+&quot;analyzer&quot;: &quot;keyword&quot;,
+&quot;text&quot;: [&quot;测试liu&quot;]
+&#125;&#x2F;&#x2F; 不会分词，即 测试liu<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627806678547.png"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET _analyze
+&#123;
+&quot;analyzer&quot;: &quot;standard&quot;,
+&quot;text&quot;: [&quot;测试liu&quot;]
+&#125;&#x2F;&#x2F; 分为 测 试 liu<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627806699478.png"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET _analyze
+&#123;
+&quot;analyzer&quot;:&quot;ik_max_word&quot;,
+&quot;text&quot;: [&quot;测试liu&quot;]
+&#125;&#x2F;&#x2F; 分为 测试 liu<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627806733173.png"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; text 支持分词
+&#x2F;&#x2F; keyword 不支持分词
+GET &#x2F;test&#x2F;_doc&#x2F;_search
+&#123;
+    &quot;query&quot;:&#123;
+        &quot;match&quot;:&#123;
+            &quot;text&quot;:&quot;测试&quot;
+        &#125;
+    &#125;
+&#125;&#x2F;&#x2F; 查的到
+ 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627807078912.png"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET &#x2F;test&#x2F;_doc&#x2F;_search
+&#123;
+        &quot;query&quot;:&#123;
+            &quot;match&quot;:&#123;
+                &quot;keyword&quot;:&quot;测试&quot;
+            &#125;
+        &#125;
+&#125;&#x2F;&#x2F; 查不到，必须是 &quot;测试keyword和text是否支持分词&quot; 才能查到<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627807097887.png"></p>
+<h5 id="⑥高亮查询"><a href="#⑥高亮查询" class="headerlink" title="⑥高亮查询"></a>⑥高亮查询</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 自定义前缀和后缀
+GET blog&#x2F;user&#x2F;_search
+&#123;
+&quot;query&quot;: &#123;
+&quot;match&quot;: &#123;
+&quot;name&quot;:&quot;流&quot;
+&#125;
+&#125;
+,
+&quot;highlight&quot;: &#123;
+&quot;pre_tags&quot;: &quot;&lt;p class&#x3D;&#39;key&#39; style&#x3D;&#39;color:red&#39;&gt;&quot;,
+&quot;post_tags&quot;: &quot;&lt;&#x2F;p&gt;&quot;,
+&quot;fields&quot;: &#123;
+&quot;name&quot;: &#123;&#125;
+&#125;
+&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+ <pre class="line-numbers language-java" data-language="java"><code class="language-java">GET &#x2F;chao&#x2F;user&#x2F;_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;match&quot;: &#123;
+      &quot;name&quot;: &quot;超&quot;
+    &#125;
+  &#125;
+  , &quot;highlight&quot;: &#123;
+    &quot;fields&quot;: &#123;
+      &quot;name&quot;:&#123;
+        
+      &#125;
+    &#125;
+  &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627808021924.png" alt="1627808021924"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET &#x2F;chao&#x2F;user&#x2F;_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;match&quot;: &#123;
+      &quot;name&quot;: &quot;任宜超&quot;
+    &#125;
+  &#125;
+  , &quot;highlight&quot;: &#123;
+    &quot;fields&quot;: &#123;
+      &quot;name&quot;:&#123;
+        
+      &#125;
+    &#125;
+  &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627808100154.png"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">GET &#x2F;chao&#x2F;user&#x2F;_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;match&quot;: &#123;
+      &quot;name&quot;: &quot;任宜超&quot;
+    &#125;
+  &#125;
+  , &quot;highlight&quot;: &#123;
+    &quot;pre_tags&quot;: &quot;&lt;p class&#x3D;&#39;key&#39; style&#x3D;&#39;color:red&#39;&gt;&quot;,
+    &quot;post_tags&quot;: &quot;&lt;&#x2F;p&gt;&quot;,
+    &quot;fields&quot;: &#123;
+&quot;name&quot;: &#123;&#125;
+    &#125;
+  &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627808291725.png"></p>
+<h1 id="六、SpringBoot整合"><a href="#六、SpringBoot整合" class="headerlink" title="六、SpringBoot整合"></a>六、SpringBoot整合</h1><h4 id="※学习方法"><a href="#※学习方法" class="headerlink" title="※学习方法"></a>※<code>学习方法</code></h4><blockquote>
+<p>找文档  [<a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/client/index.html]">https://www.elastic.co/guide/en/elasticsearch/client/index.html]</a></p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/1627811622545.png"></p>
+<p><img src="/2021/08/02/elasticsearch/1627811673314.png"></p>
+<h6 id="1-原生依赖"><a href="#1-原生依赖" class="headerlink" title="1.原生依赖"></a>1.原生依赖</h6><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.elasticsearch.client<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>elasticsearch-rest-high-level-client<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>7.13.4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="2-找对象"><a href="#2-找对象" class="headerlink" title="2.找对象"></a>2.找对象</h5><p><img src="/2021/08/02/elasticsearch/1627812013931.png"></p>
+<h3 id="1、创建工程"><a href="#1、创建工程" class="headerlink" title="1、创建工程"></a>1、创建工程</h3><p><img src="/2021/08/02/elasticsearch/1627812619003.png"></p>
+<blockquote>
+<p>版本要一致</p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/1627813203516.png"></p>
+<h3 id="2-自己定义es-版本，保证和本地一样"><a href="#2-自己定义es-版本，保证和本地一样" class="headerlink" title="2.自己定义es 版本，保证和本地一样"></a>2.<code>自己定义es 版本，保证和本地一样</code></h3><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>java.version</span><span class="token punctuation">></span></span>1.8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>java.version</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>elasticsearch.version</span><span class="token punctuation">></span></span>7.6.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>elasticsearch.version</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>提前导入fastjson、lombok</strong></p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&lt;dependency&gt;
+&lt;groupId&gt;com.alibaba&lt;&#x2F;groupId&gt;
+&lt;artifactId&gt;fastjson&lt;&#x2F;artifactId&gt;
+&lt;version&gt;1.2.70&lt;&#x2F;version&gt;
+&lt;&#x2F;dependency&gt;
+
+&lt;!-- lombok需要安装插件 --&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;org.projectlombok&lt;&#x2F;groupId&gt;
+&lt;artifactId&gt;lombok&lt;&#x2F;artifactId&gt;
+&lt;optional&gt;true&lt;&#x2F;optional&gt;
+&lt;&#x2F;dependency&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-创建一个配置类"><a href="#3-创建一个配置类" class="headerlink" title="3.创建一个配置类"></a>3.创建一个配置类</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">@Configuration
+public class ElasticSearchClientConfig &#123;
+
+    @Bean
+    public RestHighLevelClient restHighLevelClient()&#123;
+        RestHighLevelClient client &#x3D; new RestHighLevelClient(
+                RestClient.builder(
+                        new HttpHost(&quot;localhost&quot;, 9200, &quot;http&quot;)));
+                return client;
+    &#125;
+
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627821147130.png"></p>
+<blockquote>
+<p>索引操作</p>
+</blockquote>
+<h3 id="4-测试索引创建"><a href="#4-测试索引创建" class="headerlink" title="4.测试索引创建"></a>4.测试索引创建</h3><blockquote>
+<p>相当于PUT</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.chao;
+
+import org.elasticsearch.client.RequestOptions;
+import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.client.indices.CreateIndexRequest;
+import org.elasticsearch.client.indices.CreateIndexResponse;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.io.IOException;
+
+@SpringBootTest
+class ChaoEsApiApplicationTests &#123;
+
+    @Autowired
+    @Qualifier(&quot;restHighLevelClient&quot;)
+    private RestHighLevelClient Client;
+
+
+
+    @Test
+    void testCreatIndex() throws IOException &#123;
+        &#x2F;&#x2F;创建索引请求
+        CreateIndexRequest request &#x3D; new CreateIndexRequest(&quot;chao_index&quot;);
+
+        &#x2F;&#x2F;执行请求indicesClient ,请求后获得响应
+        CreateIndexResponse createIndexResponse &#x3D; Client.indices().create(request, RequestOptions.DEFAULT);
+        System.out.println(createIndexResponse);
+
+    &#125;
+
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627824583104.png"></p>
+<h3 id="5-测试获取索引-判断其是否存在"><a href="#5-测试获取索引-判断其是否存在" class="headerlink" title="5.测试获取索引,判断其是否存在"></a>5.测试获取索引,判断其是否存在</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;测试创建索引,判断其是否存在
+   @Test
+   void testExistIndex() throws IOException &#123;
+       &#x2F;&#x2F;创建索引请求
+       GetIndexRequest request &#x3D; new GetIndexRequest(&quot;chao_index&quot;);
+
+       &#x2F;&#x2F;执行请求indicesClient ,请求后获得响应
+       boolean exists &#x3D; Client.indices().exists(request,RequestOptions.DEFAULT);
+       System.out.println(exists);
+
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627825489541.png"></p>
+<h3 id="6-测试索引删除"><a href="#6-测试索引删除" class="headerlink" title="6.测试索引删除"></a>6.测试索引删除</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 测试索引删除
+@Test
+public void testDeleteIndex() throws IOException &#123;
+    DeleteIndexRequest request &#x3D; new DeleteIndexRequest(&quot;chao_index&quot;);
+    AcknowledgedResponse delete &#x3D; Client.indices().delete(request,     RequestOptions.DEFAULT);
+    System.out.println(delete.isAcknowledged());&#x2F;&#x2F; 是否删除成功
+   Client.close();
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="7、创建并编写实体类"><a href="#7、创建并编写实体类" class="headerlink" title="7、创建并编写实体类"></a>7、创建并编写实体类</h3><blockquote>
+<p>会自动帮我们封装</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class User implements Serializable &#123;
+ 
+    private static final long serialVersionUID &#x3D; -3843548915035470817L;
+ 
+    private String name;
+    private Integer age;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="※文档的操作"><a href="#※文档的操作" class="headerlink" title="※文档的操作"></a>※文档的操作</h3><h3 id="1、文档的添加"><a href="#1、文档的添加" class="headerlink" title="1、文档的添加"></a>1、文档的添加</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 测试添加文档(先创建一个User实体类，添加fastjson依赖)
+   @Test
+   public void testAddDocument() throws IOException &#123;
+   &#x2F;&#x2F; 创建一个User对象
+       User chao &#x3D; new User(&quot;chao&quot;, 18);
+   &#x2F;&#x2F; 创建请求
+       IndexRequest request &#x3D; new IndexRequest(&quot;chao_index&quot;);
+   &#x2F;&#x2F; 制定规则 PUT &#x2F;chao_index&#x2F;_doc&#x2F;1
+       request.id(&quot;1&quot;);&#x2F;&#x2F; 设置文档ID
+       &#x2F;&#x2F;request失效时间
+       request.timeout(TimeValue.timeValueMillis(1000));&#x2F;&#x2F; request.timeout(&quot;1s&quot;)
+   &#x2F;&#x2F; 将我们的数据放入请求中
+       request.source(JSON.toJSONString(chao), XContentType.JSON);
+   &#x2F;&#x2F; 客户端发送请求，获取响应的结果
+       IndexResponse response &#x3D; Client.index(request, RequestOptions.DEFAULT);
+       System.out.println(response.status());&#x2F;&#x2F; 获取建立索引的状态信息 CREATED
+       System.out.println(response);&#x2F;&#x2F; 查看返回内容  IndexResponse[index&#x3D;chao_index,type&#x3D;_doc,id&#x3D;1,version&#x3D;1,result&#x3D;created,seqNo&#x3D;0,
+      &#x2F;&#x2F; primaryTerm&#x3D;1,shards&#x3D;&#123;&quot;total&quot;:2,&quot;successful&quot;:1,&quot;failed&quot;:0&#125;]
+   &#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627883231852.png"></p>
+<h3 id="2、文档信息的获取"><a href="#2、文档信息的获取" class="headerlink" title="2、文档信息的获取"></a>2、文档信息的获取</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 测试获得文档信息
+   @Test
+   public void testGetDocument() throws IOException &#123;
+       GetRequest request &#x3D; new GetRequest(&quot;chao_index&quot;,&quot;1&quot;);
+       GetResponse response &#x3D; Client.get(request, RequestOptions.DEFAULT);
+       System.out.println(response.getSourceAsString());&#x2F;&#x2F; 打印文档内容
+       System.out.println(response);&#x2F;&#x2F; 返回的全部内容和命令是一样的
+       &#x2F;&#x2F;Client.close();
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627884570235.png"></p>
+<p><img src="/2021/08/02/elasticsearch/1627884584979.png"></p>
+<h3 id="3、文档的获取，并判断其是否存在"><a href="#3、文档的获取，并判断其是否存在" class="headerlink" title="3、文档的获取，并判断其是否存在"></a>3、文档的获取，并判断其是否存在</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 获取文档，判断是否存在 get &#x2F;chao_index&#x2F;_doc&#x2F;1
+   @Test
+   public void testDocumentIsExists() throws IOException &#123;
+       GetRequest request &#x3D; new GetRequest(&quot;chao_index&quot;, &quot;1&quot;);
+   &#x2F;&#x2F; 不获取返回的 _source的上下文了
+       request.fetchSourceContext(new FetchSourceContext(false));
+       request.storedFields(&quot;_none_&quot;);
+
+       boolean exists &#x3D; Client.exists(request, RequestOptions.DEFAULT);
+       System.out.println(exists);  &#x2F;&#x2F;true
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4、文档的更新"><a href="#4、文档的更新" class="headerlink" title="4、文档的更新"></a>4、文档的更新</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 测试更新文档内容
+  @Test
+  public void testUpdateDocument() throws IOException &#123;
+      UpdateRequest request &#x3D; new UpdateRequest(&quot;chao_index&quot;, &quot;1&quot;);
+      User user &#x3D; new User(&quot;lmk&quot;,11);
+      request.doc(JSON.toJSONString(user),XContentType.JSON);
+      UpdateResponse response &#x3D; Client.update(request, RequestOptions.DEFAULT);
+      System.out.println(response.status()); &#x2F;&#x2F; OK
+      
+  &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627885001483.png"></p>
+<h3 id="5、文档的删除"><a href="#5、文档的删除" class="headerlink" title="5、文档的删除"></a>5、文档的删除</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 测试删除文档
+   @Test
+   public void testDeleteDocument() throws IOException &#123;
+       DeleteRequest request &#x3D; new DeleteRequest(&quot;chao_index&quot;, &quot;1&quot;);
+       request.timeout(&quot;1s&quot;);
+       DeleteResponse response &#x3D; Client.delete(request, RequestOptions.DEFAULT);
+       System.out.println(response.status());&#x2F;&#x2F; OK
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627885080796.png"></p>
+<h3 id="6、文档的查询"><a href="#6、文档的查询" class="headerlink" title="6、文档的查询"></a>6、文档的查询</h3><p><img src="/2021/08/02/elasticsearch/1627886405141.png"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">  	&#x2F;&#x2F; 查询
+&#x2F;&#x2F; SearchRequest 搜索请求
+&#x2F;&#x2F; SearchSourceBuilder 条件构造
+&#x2F;&#x2F; HighlightBuilder 高亮
+&#x2F;&#x2F; TermQueryBuilder 精确查询
+&#x2F;&#x2F; MatchAllQueryBuilder
+&#x2F;&#x2F; xxxQueryBuilder ...
+   @Test
+   public void testSearch() throws IOException &#123;
+       &#x2F;&#x2F; 1.创建查询请求对象
+       SearchRequest searchRequest &#x3D; new SearchRequest();
+
+       &#x2F;&#x2F; 2.构建搜索条件
+       SearchSourceBuilder searchSourceBuilder &#x3D; new SearchSourceBuilder();
+
+       &#x2F;&#x2F; (1)查询条件 使用QueryBuilders工具类创建
+       &#x2F;&#x2F; 精确查询
+       TermQueryBuilder termQueryBuilder &#x3D; QueryBuilders.termQuery(&quot;name&quot;, &quot;chao&quot;);
+       &#x2F;&#x2F; &#x2F;&#x2F; 匹配查询
+       &#x2F;&#x2F; MatchAllQueryBuilder matchAllQueryBuilder &#x3D; QueryBuilders.matchAllQuery();
+
+
+       &#x2F;&#x2F; (2)其他&lt;可有可无&gt;：（可以参考 SearchSourceBuilder 的字段部分）
+       &#x2F;&#x2F; 设置高亮
+       searchSourceBuilder.highlighter(new HighlightBuilder());
+       &#x2F;&#x2F; &#x2F;&#x2F; 分页
+       &#x2F;&#x2F; searchSourceBuilder.from();
+       &#x2F;&#x2F; searchSourceBuilder.size();
+       &#x2F;&#x2F;希望在60s查出
+       searchSourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
+       &#x2F;&#x2F; (3)条件投入
+       searchSourceBuilder.query(termQueryBuilder);
+
+       &#x2F;&#x2F; 3.添加条件到请求
+       searchRequest.source(searchSourceBuilder);
+
+       &#x2F;&#x2F; 4.客户端查询请求
+       SearchResponse search &#x3D; Client.search(searchRequest, RequestOptions.DEFAULT);
+
+       &#x2F;&#x2F; 5.查看返回结果
+       SearchHits hits &#x3D; search.getHits();
+       System.out.println(JSON.toJSONString(hits));
+       System.out.println(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;);
+       for (SearchHit documentFields : hits.getHits()) &#123;
+           System.out.println(documentFields.getSourceAsMap());
+       &#125;
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>前面的操作都无法批量添加数据 </p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 上面的这些api无法批量增加数据（只会保留最后一个source）
+@Test
+public void test() throws IOException &#123;
+    IndexRequest request &#x3D; new IndexRequest(&quot;bulk&quot;);&#x2F;&#x2F; 没有id会自动生成一个随机ID
+    request.source(JSON.toJSONString(new User(&quot;liu&quot;,1)),XContentType.JSON);
+    request.source(JSON.toJSONString(new User(&quot;min&quot;,2)),XContentType.JSON);
+    request.source(JSON.toJSONString(new User(&quot;kai&quot;,3)),XContentType.JSON);
+    IndexResponse index &#x3D; restHighLevelClient.index(request, RequestOptions.DEFAULT);
+    System.out.println(index.status());&#x2F;&#x2F; created
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="7、批量添加数据"><a href="#7、批量添加数据" class="headerlink" title="7、批量添加数据"></a>7、批量添加数据</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">    &#x2F;&#x2F; 特殊的，真的项目一般会 批量插入数据
+    @Test
+    public void testBulk() throws IOException &#123;
+        BulkRequest bulkRequest &#x3D; new BulkRequest();
+        bulkRequest.timeout(&quot;10s&quot;);
+
+        ArrayList&lt;User&gt; users &#x3D; new ArrayList&lt;&gt;();
+        users.add(new User(&quot;chao-1&quot;,1));
+        users.add(new User(&quot;chao-2&quot;,2));
+        users.add(new User(&quot;chao-3&quot;,3));
+        users.add(new User(&quot;chao-4&quot;,4));
+        users.add(new User(&quot;chao-5&quot;,5));
+        users.add(new User(&quot;chao-6&quot;,6));
+
+        &#x2F;&#x2F; 批量请求处理
+        for (int i &#x3D; 0; i &lt; users.size(); i++) &#123;
+            bulkRequest.add(
+                &#x2F;&#x2F; 这里是数据信息
+                    new IndexRequest(&quot;chao_index&quot;)
+                            .id(&quot;&quot;+(i + 1)) &#x2F;&#x2F; 没有设置id 会自定生成一个随机id
+                            .source(JSON.toJSONString(users.get(i)),XContentType.JSON)
+            );
+        &#125;
+
+        BulkResponse bulk &#x3D; Client.bulk(bulkRequest, RequestOptions.DEFAULT);
+        System.out.println(bulk.status());&#x2F;&#x2F; ok
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627885584566.png"></p>
+<h1 id="七、ElasticSearch实战"><a href="#七、ElasticSearch实战" class="headerlink" title="七、ElasticSearch实战"></a>七、ElasticSearch实战</h1><h2 id="防京东商城搜索（高亮）"><a href="#防京东商城搜索（高亮）" class="headerlink" title="防京东商城搜索（高亮）"></a>防京东商城搜索（高亮）</h2><h3 id="1、工程创建（springboot）"><a href="#1、工程创建（springboot）" class="headerlink" title="1、工程创建（springboot）"></a>1、工程创建（springboot）</h3><p><img src="/2021/08/02/elasticsearch/1627889885764.png"></p>
+<p><strong>目录结构</strong></p>
+<p><img src="/2021/08/02/elasticsearch/f0f96e10f7221f6217052046b81f2baf-1626936023816.png"></p>
+<h3 id="2、基本编码"><a href="#2、基本编码" class="headerlink" title="2、基本编码"></a>2、基本编码</h3><p>①导入依赖</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&lt;properties&gt;
+&lt;java.version&gt;1.8&lt;&#x2F;java.version&gt;
+&lt;elasticsearch.version&gt;7.6.1&lt;&#x2F;elasticsearch.version&gt;
+&lt;&#x2F;properties&gt;
+
+&lt;dependencies&gt;
+&lt;!-- jsoup解析页面 --&gt;
+&lt;!-- 解析网页 爬视频可 研究tiko --&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;org.jsoup&lt;&#x2F;groupId&gt;
+&lt;artifactId&gt;jsoup&lt;&#x2F;artifactId&gt;
+&lt;version&gt;1.10.2&lt;&#x2F;version&gt;
+&lt;&#x2F;dependency&gt;
+
+&lt;!-- fastjson --&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;com.alibaba&lt;&#x2F;groupId&gt;
+&lt;artifactId&gt;fastjson&lt;&#x2F;artifactId&gt;
+&lt;version&gt;1.2.70&lt;&#x2F;version&gt;
+&lt;&#x2F;dependency&gt;
+
+&lt;!-- ElasticSearch --&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;
+&lt;artifactId&gt;spring-boot-starter-data-elasticsearch&lt;&#x2F;artifactId&gt;
+&lt;&#x2F;dependency&gt;
+
+&lt;!-- thymeleaf --&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;
+&lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;&#x2F;artifactId&gt;
+&lt;&#x2F;dependency&gt;
+
+&lt;!-- web --&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;
+&lt;artifactId&gt;spring-boot-starter-web&lt;&#x2F;artifactId&gt;
+&lt;&#x2F;dependency&gt;
+
+&lt;!-- devtools热部署 --&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;
+&lt;artifactId&gt;spring-boot-devtools&lt;&#x2F;artifactId&gt;
+&lt;scope&gt;runtime&lt;&#x2F;scope&gt;
+&lt;optional&gt;true&lt;&#x2F;optional&gt;
+&lt;&#x2F;dependency&gt;
+
+&lt;!-- --&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;
+&lt;artifactId&gt;spring-boot-configuration-processor&lt;&#x2F;artifactId&gt;
+&lt;optional&gt;true&lt;&#x2F;optional&gt;
+&lt;&#x2F;dependency&gt;
+
+&lt;!-- lombok 需要安装插件 --&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;org.projectlombok&lt;&#x2F;groupId&gt;
+&lt;artifactId&gt;lombok&lt;&#x2F;artifactId&gt;
+&lt;optional&gt;true&lt;&#x2F;optional&gt;
+&lt;&#x2F;dependency&gt;
+
+&lt;!-- test --&gt;
+&lt;dependency&gt;
+&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;
+&lt;artifactId&gt;spring-boot-starter-test&lt;&#x2F;artifactId&gt;
+&lt;scope&gt;test&lt;&#x2F;scope&gt;
+&lt;&#x2F;dependency&gt;
+&lt;&#x2F;dependencies&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>②导入前端素材</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1M5uWdYsCZyzIAOcgcRkA_A">https://pan.baidu.com/s/1M5uWdYsCZyzIAOcgcRkA_A</a><br>提取码：qk8p<br>复制这段内容后打开百度网盘手机App，操作更方便哦</p>
+<p>③编写 <code>application.preperties</code>配置文件</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"># 更改端口，防止冲突
+server.port&#x3D;9999
+# 关闭thymeleaf缓存
+spring.thymeleaf.cache&#x3D;false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>④测试controller和view</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Controller
+public class IndexController &#123;
+
+@GetMapping(&#123;&quot;&#x2F;&quot;,&quot;index&quot;&#125;)
+ public String index()&#123;
+ return &quot;index&quot;;
+ &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/c4c75ee5fb0be9a19face4c60b882684-1626936023814.png"></p>
+<h3 id="3、爬虫（jsoup）"><a href="#3、爬虫（jsoup）" class="headerlink" title="3、爬虫（jsoup）"></a>3、爬虫（jsoup）</h3><blockquote>
+<p>数据获取：数据库、消息队列、爬虫、…</p>
+</blockquote>
+<blockquote>
+<p><code>jsoup</code>包！  解析网页</p>
+<p><code>tika</code>包！ 可以爬取视频，音乐</p>
+</blockquote>
+<p>1.导入依赖</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.jsoup<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>jsoup<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.10.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>①搜索京东搜索页面，并分析页面</p>
+<ol>
+<li><code>http://search.jd.com/search?keyword=java</code></li>
+</ol>
+<p>页面如下</p>
+<p><img src="/2021/08/02/elasticsearch/8ced87dc0e0a856e4a3578d2b0cf7dbe-1626936023816.png"></p>
+<p>审查页面元素</p>
+<p><strong>页面列表id：J_goodsList</strong></p>
+<p><img src="/2021/08/02/elasticsearch/6a78be2143beb4b4bf335a34f64dcc05-1626936023815.png"></p>
+<p><strong>目标元素：img、price、name</strong></p>
+<p><img src="/2021/08/02/elasticsearch/d200bbcbb3f7fcb84e6ad1928cf82e55-1626936023817.png"></p>
+<p>②爬取数据（获取请求返回的页面信息，筛选出可用的）</p>
+<blockquote>
+<p>创建工具类HtmlParseUtil，并简单编写</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HtmlParseUtil &#123;
+    public static void main(String[] args) throws IOException &#123;
+    &#x2F;&#x2F;&#x2F; 使用前需要联网
+    &#x2F;&#x2F; 请求url:http:&#x2F;&#x2F;search.jd.com&#x2F;search?keyword&#x3D;java
+        String url &#x3D; &quot;http:&#x2F;&#x2F;search.jd.com&#x2F;search?keyword&#x3D;java&quot;;
+    &#x2F;&#x2F; 1.解析网页(jsoup 解析返回的对象是浏览器Document对象)
+        Document document &#x3D; Jsoup.parse(new URL(url), 30000);
+    &#x2F;&#x2F; 使用document可以使用在js对document的所有操作
+    &#x2F;&#x2F; 2.获取元素（通过id）
+        Element j_goodsList &#x3D; document.getElementById(&quot;J_goodsList&quot;);
+    &#x2F;&#x2F; 3.获取J_goodsList ul 每一个 li
+        Elements lis &#x3D; j_goodsList.getElementsByTag(&quot;li&quot;);
+    &#x2F;&#x2F; 4.获取li下的 img、price、name
+        for (Element li : lis) &#123;
+            &#x2F;&#x2F; 获取li下 第一张图片的src属性
+            String img &#x3D; li.getElementsByTag(&quot;img&quot;).eq(0).attr(&quot;src&quot;);
+            
+            String name &#x3D; li.getElementsByClass(&quot;p-name&quot;).eq(0).text();
+            String price &#x3D; li.getElementsByClass(&quot;p-price&quot;).eq(0).text();
+
+            System.out.println(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;);
+            System.out.println(&quot;img : &quot; + img);
+            System.out.println(&quot;name : &quot; + name);
+            System.out.println(&quot;price : &quot; + price);
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>运行结果</strong></p>
+<p><img src="/2021/08/02/elasticsearch/6d49b4aedc386ad060d7547c72c82539-1626936023826.png"></p>
+<p><strong>原因是啥？</strong></p>
+<blockquote>
+<p>一般图片特别多的网站，所有的图片都是通过延迟加载的 </p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 打印标签内容
+Elements lis &#x3D; j_goodsList.getElementsByTag(&quot;li&quot;);
+System.out.println(lis);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>打印所有li标签，发现img标签中并没有属性src的设置，只是data-lazy-ing设置图片加载的地址</p>
+<p><img src="/2021/08/02/elasticsearch/a44a701b230cc90740c4239fbcc7f7c5-1626936023823.png"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;改成如下
+String img &#x3D; li.getElementsByTag(&quot;img&quot;).eq(0).attr(&quot;data-lazy-img&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>创建HtmlParseUtil、改写</p>
+<ul>
+<li>更改图片获取属性为 <code>data-lazy-img</code></li>
+<li>与实体类结合，实体类如下</li>
+</ul>
+<blockquote>
+<p>实体类</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Content implements Serializable &#123;
+    private static final long serialVersionUID &#x3D; -8049497962627482693L;
+    private String name;
+    private String img;
+    private String price;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>封装为方法</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class HtmlParseUtil &#123;
+    public static void main(String[] args) throws IOException &#123;
+        &#x2F;&#x2F;System.out.println(parseJD(&quot;java&quot;));
+        parseJD(&quot;vue&quot;).forEach(System.out::println);
+    &#125;
+
+
+   public static List&lt;Content&gt; parseJD(String keyword) throws IOException &#123;
+        &#x2F;&#x2F;&#x2F; 使用前需要联网
+        &#x2F;&#x2F; 请求url
+        String url &#x3D; &quot;http:&#x2F;&#x2F;search.jd.com&#x2F;search?keyword&#x3D;&quot; + keyword;
+        &#x2F;&#x2F; 1.解析网页(jsoup 解析返回的对象是浏览器Document对象)
+        Document document &#x3D; Jsoup.parse(new URL(url), 30000);
+        &#x2F;&#x2F; 使用document可以使用在js对document的所有操作
+        &#x2F;&#x2F; 2.获取元素（通过id）
+        Element j_goodsList &#x3D; document.getElementById(&quot;J_goodsList&quot;);
+        &#x2F;&#x2F;j_goodsList 如果这里为空   用下面这个方法
+        &#x2F;&#x2F;Document document &#x3D; Jsoup.connect(url).userAgent(&quot;Mozilla&#x2F;5.0 (Windows NT 5.1; zh-CN) AppleWebKit&#x2F;535.12 (KHTML, like Gecko) Chrome&#x2F;22.0.1229.79 Safari&#x2F;535.12&quot;).timeout(30000).get();
+        &#x2F;&#x2F; 3.获取J_goodsList ul 每一个 li
+        Elements lis &#x3D; j_goodsList.getElementsByTag(&quot;li&quot;);
+        &#x2F;&#x2F; System.out.println(lis);
+        &#x2F;&#x2F; 4.获取li下的 img、price、name
+        &#x2F;&#x2F; list存储所有li下的内容
+        List&lt;Content&gt; contents &#x3D; new ArrayList&lt;Content&gt;();
+        for (Element li : lis) &#123;
+        &#x2F;&#x2F; 由于网站图片使用懒加载，将src属性替换为data-lazy-img
+            String img &#x3D; li.getElementsByTag(&quot;img&quot;).eq(0).attr(&quot;data-lazy-img&quot;);&#x2F;&#x2F; 获取li下 第一张图片
+            String name &#x3D; li.getElementsByClass(&quot;p-name&quot;).eq(0).text();
+            String price &#x3D; li.getElementsByClass(&quot;p-price&quot;).eq(0).text();
+        &#x2F;&#x2F; 封装为对象
+            Content content &#x3D; new Content(name,img,price);
+        &#x2F;&#x2F; 添加到list中
+            contents.add(content);
+        &#125;
+        &#x2F;&#x2F; System.out.println(contents);
+        &#x2F;&#x2F; 5.返回 list
+        return contents;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>结果展示</strong></p>
+<p><img src="/2021/08/02/elasticsearch/1627897778683.png"></p>
+<h3 id="4、基本代码"><a href="#4、基本代码" class="headerlink" title="4、基本代码"></a>4、基本代码</h3><p>⑤编写Config</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Configuration
+public class ElasticSearchConfig &#123;
+     @Bean
+     public RestHighLevelClient restHighLevelClient()&#123;
+          RestHighLevelClient client &#x3D; new RestHighLevelClient(
+             RestClient.builder(
+                 new HttpHost(&quot;127.0.0.1&quot;,9200,&quot;http&quot;)
+             )
+           );
+           return client;
+     &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>⑥编写service</p>
+<blockquote>
+<p>因为是爬取的数据，那么就不走Dao，以下编写都不会编写接口，开发中必须严格要求编写</p>
+</blockquote>
+<p><strong>ContentService</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Service
+ public class ContentService &#123;
+
+     @Autowired
+     private RestHighLevelClient restHighLevelClient;
+
+     &#x2F;&#x2F; 1、解析数据放入 es 索引中
+     public Boolean parseContent(String keyword) throws IOException &#123;
+     &#x2F;&#x2F; 获取内容
+         List&lt;Content&gt; contents &#x3D; HtmlParseUtil.parseJD(keyword);
+     &#x2F;&#x2F; 内容放入 es 中
+         BulkRequest bulkRequest &#x3D; new BulkRequest();
+         bulkRequest.timeout(&quot;2m&quot;); &#x2F;&#x2F; 可根据实际业务设置
+         for (int i &#x3D; 0; i &lt; contents.size(); i++) &#123;
+             bulkRequest.add(
+                     new IndexRequest(&quot;jd_goods&quot;)
+                             .source(JSON.toJSONString(contents.get(i)), XContentType.JSON)
+             );
+         &#125;
+         BulkResponse bulk &#x3D; restHighLevelClient.bulk(bulkRequest, RequestOptions.DEFAULT);
+         &#x2F;&#x2F;restHighLevelClient.close();
+         return !bulk.hasFailures();
+     &#125;
+
+     &#x2F;&#x2F; 2、根据keyword分页查询结果
+     public List&lt;Map&lt;String, Object&gt;&gt; search(String keyword, Integer pageIndex, Integer pageSize) throws IOException &#123;
+         if (pageIndex &lt;&#x3D; 1)&#123;
+             pageIndex &#x3D; 1;
+         &#125;
+
+         SearchRequest jd_goods &#x3D; new SearchRequest(&quot;jd_goods&quot;);
+     &#x2F;&#x2F; 创建搜索源建造者对象
+         SearchSourceBuilder searchSourceBuilder &#x3D; new SearchSourceBuilder();
+     &#x2F;&#x2F; 条件采用：精确查询 通过keyword查字段name
+         TermQueryBuilder termQueryBuilder &#x3D; QueryBuilders.termQuery(&quot;name&quot;, keyword);
+         searchSourceBuilder.query(termQueryBuilder);
+         searchSourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));&#x2F;&#x2F; 60s
+     &#x2F;&#x2F; 分页
+         searchSourceBuilder.from(pageIndex);
+         searchSourceBuilder.size(pageSize);
+     &#x2F;&#x2F; 高亮
+     &#x2F;&#x2F; ....
+
+     &#x2F;&#x2F; 搜索源放入搜索请求中
+         jd_goods.source(searchSourceBuilder);
+     &#x2F;&#x2F; 执行查询，返回结果
+         SearchResponse searchResponse &#x3D; restHighLevelClient.search(jd_goods, RequestOptions.DEFAULT);
+         &#x2F;&#x2F;restHighLevelClient.close();
+
+     &#x2F;&#x2F; 解析结果
+         SearchHits hits &#x3D; searchResponse.getHits();
+         List&lt;Map&lt;String,Object&gt;&gt; results &#x3D; new ArrayList&lt;&gt;();
+         for (SearchHit documentFields : hits.getHits()) &#123;
+             Map&lt;String, Object&gt; sourceAsMap &#x3D; documentFields.getSourceAsMap();
+             results.add(sourceAsMap);
+         &#125;
+
+     &#x2F;&#x2F; 返回查询的结果
+         return results;
+     &#125;
+ &#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/08/02/elasticsearch/1627899063699.png"></p>
+<p>⑦编写controller</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Controller
+public class ContentController &#123;
+
+    @Autowired
+    private ContentService contentService;
+
+    @ResponseBody
+    @GetMapping(&quot;&#x2F;parse&#x2F;&#123;keyword&#125;&quot;)
+    public Boolean parse(@PathVariable(&quot;keyword&quot;) String keyword) throws IOException &#123;
+        return contentService.parseContent(keyword);
+    &#125;
+
+    @ResponseBody
+    @GetMapping(&quot;&#x2F;search&#x2F;&#123;keyword&#125;&#x2F;&#123;pageIndex&#125;&#x2F;&#123;pageSize&#125;&quot;)
+    public List&lt;Map&lt;String, Object&gt;&gt; parse(@PathVariable(&quot;keyword&quot;) String keyword,
+                                           @PathVariable(&quot;pageIndex&quot;) Integer pageIndex,
+                                           @PathVariable(&quot;pageSize&quot;) Integer pageSize) throws IOException &#123;
+        return contentService.search(keyword,pageIndex,pageSize);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>⑧测试结果</p>
+<p>1、解析数据放入 es 索引中</p>
+<p><img src="/2021/08/02/elasticsearch/1627899429322.png"></p>
+<p><img src="/2021/08/02/elasticsearch/1627899409792.png"></p>
+<p>2、根据keyword分页查询结果</p>
+<p><img src="/2021/08/02/elasticsearch/1627903273050.png"></p>
+<h3 id="5、前后端分离（简单使用Vue）"><a href="#5、前后端分离（简单使用Vue）" class="headerlink" title="5、前后端分离（简单使用Vue）"></a>5、前后端分离（简单使用Vue）</h3><blockquote>
+<p>删除Controller 方法上的 <a target="_blank" rel="noopener" href="https://github.com/ResponseBody">@ResponseBody</a>注解</p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/2d2171649598fc20bcbfb860f49dc526-1626936023823.png"></p>
+<p>①下载并引入Vue.min.js和axios.js</p>
+<blockquote>
+<p>如果安装了nodejs，可以按如下步骤，没有可以到后面素材处下载</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install vue
+npm install axios<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p> <img src="/2021/08/02/elasticsearch/10634dde7a3fc5ec924714b77debba01-1626936023828.png"></p>
+<blockquote>
+<p>将下面两个文件加到<code>js</code>中</p>
+</blockquote>
+<p><img src="/2021/08/02/elasticsearch/eae4f70d5c2ee7886e3f79a58934f7e5-1626936023818.png"></p>
+<p><img src="/2021/08/02/elasticsearch/b98c8d6381145a654518c78fc60ee080-1626936023815.png"></p>
+<p>②修改静态页面</p>
+<p>引入js</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name"><span class="token namespace">th:</span>src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@&#123;/js/vue.min.js&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name"><span class="token namespace">th:</span>src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@&#123;/js/axios.min.js&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>修改后的index.html</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>th</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.thymeleaf.org<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>狂神说Java-ES仿京东实战<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">th:</span>href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@&#123;/css/style.css&#125;<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name"><span class="token namespace">th:</span>src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@&#123;/js/jquery.min.js&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span> mallist tmall- page-not-market <span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- 头部搜索 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span> header-list-app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>headerLayout<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>headerCon <span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- Logo--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mallLogo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name"><span class="token namespace">th:</span>src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@&#123;/images/jdlogo.png&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header-extra<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!--搜索--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mallSearch<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mall-search<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>searchTop<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mallSearch-form clearfix<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span><span class="token punctuation">></span></span>天猫搜索<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mallSearch-input clearfix<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>s-combobox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>s-combobox-685<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>s-combobox-input-wrap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>keyword<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">autocomplete</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>off<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mq<span class="token punctuation">"</span></span>
+<span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>s-combobox-input<span class="token punctuation">"</span></span> <span class="token attr-name">aria-haspopup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">@click.prevent</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>searchKey<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>searchbtn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>搜索<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>relKeyTop<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">></span></span>狂神说Java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">></span></span>狂神说前端<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">></span></span>狂神说Linux<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">></span></span>狂神说大数据<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">></span></span>狂神聊理财<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- 商品详情页面 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 品牌分类 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>navAttrsForm<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>attrs j_NavAttrs<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">display</span><span class="token punctuation">:</span>block</span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brandAttr j_nav_brand<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>j_Brand attr<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>attrKey<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+品牌
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>attrValues<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>av-collapse row-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 狂神说 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> Java <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- 排序规则 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>filter clearfix<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fSort fSort-cur<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>综合<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>f-ico-arrow-d<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fSort<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>人气<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>f-ico-arrow-d<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fSort<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>新品<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>f-ico-arrow-d<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fSort<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>销量<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>f-ico-arrow-d<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fSort<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>价格<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>f-ico-triangle-mt<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>f-ico-triangle-mb<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- 商品详情 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>view grid-nosku<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>product<span class="token punctuation">"</span></span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>result in results<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>product-iWrap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!--商品封面--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>productImg-wrap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>productImg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>result.img<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!--价格--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>productPrice<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span> <span class="token attr-name">v-text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>result.price<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!--标题--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>productTitle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">v-html</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>result.name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 店铺名 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>productShop<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>店铺： 狂神说Java <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 成交信息 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>productStatus<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>月成交<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span><span class="token punctuation">></span></span>999笔<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>评价 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">></span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name"><span class="token namespace">th:</span>src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@&#123;/js/vue.min.js&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name"><span class="token namespace">th:</span>src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@&#123;/js/axios.min.js&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+<span class="token literal-property property">el</span><span class="token operator">:</span><span class="token string">"#app"</span><span class="token punctuation">,</span>
+<span class="token literal-property property">data</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+<span class="token string-property property">"keyword"</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment">// 搜索的关键字</span>
+<span class="token string-property property">"results"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// 后端返回的结果</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token literal-property property">methods</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+<span class="token function">searchKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+<span class="token keyword">var</span> keyword <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>keyword<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>keyword<span class="token punctuation">)</span><span class="token punctuation">;</span>
+axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'h_search/'</span><span class="token operator">+</span>keyword<span class="token operator">+</span><span class="token string">'/0/20'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>results<span class="token operator">=</span>response<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6、搜索高亮"><a href="#6、搜索高亮" class="headerlink" title="6、搜索高亮"></a>6、搜索高亮</h3><blockquote>
+<p>在4的基础上添加内容</p>
+</blockquote>
+<p>①ContentService</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 3、 在2的基础上进行高亮查询
+    public List&lt;Map&lt;String, Object&gt;&gt; highlightSearch(String keyword, Integer pageIndex, Integer pageSize) throws IOException &#123;
+
+        SearchRequest searchRequest &#x3D; new SearchRequest(&quot;jd_goods&quot;);
+
+        SearchSourceBuilder searchSourceBuilder &#x3D; new SearchSourceBuilder();
+&#x2F;&#x2F; 精确查询，添加查询条件
+        TermQueryBuilder termQueryBuilder &#x3D; QueryBuilders.termQuery(&quot;name&quot;, keyword);
+        searchSourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
+        searchSourceBuilder.query(termQueryBuilder);
+&#x2F;&#x2F; 分页
+        searchSourceBuilder.from(pageIndex);
+        searchSourceBuilder.size(pageSize);
+&#x2F;&#x2F; 高亮 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+        HighlightBuilder highlightBuilder &#x3D; new HighlightBuilder();
+        highlightBuilder.field(&quot;name&quot;);
+        highlightBuilder.preTags(&quot;&lt;span style&#x3D;&#39;color:red&#39;&gt;&quot;);
+        highlightBuilder.postTags(&quot;&lt;&#x2F;span&gt;&quot;);
+        searchSourceBuilder.highlighter(highlightBuilder);
+
+&#x2F;&#x2F; 执行查询
+        searchRequest.source(searchSourceBuilder);
+        SearchResponse searchResponse &#x3D; restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
+&#x2F;&#x2F; 解析结果 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+        SearchHits hits &#x3D; searchResponse.getHits();
+        List&lt;Map&lt;String, Object&gt;&gt; results &#x3D; new ArrayList&lt;&gt;();
+        for (SearchHit documentFields : hits.getHits()) &#123;
+&#x2F;&#x2F; 使用新的字段值（高亮），覆盖旧的字段值
+            Map&lt;String, Object&gt; sourceAsMap &#x3D; documentFields.getSourceAsMap();
+&#x2F;&#x2F; 高亮字段
+            Map&lt;String, HighlightField&gt; highlightFields &#x3D; documentFields.getHighlightFields();
+            HighlightField name &#x3D; highlightFields.get(&quot;name&quot;);
+&#x2F;&#x2F; 替换
+            if (name !&#x3D; null)&#123;
+                Text[] fragments &#x3D; name.fragments();
+                StringBuilder new_name &#x3D; new StringBuilder();
+                for (Text text : fragments) &#123;
+                    new_name.append(text);
+                &#125;
+                sourceAsMap.put(&quot;name&quot;,new_name.toString());
+            &#125;
+            results.add(sourceAsMap);
+        &#125;
+        return results;
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>②ContentController</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@ResponseBody
+@GetMapping(&quot;&#x2F;h_search&#x2F;&#123;keyword&#125;&#x2F;&#123;pageIndex&#125;&#x2F;&#123;pageSize&#125;&quot;)
+public List&lt;Map&lt;String, Object&gt;&gt; highlightParse(@PathVariable(&quot;keyword&quot;) String keyword,
+@PathVariable(&quot;pageIndex&quot;) Integer pageIndex,
+@PathVariable(&quot;pageSize&quot;) Integer pageSize) throws IOException &#123;
+        return contentService.highlightSearch(keyword,pageIndex,pageSize);
+        &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>③结果展示</p>
+<p><img src="/2021/08/02/elasticsearch/435430115c932f865f5d1eb27084f7f2-1626936023821.png"></p>
+<p>测试</p>
+<p><img src="/2021/08/02/elasticsearch/1627909471621.png"></p>
+<hr>
+<h2 id="over"><a href="#over" class="headerlink" title="over"></a>over</h2>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">任宜超</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2021/08/02/elasticsearch/">http://example.com/2021/08/02/elasticsearch/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">任宜超</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/ElasticSearch%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">ElasticSearch笔记</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/08/07/wang-luo-bian-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="网络编程">
+                        
+                        <span class="card-title">网络编程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">网络编程笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07/20/rabbitmq/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="RabbitMQ">
+                        
+                        <span class="card-title">RabbitMQ</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%85%B6%E4%BB%96%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    其他笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/RabbitMQ%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">RabbitMQ笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">任宜超</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://gitee.com/ren-yichao" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:727958639@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=727958639" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 727958639" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/u/6357151006/home" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/u/6357151006/home" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
