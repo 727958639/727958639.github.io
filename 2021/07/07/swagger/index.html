@@ -465,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    2.5k
                 </div>
                 
 
@@ -718,6 +718,176 @@ public class HelloController &#123;
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="实践步骤"><a href="#实践步骤" class="headerlink" title="实践步骤"></a>实践步骤</h3><ol>
+<li>导入依赖</li>
+</ol>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>io.springfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>springfox-swagger-ui<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.9.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>io.springfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>springfox-swagger2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.9.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>在启动类上添加注解</li>
+</ol>
+<p><img src="/2021/07/07/swagger/image-20230726195059848.png"></p>
+<ol start="3">
+<li>创建swagger的配置类</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.chao.config;
+
+import java.util.function.Predicate;
+
+@Configuration
+public class swaggerConfiguration &#123;
+
+    @Bean
+    public Docket docket()&#123;
+        Docket docket &#x3D; new Docket(DocumentationType.SWAGGER_2);
+
+
+
+        docket
+                .apiInfo(apiInfo())
+            	.enable(false)  &#x2F;&#x2F;是否开启swagger
+            
+                &#x2F;&#x2F; build模式,返回一个建造者
+                .select()
+            
+                &#x2F;&#x2F; api的配置路径
+                &#x2F;&#x2F; RequestHandlerSelectors, 配置要扫描的包
+                &#x2F;&#x2F; basePackage(): 指定要扫描的包
+                &#x2F;&#x2F; any(): 扫描全部
+                &#x2F;&#x2F; none(): 都不扫描
+                &#x2F;&#x2F; withClassAnnotation : 扫描类上的注解, 参数是一个注解的反射对象
+                &#x2F;&#x2F; 例如：withClassAnnotation(RestController.class) 只扫描类上有@RestController的生成文档
+                &#x2F;&#x2F; withMethodAnnotation: 扫描方法上的注解, 参数是一个注解的反射对象
+                .apis(RequestHandlerSelectors.basePackage(&quot;com.chao.controller&quot;))
+            
+                &#x2F;&#x2F; paths(): 过滤什么路径
+                &#x2F;&#x2F;例如.paths(PathSelectors.ant(&quot;&#x2F;kuang&#x2F;**&quot;))指的是只有链接带有&#x2F;kuang&#x2F;才被扫描
+                &#x2F;&#x2F;.paths(Predicates.or(PathSelectors.regex(&quot;&#x2F;kuang&#x2F;**&quot;),
+                &#x2F;&#x2F;                        PathSelectors.regex(&quot;&#x2F;kuang1&#x2F;**&quot;),
+                &#x2F;&#x2F;                        PathSelectors.regex(&quot;&#x2F;kuang2&#x2F;**&quot;)))
+                &#x2F;&#x2F;这三个路径都可以
+                &#x2F;&#x2F;paths(PathSelectors.any())扫描所有
+                .paths(PathSelectors.any())
+                .build();
+
+
+
+        return docket;
+    &#125;
+
+    &#x2F;&#x2F;配置 swagger 信息
+    private ApiInfo apiInfo() &#123;
+        return new ApiInfoBuilder()
+
+                &#x2F;&#x2F;作者信息
+                .contact(new Contact(&quot;任宜超&quot;,&quot;www.hahaha.com&quot;,&quot;727958639@qq.com&quot;))
+                &#x2F;&#x2F; 文档标题
+                .title(&quot;AI能力平台-监控服务-接口API&quot;)
+                &#x2F;&#x2F; 接口概述
+                .description(&quot;AI能力平台-监控服务接口，包括前端接口在内&quot;)
+                &#x2F;&#x2F; 版本号
+                .version(&quot;1.0&quot;)
+                &#x2F;&#x2F; 服务的域名
+                .termsOfServiceUrl(&quot;https:&#x2F;&#x2F;www.jiutian.com&quot;).build();
+    &#125;
+
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="4">
+<li>常用注解</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Api(tags&#x3D;&quot;youController&quot;)   tags： 生成文档的名称（也可以定义多个）
+    						 description：描述信息
+    						 放在类上
+    
+    
+@ApiOperation(value &#x3D; &quot;这是post方法&quot;,notes &#x3D; &quot;学习一下&quot;)
+    						value:方法名
+                            notes：描述
+    
+    
+@ApiParam(name &#x3D; &quot;名字&quot;,value &#x3D; &quot;描述&quot;,required &#x3D; true) String a, String b
+                            required：该参数是否为必要的
+                                
+@ApiIgnore   一般放在方法上，该方法就不会生成api文档
+                                
+                                
+@ApiImplicitParam(name &#x3D; &quot;a&quot;,value &#x3D; &quot;描述&quot;,required &#x3D; false,paramType &#x3D; &quot;字符串&quot;,dataType &#x3D; &quot;String&quot;)  放在方法上用于描述方法输入参数信息
+    
+@ApiModel(value &#x3D; &quot;自定义名字&quot;,description &#x3D; &quot;描述&quot;)
+                     放在实体类上，如果这个实体类成为任意一个生成api文档方法的返回值时会被解析
+                                
+                                
+@ApiModelProperty(value &#x3D; &quot;主键&quot;,name &#x3D; &quot;名字&quot;,required &#x3D; false,hidden &#x3D; false,example &#x3D; &quot;任宜超&quot;)
+                                放在实体类的参数上面<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<img src="/2021/07/07/swagger/image-20230726195329815.png" style="zoom: 80%;">
+
+<p><img src="/2021/07/07/swagger/image-20230726195356735.png"></p>
+<img src="/2021/07/07/swagger/image-20230726195409126.png" style="zoom:80%;">
+
+<img src="/2021/07/07/swagger/image-20230726195454316.png" style="zoom:80%;">
+
+
+
+<img src="/2021/07/07/swagger/image-20230726195509655.png" style="zoom:80%;">
+
+<p><img src="/2021/07/07/swagger/image-20230726195530467.png"></p>
+<p>==想让自己的swagger只在测试环境中使用，在生产环境不使用==</p>
+<p>在配置中定义开发环境：</p>
+<p><img src="/2021/07/07/swagger/image-20230726202921327.png"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"> @Bean
+ public Docket docket(Environment environment)&#123;
+     Docket docket &#x3D; new Docket(DocumentationType.SWAGGER_2);
+     
+Profiles profiles &#x3D; Profiles.of(&quot;dev&quot;);
+     
+     &#x2F;&#x2F;判断生产环境是不是dev，是的话flag才是true，才可以让后面的swagger开启
+     boolean flag &#x3D; environment.acceptsProfiles(profiles);
+
+     docket
+             .apiInfo(apiInfo())
+         	.enable(flag)  &#x2F;&#x2F;是否开启swagger
+         
+             &#x2F;&#x2F; build模式,返回一个建造者
+             .select()
+         
+             &#x2F;&#x2F; api的配置路径
+             &#x2F;&#x2F; RequestHandlerSelectors, 配置要扫描的包
+             &#x2F;&#x2F; basePackage(): 指定要扫描的包
+             &#x2F;&#x2F; any(): 扫描全部
+             &#x2F;&#x2F; none(): 都不扫描
+             &#x2F;&#x2F; withClassAnnotation : 扫描类上的注解, 参数是一个注解的反射对象
+             &#x2F;&#x2F; 例如：withClassAnnotation(RestController.class) 只扫描类上有@RestController的生成文档
+             &#x2F;&#x2F; withMethodAnnotation: 扫描方法上的注解, 参数是一个注解的反射对象
+             .apis(RequestHandlerSelectors.basePackage(&quot;com.chao.controller&quot;))
+         
+             &#x2F;&#x2F; paths(): 过滤什么路径
+             &#x2F;&#x2F;例如.paths(PathSelectors.ant(&quot;&#x2F;kuang&#x2F;**&quot;))指的是只有链接带有&#x2F;kuang&#x2F;才被扫描
+             &#x2F;&#x2F;.paths(Predicates.or(PathSelectors.regex(&quot;&#x2F;kuang&#x2F;**&quot;),
+             &#x2F;&#x2F;                        PathSelectors.regex(&quot;&#x2F;kuang1&#x2F;**&quot;),
+             &#x2F;&#x2F;                        PathSelectors.regex(&quot;&#x2F;kuang2&#x2F;**&quot;)))
+             &#x2F;&#x2F;这三个路径都可以
+             &#x2F;&#x2F;paths(PathSelectors.any())扫描所有
+             .paths(PathSelectors.any())
+             .build();
+
+
+
+     return docket;
+ &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/07/swagger/image-20230726203220296.png"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
 <li>我们可以通过Swagger给一些比较比较难理解的属性后接口，增加注释信息</li>
 <li>接口文档实时更新</li>
